@@ -1,0 +1,9 @@
+state = "Docile";
+i = 0;
+jump_hitbox = 0;
+vsp = 0;
+hsp = 0;
+grav = 1
+hp = 1000;
+jump = 0;
+detect = 0;

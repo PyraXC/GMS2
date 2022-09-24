@@ -1,0 +1,1 @@
+audio_play_sound(footstep_reverb, 1, 1);

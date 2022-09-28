@@ -296,8 +296,8 @@ switch (state)
 	set_state_sprite(s_skeleton_attack_alt_two, 1.2, 0);
 	if animation_hit_frame(5)
 	{
-		create_hitbox(x, y, self, s_skeleton_attack_alt_two_damage, 5, 2, 7, image_xscale);
-		audio_play_sound(a_swipe, 3, false);
+		create_hitbox(x, y, self, s_skeleton_attack_alt_two_damage, 4, 2, 8, image_xscale);
+		audio_play_sound(a_big_hit, 3, false);
 	}
 	
 	if input.roll and animation_hit_frame_range(0, 2)
@@ -355,10 +355,10 @@ switch (state)
 	case "Alt Two":
 	#region 2 2
 		set_state_sprite(s_skeleton_attack_alt_two2, 1.5, 0);
-	if animation_hit_frame(0)
+	if animation_hit_frame(4)
 	{
-		create_hitbox(x, y, self, s_skeleton_attack_alt_two2_damage, 2, 2, 3, image_xscale);
-		audio_play_sound(a_swipe, 3, false);
+		create_hitbox(x, y, self, s_skeleton_attack_alt_two2_damage, 6, 2, 10, image_xscale);
+		audio_play_sound(a_big_hit, 3, false);
 	}
 	
 	if input.roll and animation_hit_frame_range(1, 2)
@@ -366,12 +366,12 @@ switch (state)
 			state = "Roll";
 		}
 		
-		if input.attack_alt and animation_hit_frame_range(0, 2)
+		if input.attack_alt and animation_hit_frame_range(5, 7)
 		{
 			state = "Alt Three";
 		}
 		
-		if input.attack and animation_hit_frame_range(0, 2)
+		if input.attack and animation_hit_frame_range(5, 7)
 		{
 			state = "Alt Normal";
 		}

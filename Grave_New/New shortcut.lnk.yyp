@@ -62,7 +62,6 @@
     {"id":{"name":"s_grass","path":"sprites/s_grass/s_grass.yy",},"order":3,},
     {"id":{"name":"s_grave","path":"sprites/s_grave/s_grave.yy",},"order":4,},
     {"id":{"name":"s_graves","path":"sprites/s_graves/s_graves.yy",},"order":5,},
-    {"id":{"name":"s_skeleton_attack_alt_two3_old","path":"sprites/s_skeleton_attack_alt_two3_old/s_skeleton_attack_alt_two3_old.yy",},"order":44,},
     {"id":{"name":"s_wall","path":"sprites/s_wall/s_wall.yy",},"order":6,},
     {"id":{"name":"s_boss_walk","path":"sprites/s_boss_walk/s_boss_walk.yy",},"order":0,},
     {"id":{"name":"s_boss_attack_damage","path":"sprites/s_boss_attack_damage/s_boss_attack_damage.yy",},"order":1,},

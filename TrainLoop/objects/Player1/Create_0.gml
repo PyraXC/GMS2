@@ -1,0 +1,22 @@
+hp = 100;
+max_hp = hp;
+current_hp = max_hp;
+state = "Move";
+run_speed = 6;
+max_run_speed = 12;
+jump_speed = 12;
+jump_input = 0;
+idle_time = 0;
+air_speed = 0;
+grav = 0.5;
+hsp = 0;
+vsp = 0;
+move = 0;
+i = 0;
+i2 = 0;
+i_grav = grav;
+i_run_speed = run_speed;
+i_jump_speed = jump_speed;
+kills = 0;
+//Dependencies
+input = instance_create_layer(0, 0, "Instances", o_input);

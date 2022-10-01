@@ -1,0 +1,218 @@
+switch (state)
+{
+	case "Move":
+	#region Move State
+	#region Stuff
+		jump_speed = i_jump_speed;
+		air_speed = 0;
+		lag_count = 0;
+		wall_jump_count = 0;
+		idle_time = 0;
+		i = 0;
+	if input.run
+	{
+		run_speed = max_run_speed;
+	}
+	else
+	{ 
+		run_speed = i_run_speed;
+	}
+	
+	if input.right and not input.left
+		{
+			move_and_collide(run_speed, 0);
+			//run_speed = run_speed
+			image_xscale = 1;
+			if !input.run{set_state_sprite(s_move, 0 + run_speed/10, 0);}
+			else{set_state_sprite(s_run, 0 + run_speed/10, 0);}
+			idle_time = 0;
+			hsp = run_speed;
+			if(place_meeting(x+run_speed, y, o_wall))
+	{
+		while(!place_meeting(x+sign(run_speed), y, o_wall))
+		{
+			x += sign(run_speed); 
+		}
+		run_speed = i_run_speed;
+	}
+	if animation_hit_frame(1){audio_play_sound(footstep_reverb, 1, 0);}
+		}
+	if input.left and not input.right
+		{
+			move_and_collide(-run_speed, 0);
+			//run_speed = approach(run_speed, max_run_speed, 0.2);
+			image_xscale = -1;
+			if !input.run{set_state_sprite(s_move, 0 + run_speed/10, 0);}
+			else{set_state_sprite(s_run, 0 + run_speed/10, 0);}
+			idle_time = 0;
+			hsp = -run_speed;
+		if(place_meeting(x-run_speed, y, o_wall))
+			{
+			while(!place_meeting(x-sign(run_speed), y, o_wall))
+				{
+					x -= sign(run_speed); 
+				}
+			run_speed = i_run_speed;
+			}
+			if animation_hit_frame(1){audio_play_sound(footstep_reverb, 1, 0);}
+		}
+	if not input.left and not input.right
+		{
+			if input.jump
+				{
+					state = "Jump";
+				}
+			idle_time++;
+			run_speed = i_run_speed;
+			set_state_sprite(s_idle, 0.25, 0);
+			hsp = 0;
+			if idle_time >= 120
+				{
+					state = "Idle2";
+					run_speed = 0;
+				}
+		}
+	
+	if input.left and input.right
+		{
+			idle_time++;
+			run_speed = i_run_speed;
+			set_state_sprite(s_idle, 0.25, 0);
+			if idle_time >= 120
+				{
+					state = "Idle2";
+				}
+		}
+	
+	if input.jump and not (input.left && input.right)
+		{
+		if run_speed == max_run_speed
+			{
+				jump_speed += 2;
+			}
+			jump_input = 1;
+			state = "Jump";
+		}
+#endregion
+#endregion
+
+	case "Jump":
+	#region Jump
+	#region stuff
+	set_state_sprite(s_jump, 1, 0);
+	if i == 0
+	{
+		grav = 0;
+		i++;
+	}
+	else
+	{
+		grav = i_grav;
+	}
+	launch_speed_x = 0;
+	launch_speed_y = 0;
+	launch_coordinates = 0;
+		//fgc_air_mvm();
+		fgc_air_mvm();
+		if global.pause == 1
+			{
+				exit;
+			}
+			#endregion
+			break;
+			#endregion
+
+	case "Free Fall":
+	#region Free Fall	
+	set_state_sprite(s_free_fall, 1, 0);
+	free_fall();
+		#endregion
+		break;
+
+	case "Aerial Lag":
+	#region Landing Lag
+	if alarm[0] <= 0
+		{
+			state = "Move";
+		}
+	set_state_sprite(s_landing_lag, 1, 0);
+	hsp -= sign(hsp) * 0.5;
+	move_and_collide(hsp, vsp);
+	if !place_meeting(x, y+1, o_wall)
+	{ state = "Jump";}
+	#endregion
+		break;
+	
+	case "Knockback":
+	#region
+	 knockback_state(s_knockback, "Jump");
+	#endregion
+		break;
+
+	case "Idle2":
+		#region Idle2
+		set_state_sprite(s_idle2, 0.33, 0);
+		
+	if input.right or input.left
+		{
+			state= "Move";
+			idle_time = 0;
+		}
+		if input.attack
+		{
+			state = "Attack One";
+			idle_time = 0;
+		}
+	if input.attack_alt
+		{
+			state = "Alt One";
+			idle_time = 0;
+		}
+	if animation_end()
+	{
+		state = "Move";
+		idle_time = 0;
+	}
+	if input.jump
+		{
+			state = "Jump";
+			idle_time = 0;
+		}
+	#endregion
+		break;	
+}
+if hp >= max_hp
+	{
+		hp = max_hp;
+	}
+
+if hp < current_hp
+	{
+		current_hp = hp;
+		zero_degree_meter += 1/10;
+	}
+if hp > current_hp
+	{
+		current_hp = hp;
+	}
+
+//show_debug_message(alarm[0]);
+//show_debug_message(state);
+//show_debug_message(vsp);
+//show_debug_message(hsp);
+//show_debug_message(y);
+//show_debug_message(o_game.a_attack);
+//show_debug_message(global.pause);
+//show_debug_message(global.game_fps);
+//show_debug_message(run_speed);
+//show_debug_message(jump_speed);
+//show_debug_message(i_jump_speed);
+//show_debug_message(wall_jump_count);
+//show_debug_message(launch);
+//show_debug_message(sign(x - o_tether_point.x));
+//show_debug_message(launch_speed_x);
+//show_debug_message(launch_speed_y);
+//show_debug_message(tether_range);
+//show_debug_message(zero_degree_meter);
+//show_debug_message(hp);
+

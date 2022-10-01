@@ -297,7 +297,7 @@ switch (state)
 	if animation_hit_frame(5)
 	{
 		create_hitbox(x, y, self, s_skeleton_attack_alt_two_damage, 4, 2, 8, image_xscale);
-		audio_play_sound(a_big_hit, 3, false);
+		audio_play_sound(a_medium_hit, 3, false);
 	}
 	
 	if input.roll and animation_hit_frame_range(0, 2)
@@ -358,7 +358,7 @@ switch (state)
 	if animation_hit_frame(4)
 	{
 		create_hitbox(x, y, self, s_skeleton_attack_alt_two2_damage, 6, 2, 10, image_xscale);
-		audio_play_sound(a_big_hit, 3, false);
+		audio_play_sound(a_medium_hit, 3, false);
 	}
 	
 	if input.roll and animation_hit_frame_range(1, 2)
@@ -366,12 +366,12 @@ switch (state)
 			state = "Roll";
 		}
 		
-		if input.attack_alt and animation_hit_frame_range(5, 7)
+		if input.attack_alt and animation_hit_frame_range(5, 8)
 		{
 			state = "Alt Three";
 		}
 		
-		if input.attack and animation_hit_frame_range(5, 7)
+		if input.attack and animation_hit_frame_range(5, 8)
 		{
 			state = "Alt Normal";
 		}
@@ -387,49 +387,25 @@ switch (state)
 		
 		case "Alt Three":
 	#region 2 2 2
-	set_state_sprite(s_skeleton_attack_alt_two3, 1.5, 0);
-	if input.left && i == 0 {image_xscale = -1; i++;}
-	if input.right && i == 0 {image_xscale = 1; i++;}
-	if animation_hit_frame(0)
+	set_state_sprite(s_skeleton_attack_alt_two3, 0.75, 0);
+	
+	if animation_hit_frame_range(0,2) && input.roll
 	{
-		create_hitbox(x, y, self, s_skeleton_attack_alt_two3_damage, 2, 1, 1, image_xscale);
-		audio_play_sound(a_swipe, 3, false);
+		state = "Roll";
+		store_state = "Alt Three";
+		store_adv = 3;
+		i = 0;
 	}
-	if animation_hit_frame(1)
+
+	if animation_hit_frame(9)
 	{
-		create_hitbox(x, y, self, s_skeleton_attack_alt_two3_damage1, 2, 1, 1, image_xscale);
-		audio_play_sound(a_swipe, 3, false);
+		create_hitbox(x, y, self, s_skeleton_attack_alt_two3_damage, 15, 3, 12, image_xscale);
+		audio_play_sound(a_big_hit, 3, false);
 	}
-	if animation_hit_frame(2)
+	if animation_end()
 	{
-		create_hitbox(x, y, self, s_skeleton_attack_alt_two3_damage2, 2, 1, 1, image_xscale);
-		audio_play_sound(a_swipe, 3, false);
+		state = "Move";	
 	}
-	if animation_hit_frame(3)
-	{
-		create_hitbox(x, y, self, s_skeleton_attack_alt_two3_damage3, 2, 1, 1, image_xscale);
-		audio_play_sound(a_swipe, 3, false);
-	}
-	if animation_hit_frame(4)
-	{
-		create_hitbox(x, y, self, s_skeleton_attack_alt_two3_damage4, 2, 1, 1, image_xscale);
-		audio_play_sound(a_swipe, 3, false);
-	}
-	if animation_hit_frame(5)
-	{
-		create_hitbox(x, y, self, s_skeleton_attack_alt_two3_damage5, 2, 1, 1, image_xscale);
-		audio_play_sound(a_swipe, 3, false);
-	}
-	if animation_hit_frame(8)
-	{
-		create_hitbox(x, y, self, s_skeleton_attack_alt_two3_damage6, 14, 4, 9, image_xscale);
-		audio_play_sound(a_swipe, 3, false);
-		audio_play_sound(a_medium_hit, 3, false);
-	}
-		if animation_end()
-		{
-			state = "Move";	
-		}
 	
 	#endregion
 		break;

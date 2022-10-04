@@ -9,6 +9,8 @@ switch (state)
 		wall_jump_count = 0;
 		idle_time = 0;
 		i = 0;
+		grav = i_grav;
+		
 	if input.run
 	{
 		run_speed = max_run_speed;
@@ -35,7 +37,7 @@ switch (state)
 		}
 		run_speed = i_run_speed;
 	}
-	if animation_hit_frame(1){audio_play_sound(footstep_reverb, 1, 0);}
+	//if animation_hit_frame(1){audio_play_sound(footstep_reverb, 1, 0);}
 		}
 	if input.left and not input.right
 		{
@@ -54,7 +56,7 @@ switch (state)
 				}
 			run_speed = i_run_speed;
 			}
-			if animation_hit_frame(1){audio_play_sound(footstep_reverb, 1, 0);}
+		//	if animation_hit_frame(1){audio_play_sound(footstep_reverb, 1, 0);}
 		}
 	if not input.left and not input.right
 		{
@@ -93,6 +95,16 @@ switch (state)
 			jump_input = 1;
 			state = "Jump";
 		}
+	if !place_meeting(x, y+1, o_wall)
+		{
+			state = "Jump";
+			show_debug_message("Here");
+		}
+	
+	if animation_end()
+		{
+			state = "Move";
+		}
 #endregion
 #endregion
 
@@ -109,26 +121,11 @@ switch (state)
 	{
 		grav = i_grav;
 	}
-	launch_speed_x = 0;
-	launch_speed_y = 0;
-	launch_coordinates = 0;
-		//fgc_air_mvm();
-		fgc_air_mvm();
-		if global.pause == 1
-			{
-				exit;
-			}
+		air_movement();
 			#endregion
 			break;
 			#endregion
-
-	case "Free Fall":
-	#region Free Fall	
-	set_state_sprite(s_free_fall, 1, 0);
-	free_fall();
-		#endregion
-		break;
-
+/*
 	case "Aerial Lag":
 	#region Landing Lag
 	if alarm[0] <= 0
@@ -142,7 +139,7 @@ switch (state)
 	{ state = "Jump";}
 	#endregion
 		break;
-	
+	*/
 	case "Knockback":
 	#region
 	 knockback_state(s_knockback, "Jump");
@@ -168,16 +165,16 @@ switch (state)
 			state = "Alt One";
 			idle_time = 0;
 		}
-	if animation_end()
-	{
-		state = "Move";
-		idle_time = 0;
-	}
 	if input.jump
 		{
 			state = "Jump";
 			idle_time = 0;
 		}
+	if animation_end()
+	{
+		state = "Move";
+		idle_time = 0;
+	}
 	#endregion
 		break;	
 }
@@ -197,7 +194,7 @@ if hp > current_hp
 	}
 
 //show_debug_message(alarm[0]);
-//show_debug_message(state);
+show_debug_message(state);
 //show_debug_message(vsp);
 //show_debug_message(hsp);
 //show_debug_message(y);

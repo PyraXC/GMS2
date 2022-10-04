@@ -32,7 +32,6 @@
     {"id":{"name":"s_landing_lag","path":"sprites/s_landing_lag/s_landing_lag.yy",},"order":22,},
     {"id":{"name":"s_free_fall","path":"sprites/s_free_fall/s_free_fall.yy",},"order":2,},
     {"id":{"name":"s_n_air_kick_damage","path":"sprites/s_n_air_kick_damage/s_n_air_kick_damage.yy",},"order":12,},
-    {"id":{"name":"o_poopyhead","path":"objects/o_poopyhead/o_poopyhead.yy",},"order":11,},
     {"id":{"name":"s_u_special","path":"sprites/s_u_special/s_u_special.yy",},"order":4,},
     {"id":{"name":"s_u_special_st","path":"sprites/s_u_special_st/s_u_special_st.yy",},"order":5,},
     {"id":{"name":"s_d_special","path":"sprites/s_d_special/s_d_special.yy",},"order":0,},

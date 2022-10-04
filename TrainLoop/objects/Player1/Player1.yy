@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "Player1",
   "spriteId": {
-    "name": "s_wall",
-    "path": "sprites/s_wall/s_wall.yy",
+    "name": "s_idle",
+    "path": "sprites/s_idle/s_idle.yy",
   },
   "solid": false,
   "visible": true,
@@ -30,6 +30,7 @@
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":7,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],

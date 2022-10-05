@@ -1,8 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function roll(){
-    var roll = [];
-    money -= getLines() * bet;
+    var rll = [];
+    money -= lines * bet;
     spins++;
     BC = 0;
     bonus = 0;
@@ -16,20 +16,18 @@ function roll(){
                 bonus++;
             }
         }
-        array_push(roll,temp);
+        array_push(rll ,temp);
 		j++;
     }
-    for (int i = 0; i < roll.size(); i++) {
-        for (int j = 0; j < roll[i].size(); j++) {
-            cout << roll[i][j] << " ";
+    for (var i = 0; i < array_length(rll); i++) {
+        for (var j = 0; j < array_length(rll[i]); j++) {
+            show_debug_message(rll[i][j]);
         }
-        cout << endl;
+        show_debug_message("");
     }
-    calcRoll(roll);
+    calcRoll(rll);
     if (bonus == 3) {
         BONUS++;
     }
     return roll;
-}
-
 }

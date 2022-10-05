@@ -1,21 +1,21 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function air_movement(){
-		var dir = noone;
-		if(hsp > 0 && dir == noone) {dir = "r";}
-		else {dir = "l";}
-		if dir == "r" {
-			if input.left{hsp -= 0.125;}
+	if state == "Aerial Lag" //Landing lag
+		{
+			exit;
 		}
-		if dir == "l" { 
-			if input.right{hsp += 0.125;}
-		}
-		move_and_collide(hsp, vsp);
+		#region Second Player Stat Resets And Such
+		dash_count = 0;
 		
-
+		#endregion
+		if input.left && alarm[9] == -1{hsp = -max_hsp;}
+		if input.right && alarm[9] == -1{hsp = max_hsp;}
+		if !input.left && !input.right && alarm[9] == -1{hsp = 0;}
+			move_and_collide(hsp, vsp);
+		
+		
 	if (vsp < 15) vsp += grav;
 	if (vsp > 15) vsp = 15;
-	if(wall_jump_count > 1) wall_jump_count = 1;
+	if(wall_jump_count > 8) wall_jump_count = 8;
 
 	if (place_meeting(x,y+1, o_wall)) and jump_input == 1
 		{
@@ -30,22 +30,28 @@ function air_movement(){
 				x += sign(hsp); 
 			}
 	
-			if state = "Jump" and input.jump and wall_jump_count < 1
-			
+			if state = "Jump" and input.jump and wall_jump_count < 1 and input.left
 			{
 				vsp = -9.8-(jump_speed/(i_jump_speed-2)) + wall_jump_count/1.5;
-				hsp = -sign(hsp) * 7;
+				image_xscale = 1;
 				wall_jump_count++;
-				image_xscale = sign(hsp);
+				state = "Walljump";
 			}
-			else
+			if state = "Jump" and input.jump and wall_jump_count < 1 and input.right
+			{
+				vsp = -9.8-(jump_speed/(i_jump_speed-2)) + wall_jump_count/1.5;
+				image_xscale = -1;
+				wall_jump_count++;
+				state = "Walljump";
+			}
+			else if alarm[9] == -1
 				{
 					hsp = 0;	
 				}
 		}
 	
 	//Verticle Collision
-	if(place_meeting(x, y+vsp, o_wall)) and vsp > 0 
+	if(place_meeting(x, y+vsp, o_wall)) and vsp > 0 and lag_count == 0
 		{
 			if state = "Jump"
 			{
@@ -68,7 +74,6 @@ function air_movement(){
 				y += sign(vsp); 
 			}
 			vsp = 0; 
-			show_debug_message("Bonk");
 		}
 		grav = i_grav;
 }

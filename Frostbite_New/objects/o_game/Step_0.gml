@@ -1,6 +1,6 @@
 if keyboard_check_pressed(ord("R"))
 {
-	game_restart();
+	room_goto_next();
 }
 if global.game_fps >= 60
 {

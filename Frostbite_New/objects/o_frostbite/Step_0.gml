@@ -1134,7 +1134,7 @@ if hp > current_hp
 	}
 
 //show_debug_message(alarm[0]);
-//show_debug_message(state);
+show_debug_message(state);
 //show_debug_message(vsp);
 //show_debug_message(hsp);
 //show_debug_message(y);

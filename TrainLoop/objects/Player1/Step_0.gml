@@ -10,7 +10,7 @@ switch (state)
 		idle_time = 0;
 		i = 0;
 		grav = i_grav;
-		
+	#endregion
 	if input.run
 	{
 		run_speed = max_run_speed;
@@ -95,17 +95,17 @@ switch (state)
 			jump_input = 1;
 			state = "Jump";
 		}
+		
 	if !place_meeting(x, y+1, o_wall)
 		{
 			state = "Jump";
-			show_debug_message("Here");
 		}
 	
 	if animation_end()
 		{
 			state = "Move";
 		}
-#endregion
+	break;
 #endregion
 
 	case "Jump":
@@ -192,9 +192,9 @@ if hp > current_hp
 	{
 		current_hp = hp;
 	}
-
-//show_debug_message(alarm[0]);
-show_debug_message(state);
+//show_debug_message(image_xscale);
+show_debug_message(alarm[9]);
+//show_debug_message(state);
 //show_debug_message(vsp);
 //show_debug_message(hsp);
 //show_debug_message(y);

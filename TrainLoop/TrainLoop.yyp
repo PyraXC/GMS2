@@ -7,6 +7,7 @@
     {"id":{"name":"add_screen_shake","path":"scripts/add_screen_shake/add_screen_shake.yy",},"order":8,},
     {"id":{"name":"o_lifeform","path":"objects/o_lifeform/o_lifeform.yy",},"order":3,},
     {"id":{"name":"s_train_car1","path":"sprites/s_train_car1/s_train_car1.yy",},"order":0,},
+    {"id":{"name":"wall_jump_movement","path":"scripts/wall_jump_movement/wall_jump_movement.yy",},"order":12,},
     {"id":{"name":"s_idle","path":"sprites/s_idle/s_idle.yy",},"order":0,},
     {"id":{"name":"set_state_sprite","path":"scripts/set_state_sprite/set_state_sprite.yy",},"order":4,},
     {"id":{"name":"Player1","path":"objects/Player1/Player1.yy",},"order":0,},

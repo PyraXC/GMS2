@@ -125,6 +125,14 @@ switch (state)
 			#endregion
 			break;
 			#endregion
+	
+	case "Walljump":
+		alarm[0] = 30;
+		if(place_meeting(x+1, y, o_wall)){
+			image_xscale = -1;
+			move_and_collide(-max_hsp, )
+		}
+		break;
 /*
 	case "Aerial Lag":
 	#region Landing Lag

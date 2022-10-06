@@ -1,4 +1,4 @@
-function air_movement(){
+function wall_jump_movement(){
 	if state == "Aerial Lag" //Landing lag
 		{
 			exit;
@@ -7,9 +7,7 @@ function air_movement(){
 		dash_count = 0;
 		
 		#endregion
-		if input.left && alarm[9] == -1{hsp = -max_hsp;}
-		if input.right && alarm[9] == -1{hsp = max_hsp;}
-		if !input.left && !input.right && alarm[9] == -1{hsp = 0;}
+
 			move_and_collide(hsp, vsp);
 		
 		
@@ -32,7 +30,6 @@ function air_movement(){
 	
 			if state = "Jump" and input.jump and wall_jump_count < 1
 			{
-				set_state_sprite(s_jump, 1, 0);
 				vsp = -9.8-(jump_speed/(i_jump_speed-2)) + wall_jump_count/1.5;
 				wall_jump_count++;
 			}

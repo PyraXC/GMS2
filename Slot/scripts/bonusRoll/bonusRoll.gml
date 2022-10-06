@@ -5,7 +5,7 @@
 ///arg1
 ///arg2
 
-function bonusRoll(){
+function bonusRoll(argument0, argument1, argument2){
 	rollNum = argument0;
 	rolls = argument1;
 	rng = argument2;

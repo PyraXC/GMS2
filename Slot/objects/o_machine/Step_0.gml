@@ -24,15 +24,15 @@
                     if (bet == 9) { rolls = 15; }
                     else if (bet > 4) { rolls = 12; }
                     else { rolls = 8; }
-                    rng = rand() % rolls;
-                    for (int i = 0; i < rolls; i++) {
-                        cout << "Press Y For Free Spin" << endl;
-                        cin >> inp;
-                        cout << "FREE SPIN: " << i + 1 << endl;
-                        M1.bonusRoll(i, rolls, rng);
+                    rng = random_range(0, rolls);
+                    for (var i = 0; i < rolls; i++) {
+                        show_debug_message("Press Y For Free Spin");
+                        inp = "y";
+                        show_debug_message("FREE SPIN: " + (i + 1));
+                        bonusRoll(i, rolls, rng);
                     }
                 }
-                cout << endl;
+                show_debug_message("");
                 break;
             case "n":
             case "N":
@@ -40,10 +40,10 @@
                 break;
             case "a":
             case "A":
-                int mon;
-                cout << "Add Funds" << endl;
-                cin >> mon;
-                M1.addMoney(mon);
+                mon = 0;
+                show_debug_message("Add Funds");
+//                cin >> mon;
+                addMoney(mon);
                 break;
             case "b":
             case "B":

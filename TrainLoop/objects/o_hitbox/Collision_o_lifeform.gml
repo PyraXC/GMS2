@@ -3,9 +3,6 @@ if creator == noone or creator == other or ds_list_find_index(hit_objects, other
 		exit;
 	}
 
-if creator.object_index == Player1 && other.object_index == o_player_2 exit;
-if creator.object_index == o_player_2 && other.object_index == Player1 exit;
-
 other.hp -= damage;
 other.state = "Knockback";
 
@@ -16,10 +13,11 @@ if instance_exists(Player1)
 		Player1.kills += 1;	
 	}
 
-	if other.object_index == Player1 or other.object_index == o_player_2
+	if other.object_index == Player1
 	// Hit player
 	{
 		add_screen_shake(4, 10);
+		o_gameState.turn = "Enemy";
 	}
 
 	if other.hp <= 0

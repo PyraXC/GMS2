@@ -126,13 +126,6 @@ switch (state)
 			break;
 			#endregion
 	
-	case "Walljump":
-		alarm[0] = 30;
-		if(place_meeting(x+1, y, o_wall)){
-			image_xscale = -1;
-			move_and_collide(-max_hsp, )
-		}
-		break;
 /*
 	case "Aerial Lag":
 	#region Landing Lag
@@ -148,6 +141,16 @@ switch (state)
 	#endregion
 		break;
 	*/
+	
+	case "Battle":
+	if(o_gameState.turn == "P1"){
+		
+	}
+	else if(o_gameState == "Enemy"){
+		
+	}
+		break;
+
 	case "Knockback":
 	#region
 	 knockback_state(s_knockback, "Jump");

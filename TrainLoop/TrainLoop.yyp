@@ -22,6 +22,7 @@
     {"id":{"name":"animation_hit_frame","path":"scripts/animation_hit_frame/animation_hit_frame.yy",},"order":6,},
     {"id":{"name":"air_movement","path":"scripts/air_movement/air_movement.yy",},"order":0,},
     {"id":{"name":"o_hitbox","path":"objects/o_hitbox/o_hitbox.yy",},"order":2,},
+    {"id":{"name":"o_gameState","path":"objects/o_gameState/o_gameState.yy",},"order":10,},
     {"id":{"name":"s_jump","path":"sprites/s_jump/s_jump.yy",},"order":1,},
     {"id":{"name":"s_wall","path":"sprites/s_wall/s_wall.yy",},"order":1,},
     {"id":{"name":"o_enemy","path":"objects/o_enemy/o_enemy.yy",},"order":4,},
@@ -31,11 +32,13 @@
     {"id":{"name":"s_knockback","path":"sprites/s_knockback/s_knockback.yy",},"order":4,},
     {"id":{"name":"get_input","path":"scripts/get_input/get_input.yy",},"order":1,},
     {"id":{"name":"set_sprite","path":"scripts/set_sprite/set_sprite.yy",},"order":3,},
+    {"id":{"name":"cout","path":"scripts/cout/cout.yy",},"order":13,},
     {"id":{"name":"create_hitbox","path":"scripts/create_hitbox/create_hitbox.yy",},"order":10,},
     {"id":{"name":"o_miniboss","path":"objects/o_miniboss/o_miniboss.yy",},"order":8,},
     {"id":{"name":"set_state_hurtbox","path":"scripts/set_state_hurtbox/set_state_hurtbox.yy",},"order":5,},
     {"id":{"name":"approach","path":"scripts/approach/approach.yy",},"order":9,},
     {"id":{"name":"o_wall","path":"objects/o_wall/o_wall.yy",},"order":1,},
+    {"id":{"name":"rm_battle1","path":"rooms/rm_battle1/rm_battle1.yy",},"order":1,},
     {"id":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},"order":0,},
   ],
   "Options": [
@@ -53,6 +56,7 @@
   },
   "RoomOrderNodes": [
     {"roomId":{"name":"rm_test","path":"rooms/rm_test/rm_test.yy",},},
+    {"roomId":{"name":"rm_battle1","path":"rooms/rm_battle1/rm_battle1.yy",},},
   ],
   "Folders": [
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Animation Curves","folderPath":"folders/Animation Curves.yy","order":11,},

@@ -1,20 +1,14 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "o_skeleton_king",
-  "spriteId": {
-    "name": "s_skeleton_king_idle",
-    "path": "sprites/s_skeleton_king_idle/s_skeleton_king_idle.yy",
-  },
+  "name": "o_gameState",
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
-  "persistent": false,
-  "parentObjectId": {
-    "name": "o_miniboss",
-    "path": "objects/o_miniboss/o_miniboss.yy",
-  },
+  "persistent": true,
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -30,12 +24,11 @@
   "eventList": [
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":4,"collisionObjectId":{"name":"Player1","path":"objects/Player1/Player1.yy",},},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "MiniBoss",
-    "path": "folders/Objects/Enemies/MiniBoss.yy",
+    "name": "Objects",
+    "path": "folders/Objects.yy",
   },
 }

@@ -3,6 +3,8 @@ function get_input() {
 	left = keyboard_check(ord("A"));
 	down = keyboard_check(ord("S"));
 	up = keyboard_check(ord("W"));
+	attack = keyboard_check_pressed(ord("J"));
+	defend = keyboard_check_pressed(ord("K"));
 	run = keyboard_check(vk_shift);
 	jump = keyboard_check_pressed(vk_space);
 

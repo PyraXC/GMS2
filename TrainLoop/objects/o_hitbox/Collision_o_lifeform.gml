@@ -16,6 +16,7 @@ if instance_exists(Player1)
 	if other.object_index == Player1
 	// Hit player
 	{
+		cout("Here");
 		add_screen_shake(4, 10);
 		o_gameState.turn = "Enemy";
 	}

@@ -8,4 +8,4 @@ if(keyboard_check(vk_alt)){
 }
 var VW = camera_get_view_width(cam);
 var VH = camera_get_view_height(cam);
-camera_set_view_pos(cam, player.x - VW/2 + 50, player.y - VH/2 - 160);
+camera_set_view_pos(cam, player.x - VW/2 + 192, player.y - VH/2 - 160);

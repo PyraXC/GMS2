@@ -126,29 +126,49 @@ switch (state)
 			break;
 			#endregion
 	
-/*
-	case "Aerial Lag":
-	#region Landing Lag
-	if alarm[0] <= 0
-		{
-			state = "Move";
+	case "Battle":
+	#region Battle Start
+	if(o_gameState.state == "P1"){
+	}
+	else if(o_gameState.state == "Enemy"){
+		if(input.defend){
+			state = "Defend";
 		}
-	set_state_sprite(s_landing_lag, 1, 0);
-	hsp -= sign(hsp) * 0.5;
-	move_and_collide(hsp, vsp);
-	if !place_meeting(x, y+1, o_wall)
-	{ state = "Jump";}
+		else if(input.attack){
+			state = "Reflect";
+		}
+		else if(input.jump){
+			state = "Dodge";
+		}
+	}
+		#endregion
+		break;
+		
+	case "Defend":
+	#region Defend In Enemy Turn
+	set_state_sprite(s_defend, 1, 0);
+	if(animation_end){
+		state = "Battle";
+	}
 	#endregion
 		break;
-	*/
-	
-	case "Battle":
-	if(o_gameState.turn == "P1"){
 		
+	case "Reflect":
+	#region Attack In Enemy Turn
+	set_state_sprite(s_attack, 1, 0);
+	if(animation_end){
+		state = "Battle";
 	}
-	else if(o_gameState == "Enemy"){
+	#endregion
+		break;
 		
+	case "Dodge":
+	#region Evade/Jump In Enemy Turn
+	set_state_sprite(s_jump, 1, 0);
+	if(animation_end){
+		state = "Battle";
 	}
+	#endregion
 		break;
 
 	case "Knockback":

@@ -1,6 +1,11 @@
 state = "Idle";
+instance = id;
 hp = 100;
 damage = 5;
 xp = 10;
+run_speed = 6;
+rng = irandom_range(1, 3);
+ix = 0;
+iy = 0;
 target = Player1;
-enemies = [o_skeleton_king];
+enemies = [o_skeleton_king,o_skeleton_king,o_skeleton_king,o_skeleton_king];

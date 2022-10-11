@@ -77,6 +77,6 @@
   "nineSlice": null,
   "parent": {
     "name": "MiniBosses",
-    "path": "folders/Sprites/MiniBosses.yy",
+    "path": "folders/Sprites/Enemies/MiniBosses.yy",
   },
 }

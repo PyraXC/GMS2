@@ -5,7 +5,6 @@ if creator == noone or creator == other or ds_list_find_index(hit_objects, other
 
 other.hp -= damage;
 other.state = "Knockback";
-
 if instance_exists(Player1)
 {
 	if creator.object_index == Player1 && other.hp <= 0 and other.state != "Death"
@@ -13,12 +12,12 @@ if instance_exists(Player1)
 		Player1.kills += 1;	
 	}
 
-	if other.object_index == Player1
+	if other.object_index == Player1 && o_gameState.state == "Overworld"
 	// Hit player
 	{
-		cout("Here");
 		add_screen_shake(4, 10);
 		o_gameState.turn = "Enemy";
+		start_battle(creator);
 	}
 
 	if other.hp <= 0
@@ -40,9 +39,9 @@ if instance_exists(Player1)
 }
 	
 ds_list_add(hit_objects, other);
-if other.state != "Death" and other.object_index != o_boss
+if other.state != "Death" and other.object_index != o_miniboss
 {
 other.state = "Knockback";
 }
-other.knockback_speed = knockback * image_xscale;
-other.knockback_speed_y = knockback_y;
+//other.knockback_speed = knockback * image_xscale;
+//other.knockback_speed_y = knockback_y;

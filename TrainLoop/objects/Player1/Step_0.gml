@@ -173,7 +173,7 @@ switch (state)
 
 	case "Knockback":
 	#region
-	 knockback_state(s_knockback, "Jump");
+	 knockback_state(s_knockback, "Battle");
 	#endregion
 		break;
 
@@ -217,7 +217,6 @@ if hp >= max_hp
 if hp < current_hp
 	{
 		current_hp = hp;
-		zero_degree_meter += 1/10;
 	}
 if hp > current_hp
 	{

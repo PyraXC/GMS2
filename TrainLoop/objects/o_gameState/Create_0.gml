@@ -5,3 +5,4 @@ enemy = Player1;
 enemies = noone;
 enemyLen = 0;
 turnList = [];
+i = 0;

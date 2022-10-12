@@ -38,10 +38,10 @@ switch(state){
 		break;
 		
 	case "Battle Attack":
-		if(distance_to_object(Player1) <= 100){
+		if(distance_to_object(Player1) <= 64){
 			set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
-			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 2, 1, image_xscale);
+			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 2, 40, image_xscale);
 		}
 		if(animation_end()){
 			//cout("Here");
@@ -58,8 +58,8 @@ switch(state){
 		set_state_sprite(s_skeleton_king_walk, 1, 0);
 		var dir = sign(distance_to_object(Player1));
 		if(x != ix){
-			move_and_collide(dir*run_speed, 0);
-			if(abs(ix-x) < run_speed){
+			move_and_collide(dir*run_speed*2, 0);
+			if(abs(ix-x) < run_speed*2){
 				x += (ix-x);
 			}
 		}

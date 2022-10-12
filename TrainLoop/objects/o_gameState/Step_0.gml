@@ -8,13 +8,13 @@ switch(state){
 	#region Initialize Battle
 		while(array_length(enemies) != 0){
 			enemy = array_pop(enemies);
-			array_push(turnList, enemy);
 			instance_create_layer(Player1.x + 256 + 96 * array_length(enemies), Player1.y, "Instances", enemy);
 		}
 		with(enemy){
 			ix = x;
 			iy = y;
 			state = "Battle";
+			array_push(o_gameState.turnList, id);
 			}
 		Player1.state = "Battle";
 		state = turn;
@@ -23,7 +23,7 @@ switch(state){
 		
 	case "P1":
 	#region Player Turn
-	cout("P1 Phase");
+	//cout("P1 Phase");
 	//state = "Enemy";
 	#endregion
 		break;
@@ -31,14 +31,16 @@ switch(state){
 	case "Enemy":
 	//cout("Enemy Phase");
 	#region Enemy Turn
-	with(enemy){
-		if(alarm[0] == -1){
-			state = "Choose Attack";
-			alarm[0] = 1300;
-		}
-		o_gameState.i++;
+	while(alarm[0] = -1){
+		alarm[0] = 6000;
+		turnList[i].state = "Choose Attack";
 	}
-	if(i == enemyLen){
+	if(turnList[i].state == "Battle"){
+		alarm[0] = -1;
+		i++;
+	}
+	if(i >= enemyLen){
+		i=0;
 		state = "P1";
 	}
 	#endregion
@@ -50,4 +52,5 @@ switch(state){
 		break;
 }
 //cout(id);
-//cout(state);
+
+;

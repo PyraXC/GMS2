@@ -128,6 +128,7 @@ switch (state)
 	
 	case "Battle":
 	#region Battle Start
+	set_state_sprite(s_idle, 1, 0);
 	if(o_gameState.state == "P1"){
 	}
 	else if(o_gameState.state == "Enemy"){
@@ -241,5 +242,5 @@ if hp > current_hp
 //show_debug_message(launch_speed_y);
 //show_debug_message(tether_range);
 //show_debug_message(zero_degree_meter);
-//show_debug_message(hp);
+show_debug_message(hp);
 

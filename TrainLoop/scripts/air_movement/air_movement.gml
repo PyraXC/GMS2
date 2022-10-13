@@ -7,9 +7,9 @@ function air_movement(){
 		dash_count = 0;
 		
 		#endregion
-		if input.left && alarm[9] == -1{hsp = -max_hsp;}
-		if input.right && alarm[9] == -1{hsp = max_hsp;}
-		if !input.left && !input.right && alarm[9] == -1{hsp = 0;}
+		if input.left {hsp = -max_hsp;}
+		if input.right {hsp = max_hsp;}
+		if !input.left && !input.right{hsp = 0;}
 			move_and_collide(hsp, vsp);
 		
 		
@@ -63,5 +63,5 @@ function air_movement(){
 			}
 			vsp = 0; 
 		}
-		grav = i_grav;
+grav = i_grav;
 }

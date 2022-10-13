@@ -1,7 +1,8 @@
 hp = 100;
 max_hp = hp;
 current_hp = max_hp;
-state = "Jump";
+state = "Move";
+defend = 1;
 actions = 1;
 run_speed = 6;
 max_run_speed = 10;

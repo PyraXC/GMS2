@@ -38,7 +38,7 @@ switch(state){
 		break;
 		
 	case "Battle Attack":
-		if(distance_to_object(Player1) <= 64){
+		if(abs(x - Player1.x) <= 96){
 			set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
 			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 2, 40, image_xscale);

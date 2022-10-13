@@ -3,8 +3,10 @@ if creator == noone or creator == other or ds_list_find_index(hit_objects, other
 		exit;
 	}
 
-other.hp -= damage;
-other.state = "Knockback";
+other.hp -= damage * other.defend;
+if(other.state != "Defend"){
+	other.state = "Knockback";
+}
 if instance_exists(Player1)
 {
 	if creator.object_index == Player1 && other.hp <= 0 and other.state != "Death"

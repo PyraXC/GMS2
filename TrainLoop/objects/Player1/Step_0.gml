@@ -148,7 +148,10 @@ switch (state)
 	case "Defend":
 	#region Defend In Enemy Turn
 	set_state_sprite(s_defend, 1, 0);
-	if(animation_end){
+	if(animation_hit_frame_range(2, 4)){
+		defend = 0.25;
+	}
+	if(animation_end()){
 		state = "Battle";
 	}
 	#endregion
@@ -166,9 +169,7 @@ switch (state)
 	case "Dodge":
 	#region Evade/Jump In Enemy Turn
 	set_state_sprite(s_jump, 1, 0);
-	if(animation_end){
-		state = "Battle";
-	}
+	dodge();
 	#endregion
 		break;
 
@@ -242,5 +243,5 @@ if hp > current_hp
 //show_debug_message(launch_speed_y);
 //show_debug_message(tether_range);
 //show_debug_message(zero_degree_meter);
-show_debug_message(hp);
-
+//show_debug_message(hp);
+//cout(lag_count);

@@ -19,6 +19,7 @@
     {"id":{"name":"Player1","path":"objects/Player1/Player1.yy",},"order":0,},
     {"id":{"name":"start_battle","path":"scripts/start_battle/start_battle.yy",},"order":16,},
     {"id":{"name":"move_and_collide","path":"scripts/move_and_collide/move_and_collide.yy",},"order":2,},
+    {"id":{"name":"dodge","path":"scripts/dodge/dodge.yy",},"order":17,},
     {"id":{"name":"o_camera","path":"objects/o_camera/o_camera.yy",},"order":5,},
     {"id":{"name":"o_input","path":"objects/o_input/o_input.yy",},"order":6,},
     {"id":{"name":"s_run","path":"sprites/s_run/s_run.yy",},"order":3,},

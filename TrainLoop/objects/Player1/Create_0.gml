@@ -1,3 +1,8 @@
+#region Menus
+enum item_inventory {bone = 3, health_potion = 2, };
+weapon_inventory = [];
+#endregion
+
 hp = 100;
 max_hp = hp;
 current_hp = max_hp;

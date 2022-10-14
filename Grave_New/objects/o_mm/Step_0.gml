@@ -2,7 +2,6 @@ up_key = keyboard_check_pressed(vk_up);
 down_key = keyboard_check_pressed(vk_down);
 accept_key = keyboard_check_pressed(vk_enter);
 
-op_length = array_length(option[menu_level]);
 
 pos += down_key - up_key;
 if pos >= op_length{pos = 0;}

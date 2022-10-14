@@ -129,7 +129,11 @@ switch (state)
 	case "Battle":
 	#region Battle Start
 	set_state_sprite(s_idle, 1, 0);
+	in_air();
 	if(o_gameState.state == "P1"){
+		while(!instance_exists(o_battle_menu)){
+			instance_create_layer(x, y-128, "Instances", o_battle_menu);
+		}
 	}
 	else if(o_gameState.state == "Enemy"){
 		if(input.defend){
@@ -168,6 +172,7 @@ switch (state)
 		
 	case "Dodge":
 	#region Evade/Jump In Enemy Turn
+	in_air();
 	set_state_sprite(s_jump, 1, 0);
 	dodge();
 	#endregion
@@ -175,7 +180,8 @@ switch (state)
 
 	case "Knockback":
 	#region
-	 knockback_state(s_knockback, "Battle");
+	
+	knockback_state(s_knockback, "Battle");
 	#endregion
 		break;
 

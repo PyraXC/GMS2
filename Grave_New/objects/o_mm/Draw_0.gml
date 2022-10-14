@@ -2,6 +2,7 @@ draw_sprite_ext(sprite_index, image_index, x, y, width/sprite_width, height/spri
 draw_set_font(f_one);
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
+op_length = array_length(option[menu_level]);
 for(var i = 0; i < op_length; i++)
 {
 	var _c = c_ltgrey;

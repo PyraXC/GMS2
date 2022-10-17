@@ -184,7 +184,43 @@ switch (state)
 	knockback_state(s_knockback, "Battle");
 	#endregion
 		break;
+		
+	case "Stab":
+	#region Knife Approach
+	set_state_sprite(s_move, 1, 0);
+	approach_target(target);
+	if(abs(x - target.x) < 64){
+		state = "Stab Attack";
+	}
+	#endregion
+		break;
+		
+	case "Stab Attack":
+	#region Stab Attack
+	set_state_sprite(s_attack, 1, 0);
+	
+	if(animation_end()){
+		state = "Return";
+	}
+	
+	#endregion
+		break;
 
+	case "Return":
+		#region return
+		set_state_sprite(s_move, 1, 0);
+		if(x != ix){
+			move_and_collide(-run_speed*2, 0);
+			if(abs(ix-x) < run_speed*2){
+				x += (ix-x);
+			}
+		}
+		else{
+			state = "Battle";
+		}
+		#endregion
+		break;
+		
 	case "Idle2":
 		#region Idle2
 		set_state_sprite(s_idle2, 0.33, 0);
@@ -251,3 +287,4 @@ if hp > current_hp
 //show_debug_message(zero_degree_meter);
 //show_debug_message(hp);
 //cout(lag_count);
+//cout(ix);

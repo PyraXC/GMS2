@@ -1,29 +1,32 @@
 global.font_main = font_add_sprite(f_one, 32, true, 1);
 pos = 0;
-width = 60;
-height = 50;
-op_border = 12;
-op_space = 18
+width = 100;
+height = 60;
+op_border = 10;
+op_space = 20;
+vx = x-32;
+vy = y-64;
 //pause
 option[0,0] = "Attack";
 option[0, 1] = "Equipment";
 option[0, 2] = "Items";
 option[0, 3] = "Run";
 //equip
-option[1,0] = "Weapon1";
-option[1,1] = "Weapon2";
-option[1,2] = "Weapon3";
+for(var i = 0; i < array_length(Player1.weapon_inventory);i++;){
+	instance_create_layer(x, y, "Instances", Player1.weapon_inventory[i]);
+	option[1, i] = Player1.weapon_inventory[i].weapon;
+}
 //setting
-option[2,0] = "Item1";
-option[2,1] = "Item2";
-option[2,2] = "Item3";
+for(var i = 0; i < array_length(Player1.item_inventory);i++;){
+	instance_create_layer(x, y, "Instances", Player1.item_inventory[i]);
+	option[2, i] = Player1.item_inventory[i].item;
+}
 //Run
 option[3,0] = "Running";
 //Attacks
-option[4,0] = "Attack1";
-option[4,1] = "Attack2";
-option[4,2] = "Attack3";
-option[4,3] = "Attack4";
+for(var i = 0; i < array_length(Player1.attack_list);i++;){
+	option[4, i] = Player1.attack_list[i];
+}
 
 
 	menu[0, 0] = "AD/Left Right To Move";
@@ -58,3 +61,4 @@ option[4,3] = "Attack4";
 
 op_length = 0;
 menu_level = 0;
+lr = 0;

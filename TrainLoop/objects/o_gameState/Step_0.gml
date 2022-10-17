@@ -16,7 +16,11 @@ switch(state){
 			state = "Battle";
 			array_push(o_gameState.turnList, id);
 			}
-		Player1.state = "Battle";
+		with(Player1){
+			state = "Battle";
+			ix = x;
+			iy = y;
+		}
 		state = turn;
 	#endregion
 		break;

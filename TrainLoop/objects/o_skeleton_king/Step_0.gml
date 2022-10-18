@@ -67,6 +67,11 @@ switch(state){
 			state = "Battle";
 		}
 		break;
+		
+	case "Death":
+	#region ded
+	instance_destroy(self);
+	#endregion
 }
 //cout(state);
 //cout(ix);

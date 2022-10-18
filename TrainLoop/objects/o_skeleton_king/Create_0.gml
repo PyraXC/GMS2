@@ -1,6 +1,7 @@
 state = "Idle";
 instance = id;
-hp = 100;
+hp = 25;
+defend = 0.5;
 damage = 5;
 xp = 10;
 run_speed = 6;

@@ -12,7 +12,7 @@ state = "Move";
 ix = 0;
 iy = 0;
 defend = 1;
-actions = 1;
+actions = 0;
 #region Move stuff
 run_speed = 6;
 max_run_speed = 10;
@@ -36,3 +36,4 @@ lag_count = 0;
 kills = 0;
 //Dependencies
 input = instance_create_layer(0, 0, "Instances", o_input);
+instance_create_layer(x, y, "Instances", o_hud);

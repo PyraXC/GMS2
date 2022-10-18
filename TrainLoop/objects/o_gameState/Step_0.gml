@@ -20,6 +20,7 @@ switch(state){
 			state = "Battle";
 			ix = x;
 			iy = y;
+			actions+= 1;
 		}
 		state = turn;
 	#endregion
@@ -27,8 +28,6 @@ switch(state){
 		
 	case "P1":
 	#region Player Turn
-	//cout("P1 Phase");
-	//state = "Enemy";
 	#endregion
 		break;
 		
@@ -45,6 +44,7 @@ switch(state){
 	}
 	if(i >= enemyLen){
 		i=0;
+		Player1.actions += 1;
 		state = "P1";
 	}
 	#endregion

@@ -40,7 +40,7 @@ switch(menu_level){
 		break; #endregion
 	#region Equip Menu
 	case 1:
-		Player1.equip = option[menu_level, pos];
+		Player1.equip =  Player1.weapon_inventory[pos];
 		menu_level = 0;
 		break; #endregion
 	#region Items Menu
@@ -58,6 +58,7 @@ switch(menu_level){
 	case 4:
 		Player1.state = option[menu_level, pos];
 		Player1.target = o_gameState.turnList[lr];
+		Player1.actions--;
 		instance_destroy();
 		break; #endregion
 	}

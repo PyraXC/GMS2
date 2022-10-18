@@ -130,6 +130,7 @@ switch (state)
 	#region Battle Start
 	set_state_sprite(s_idle, 1, 0);
 	in_air();
+	if(actions == 0){ o_gameState.state = "Enemy";}
 	if(o_gameState.state == "P1"){
 		while(!instance_exists(o_battle_menu)){
 			instance_create_layer(x, y-128, "Instances", o_battle_menu);
@@ -198,8 +199,11 @@ switch (state)
 	case "Stab Attack":
 	#region Stab Attack
 	set_state_sprite(s_attack, 1, 0);
-	
+	if(animation_hit_frame(3)){
+		create_hitbox(x, y, self, s_attack_damage, 0, 0, 1, 1*equip.damage, image_xscale);
+	}
 	if(animation_end()){
+		cout(target.hp);
 		state = "Return";
 	}
 	
@@ -220,6 +224,11 @@ switch (state)
 		}
 		#endregion
 		break;
+	
+	case "Death":
+	#region dead lmao
+	game_restart();
+	#endregion
 		
 	case "Idle2":
 		#region Idle2
@@ -288,3 +297,4 @@ if hp > current_hp
 //show_debug_message(hp);
 //cout(lag_count);
 //cout(ix);
+//cout(actions);

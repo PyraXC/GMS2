@@ -21,9 +21,10 @@ if instance_exists(Player1)
 		o_gameState.turn = "Enemy";
 		start_battle(creator);
 	}
-
-	if other.hp <= 0
+	if other.object_index == Player1 && o_gameState.state == "Overworld"
 	{
+		if other.hp <= 0
+		{
 			//ini_open("save.ini")
 			//ini_write_real("Scores", "Kills", other.kills);
 			//var highscore = ini_read_real("Scores", "highscore", 0);
@@ -33,11 +34,12 @@ if instance_exists(Player1)
 			//	}
 			//ini_close();
 		}
-	else
-	{
-		other.alarm[0] = 120;
-		add_screen_shake(2, 5)
-	}	
+		else
+		{
+			other.alarm[0] = 120;
+			add_screen_shake(2, 5)
+		}	
+	}
 }
 	
 ds_list_add(hit_objects, other);

@@ -129,22 +129,30 @@ switch (state)
 	case "Battle":
 	#region Battle Start
 	set_state_sprite(s_idle, 1, 0);
+	hsp = 0;
 	in_air();
-	if(actions == 0){ o_gameState.state = "Enemy";}
-	if(o_gameState.state == "P1"){
-		while(!instance_exists(o_battle_menu)){
-			instance_create_layer(x, y-128, "Instances", o_battle_menu);
+	if(!place_meeting(x, y+1, o_wall)){
+		cout("Not ground");
 		}
-	}
-	else if(o_gameState.state == "Enemy"){
-		if(input.defend){
-			state = "Defend";
+	else{
+		if(actions == 0){ o_gameState.state = "Enemy";}
+		if(o_gameState.state == "P1" and count == 0){
+			while(!instance_exists(o_battle_menu)){
+				instance_create_layer(x, y-128, "Instances", o_battle_menu);
+				//instance_activate_object(o_battle_menu);
+				count++;
+			}
 		}
-		else if(input.attack){
-			state = "Reflect";
-		}
-		else if(input.jump){
-			state = "Dodge";
+		else if(o_gameState.state == "Enemy"){
+			if(input.defend){
+				state = "Defend";
+			}
+			else if(input.attack){
+				state = "Reflect";
+			}
+			else if(input.jump){
+				state = "Dodge";
+			}
 		}
 	}
 		#endregion
@@ -173,7 +181,6 @@ switch (state)
 		
 	case "Dodge":
 	#region Evade/Jump In Enemy Turn
-	in_air();
 	set_state_sprite(s_jump, 1, 0);
 	dodge();
 	#endregion
@@ -181,7 +188,6 @@ switch (state)
 
 	case "Knockback":
 	#region
-	
 	knockback_state(s_knockback, "Battle");
 	#endregion
 		break;
@@ -203,10 +209,30 @@ switch (state)
 		create_hitbox(x, y, self, s_attack_damage, 0, 0, 1, 1*equip.damage, image_xscale);
 	}
 	if(animation_end()){
-		cout(target.hp);
 		state = "Return";
 	}
 	
+	#endregion
+		break;
+
+	case "Bone":
+	#region Bone Item
+	
+	#endregion
+		break;
+		
+	case "Health Potion":
+	#region Health Item
+	hp += item.damage;
+	item.durability--;
+	state = "Battle";
+	#endregion
+		break;
+		
+	case "Extra Action":
+	#region Extra Action Item
+	actions += item.damage;
+	item.durability--;
 	#endregion
 		break;
 
@@ -220,6 +246,7 @@ switch (state)
 			}
 		}
 		else{
+			cout(target.hp);
 			state = "Battle";
 		}
 		#endregion
@@ -297,4 +324,4 @@ if hp > current_hp
 //show_debug_message(hp);
 //cout(lag_count);
 //cout(ix);
-//cout(actions);
+cout(weapon_inventory);

@@ -4,7 +4,10 @@
 function start_battle(argument0){
 	o_gameState.enemies = argument0.enemies;
 	o_gameState.mainEnemy = other;
-	o_gameState.state = "Battle";
 	o_gameState.enemyLen = array_length(argument0.enemies);
-	room_goto(rm_battle1);
+	//room_goto(rm_battle1);
+	Player1.x = 100;
+	Player1.y = 800;
+	o_gameState.state = "Battle";
+	//instance_create_layer(Player1.x-16, Player1.y-128, "Instances", o_battle_menu);
 }

@@ -4,21 +4,24 @@ width = 100;
 height = 60;
 op_border = 10;
 op_space = 20;
-vx = x-32;
-vy = y-64;
 //pause
+vy =0;
+vx=0;
 option[0,0] = "Attack";
 option[0, 1] = "Equipment";
 option[0, 2] = "Items";
 option[0, 3] = "Run";
 //equip
+/*
 for(var i = 0; i < array_length(Player1.weapon_inventory);i++;){
-	instance_create_layer(x, y, "Instances", Player1.weapon_inventory[i]);
-	option[1, i] = Player1.weapon_inventory[i].weapon;
+	//temp = instance_create_layer(x, y, "Instances", Player1.weapon_inventory[i]);
+	temp = Player1.weapon_inventory[i];
+	option[1, i] = temp.weapon;
+	temp.index = i;
 }
 //setting
 for(var i = 0; i < array_length(Player1.item_inventory);i++;){
-	instance_create_layer(x, y, "Instances", Player1.item_inventory[i]);
+	//instance_create_layer(x, y, "Instances", Player1.item_inventory[i]);
 	option[2, i] = Player1.item_inventory[i].item;
 }
 //Run
@@ -27,7 +30,7 @@ option[3,0] = "Running";
 for(var i = 0; i < array_length(Player1.attack_list);i++;){
 	option[4, i] = Player1.attack_list[i];
 }
-
+*/
 
 	menu[0, 0] = "AD/Left Right To Move";
 	menu[0, 1] = "J/Space To Roll";

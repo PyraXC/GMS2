@@ -10,7 +10,7 @@
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
-  "persistent": false,
+  "persistent": true,
   "parentObjectId": {
     "name": "o_lifeform",
     "path": "objects/o_lifeform/o_lifeform.yy",

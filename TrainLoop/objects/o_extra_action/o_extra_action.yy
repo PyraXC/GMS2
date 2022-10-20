@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "o_bone",
+  "name": "o_extra_action",
   "spriteId": null,
   "solid": false,
   "visible": true,

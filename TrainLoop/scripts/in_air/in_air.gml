@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function in_air(){
-	move_and_collide(0, vsp);		
+	move_and_collide(hsp, vsp);		
 	if (vsp < 15) vsp += grav;
 	if (vsp > 15) vsp = 15;
 
@@ -11,7 +11,7 @@ function in_air(){
 		{
 			if state = "Dodge"
 			{
-				jump_input = 0;
+				jump_input = 1;
 				state = "Battle";
 				//audio_play_sound(a_landing, 1, 0);
 			}

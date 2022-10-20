@@ -4,7 +4,8 @@ right_key =keyboard_check_pressed(ord("D"));
 left_key =keyboard_check_pressed(ord("A")); 
 accept_key = keyboard_check_pressed(vk_space);
 return_key = keyboard_check_pressed(vk_backspace);
-
+vx = Player1.x-32;
+vy = Player1.y-128;
 pos += down_key - up_key;
 if pos >= op_length{pos = 0;}
 if pos < 0 {pos = op_length - 1;}
@@ -42,24 +43,33 @@ switch(menu_level){
 	case 1:
 		Player1.equip =  Player1.weapon_inventory[pos];
 		menu_level = 0;
+		pos = 0;
 		break; #endregion
 	#region Items Menu
 	case 2:
-		switch(pos){
-	
-				case 0: 
-					break;
-				case 1: pos = 0; break;
-				case 2: pos = 0; break;
-				case 3: pos = 0; break;
-			}
+		with(Player1){
+			state = o_battle_menu.option[o_battle_menu.menu_level, o_battle_menu.pos];
+		}
+		menu_level = 0;
+		pos = 0;
+		lr = 0;
+		instance_destroy();
 		break; #endregion
 	#region Attack Menu
 	case 4:
-		Player1.state = option[menu_level, pos];
-		Player1.target = o_gameState.turnList[lr];
-		Player1.actions--;
+		with(Player1){
+		//if(equip == noone){equip = o_unarmed;}
+		state = o_battle_menu.option[o_battle_menu.menu_level, o_battle_menu.pos];
+		target = o_gameState.turnList[o_battle_menu.lr];
+		actions--;
+		}
+		menu_level = 0;
+		pos = 0;
+		lr = 0;
+		//instance_deactivate_object(self);
 		instance_destroy();
 		break; #endregion
 	}
 }
+//cout(option[menu_level]);
+cout("here");

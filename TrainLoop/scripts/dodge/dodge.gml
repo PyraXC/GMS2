@@ -1,5 +1,5 @@
 function dodge(){
-	move_and_collide(hsp, vsp);		
+	move_and_collide(0, vsp);		
 	if (vsp < 15) vsp += grav;
 	if (vsp > 15) vsp = 15;
 

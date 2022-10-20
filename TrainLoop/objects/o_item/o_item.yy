@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "o_bone",
+  "name": "o_item",
   "spriteId": null,
   "solid": false,
   "visible": true,
@@ -9,8 +9,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "o_item",
-    "path": "objects/o_item/o_item.yy",
+    "name": "o_weapon",
+    "path": "objects/o_weapon/o_weapon.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -24,9 +24,7 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {

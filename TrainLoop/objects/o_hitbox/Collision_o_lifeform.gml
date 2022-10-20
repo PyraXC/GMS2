@@ -9,6 +9,9 @@ if(other.state != "Defend"){
 }
 if instance_exists(Player1)
 {
+	if creator.object_index == Player1{
+		Player1.equip.durability -= 1;
+	}
 	if creator.object_index == Player1 && other.hp <= 0 and other.state != "Death"
 	{
 		Player1.kills += 1;	

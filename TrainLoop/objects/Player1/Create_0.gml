@@ -1,8 +1,9 @@
 #region Menus
 attack_list = ["Stab", "Thrust", "Sweep", "Overhead"];
 item_inventory = [o_bone, o_bone, o_health_potion, o_health_potion];
-weapon_inventory = [o_knife, o_short_sword, o_katana];
-equip = noone;
+weapon_inventory = [];
+equip = o_unarmed;
+item = noone;
 #endregion
 target = noone;
 hp = 100;
@@ -12,7 +13,7 @@ state = "Move";
 ix = 0;
 iy = 0;
 defend = 1;
-actions = 0;
+actions = 1;
 #region Move stuff
 run_speed = 6;
 max_run_speed = 10;
@@ -30,10 +31,10 @@ i_grav = grav;
 i_run_speed = run_speed;
 i_jump_speed = jump_speed;
 #endregion
+count = 0;
 i = 0;
 i2 = 0;
 lag_count = 0;
 kills = 0;
 //Dependencies
 input = instance_create_layer(0, 0, "Instances", o_input);
-instance_create_layer(x, y, "Instances", o_hud);

@@ -1,4 +1,4 @@
 damage = 2;
 durability = 1;
-item = "Bone";
+item = "Extra Action";
 index = 0;

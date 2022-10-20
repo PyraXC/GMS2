@@ -1,3 +1,4 @@
 damage = 20;
-uses = 3;
+durability = 3;
 item = "Health Potion";
+index = 0;

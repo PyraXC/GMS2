@@ -3,6 +3,7 @@ draw_sprite_ext(sprite_index, image_index, vx, vy, width/sprite_width, height/sp
 draw_set_font(f_one);
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);
+battle_menu_update();
 op_length = array_length(option[menu_level]);
 for(var i = 0; i < op_length; i++)
 {

@@ -5,7 +5,7 @@ left_key =keyboard_check_pressed(ord("A"));
 accept_key = keyboard_check_pressed(vk_space);
 return_key = keyboard_check_pressed(vk_backspace);
 vx = Player1.x-32;
-vy = Player1.y-128;
+vy = Player1.y-160;
 pos += down_key - up_key;
 if pos >= op_length{pos = 0;}
 if pos < 0 {pos = op_length - 1;}
@@ -36,7 +36,11 @@ switch(menu_level){
 			//Settings
 			case 2: menu_level = 2; pos = 0; break;
 			//Quit Game
-			case 3: cout("Running"); break;
+			case 3: 
+			run_battle(); 
+			o_gameState.mainEnemy.state = "Invincibility";
+			instance_destroy();
+			break;
 		}
 		break; #endregion
 	#region Equip Menu
@@ -72,4 +76,3 @@ switch(menu_level){
 	}
 }
 //cout(option[menu_level]);
-cout("here");

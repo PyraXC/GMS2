@@ -10,3 +10,4 @@ ix = 0;
 iy = 0;
 target = Player1;
 enemies = [o_skeleton_king,o_skeleton_king,o_skeleton_king];
+//cout(id);

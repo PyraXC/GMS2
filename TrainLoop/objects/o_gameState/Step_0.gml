@@ -3,6 +3,10 @@ switch(state){
 	while!instance_exists(o_hud){
 		instance_create_layer(Player1.x, Player1.y, "Instances", o_hud);
 	}
+	if i = 0
+	for(i = 0; i < array_length(global.obj_list); i++;){
+		instance_activate_object(global.obj_list[i]);
+	}
 	//instance_deactivate_object(o_battle_menu);
 		break;
 	
@@ -64,5 +68,4 @@ switch(state){
 		break;
 }
 //cout(id);
-
-;
+//cout(state);

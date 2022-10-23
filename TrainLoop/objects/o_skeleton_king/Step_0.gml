@@ -68,6 +68,15 @@ switch(state){
 		}
 		break;
 		
+	case "Invincibility":
+	#region Player Ran
+	set_state_sprite(s_skeleton_king_idle, 1, 0);
+	if(alarm[1] == -1){alarm[1] = 90;}
+	image_alpha = alarm[0];
+	mask_index = s_Empty;
+	#endregion
+		break;
+		
 	case "Death":
 	#region ded
 	instance_destroy(self);

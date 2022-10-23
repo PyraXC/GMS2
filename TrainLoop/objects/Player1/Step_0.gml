@@ -132,15 +132,12 @@ switch (state)
 	hsp = 0;
 	in_air();
 	if(!place_meeting(x, y+1, o_wall)){
-		cout("Not ground");
 		}
 	else{
 		if(actions == 0){ o_gameState.state = "Enemy";}
-		if(o_gameState.state == "P1" and count == 0){
+		if(o_gameState.state == "P1"){
 			while(!instance_exists(o_battle_menu)){
 				instance_create_layer(x, y-128, "Instances", o_battle_menu);
-				//instance_activate_object(o_battle_menu);
-				count++;
 			}
 		}
 		else if(o_gameState.state == "Enemy"){
@@ -271,11 +268,6 @@ switch (state)
 			state = "Attack One";
 			idle_time = 0;
 		}
-	if input.attack_alt
-		{
-			state = "Alt One";
-			idle_time = 0;
-		}
 	if input.jump
 		{
 			state = "Jump";
@@ -324,4 +316,4 @@ if hp > current_hp
 //show_debug_message(hp);
 //cout(lag_count);
 //cout(ix);
-cout(weapon_inventory);
+//cout(weapon_inventory);

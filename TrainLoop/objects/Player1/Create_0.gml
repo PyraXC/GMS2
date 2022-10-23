@@ -1,6 +1,8 @@
 #region Menus
 attack_list = ["Stab", "Thrust", "Sweep", "Overhead"];
-item_inventory = [o_bone, o_bone, o_health_potion, o_health_potion];
+item_inventory = [
+//o_bone, o_bone, o_health_potion, o_health_potion
+];
 weapon_inventory = [];
 equip = o_unarmed;
 item = noone;
@@ -31,10 +33,10 @@ i_grav = grav;
 i_run_speed = run_speed;
 i_jump_speed = jump_speed;
 #endregion
-count = 0;
 i = 0;
 i2 = 0;
 lag_count = 0;
 kills = 0;
 //Dependencies
 input = instance_create_layer(0, 0, "Instances", o_input);
+global.obj_list = [];

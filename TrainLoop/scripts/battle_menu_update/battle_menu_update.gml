@@ -4,6 +4,7 @@ function battle_menu_update(){
 	var arry = [];
 for(var i = 0; i < array_length(Player1.weapon_inventory);i++;){
 	temp = Player1.weapon_inventory[i];
+	//instance_activate_object(temp);
 	array_push(arry, temp.weapon);
 	temp.index = i;
 }
@@ -12,6 +13,7 @@ for(var i = 0; i < array_length(Player1.weapon_inventory);i++;){
 //setting
 for(var i = 0; i < array_length(Player1.item_inventory);i++;){
 	temp = Player1.item_inventory[i];
+	//instance_activate_object(temp);
 	array_push(arry, temp.item);
 	temp.index = i;
 }

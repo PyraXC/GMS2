@@ -148,6 +148,7 @@ switch (state)
 				state = "Reflect";
 			}
 			else if(input.jump){
+				alarm[1] = delay;
 				state = "Dodge";
 			}
 		}
@@ -158,12 +159,17 @@ switch (state)
 	case "Defend":
 	#region Defend In Enemy Turn
 	set_state_sprite(s_defend, 1, 0);
-	if(animation_hit_frame_range(2, 4)){
-		defend = 0.25;
+	if(alarm[1] == -1){
+		if(animation_hit_frame_range(2, 4)){
+			defend = 0.25;
+		}
+		if(animation_end()){
+			state = "Battle";
+		}
 	}
-	if(animation_end()){
-		state = "Battle";
-	}
+	else if(animation_end()){
+			state = "Battle";
+		}
 	#endregion
 		break;
 		
@@ -179,7 +185,9 @@ switch (state)
 	case "Dodge":
 	#region Evade/Jump In Enemy Turn
 	set_state_sprite(s_jump, 1, 0);
-	dodge();
+	if(alarm[1] == -1){
+		dodge();
+	}
 	#endregion
 		break;
 
@@ -243,7 +251,7 @@ switch (state)
 			}
 		}
 		else{
-			cout(target.hp);
+			if(instance_exists(target)){cout(target.hp);}
 			state = "Battle";
 		}
 		#endregion
@@ -317,3 +325,4 @@ if hp > current_hp
 //cout(lag_count);
 //cout(ix);
 //cout(weapon_inventory);
+//cout(global.obj_list);

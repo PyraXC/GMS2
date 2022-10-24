@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "o_katana",
-  "spriteId": null,
+  "spriteId": {
+    "name": "s_katana",
+    "path": "sprites/s_katana/s_katana.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,

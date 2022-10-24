@@ -15,6 +15,7 @@ if instance_exists(Player1)
 	if creator.object_index == Player1 && other.hp <= 0 and other.state != "Death"
 	{
 		Player1.kills += 1;	
+		other.state = "Death";
 	}
 
 	if other.object_index == Player1 && o_gameState.state == "Overworld"
@@ -23,6 +24,8 @@ if instance_exists(Player1)
 		add_screen_shake(4, 10);
 		o_gameState.turn = "Enemy";
 		start_battle(creator);
+		array_push(global.obj_list, creator);
+		instance_deactivate_object(creator);
 	}
 	if other.object_index == Player1 && o_gameState.state == "Overworld"
 	{

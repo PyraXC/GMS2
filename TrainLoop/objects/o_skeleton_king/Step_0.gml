@@ -1,5 +1,6 @@
 switch(state){
 	case "Idle":
+	image_alpha = 100;
 	set_state_sprite(s_skeleton_king_idle, 1, 0);
 		if(distance_to_object(target) < 200){
 			state = "Attack";
@@ -70,15 +71,17 @@ switch(state){
 		
 	case "Invincibility":
 	#region Player Ran
-	set_state_sprite(s_skeleton_king_idle, 1, 0);
-	if(alarm[1] == -1){alarm[1] = 90;}
-	image_alpha = alarm[0];
-	mask_index = s_Empty;
+	set_state_sprite(s_skeleton_king_inv, 1, 0);
+	cout("inv");
+	if(alarm[1] == -1){alarm[1] = 300;}
+	image_alpha = alarm[1];
 	#endregion
 		break;
 		
 	case "Death":
 	#region ded
+	array_delete(o_gameState.turnList, index, 1);
+	o_gameState.enemyLen--;
 	instance_destroy(self);
 	#endregion
 }

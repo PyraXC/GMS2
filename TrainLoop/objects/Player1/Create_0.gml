@@ -16,6 +16,7 @@ ix = 0;
 iy = 0;
 defend = 1;
 actions = 1;
+delay = 15;
 #region Move stuff
 run_speed = 6;
 max_run_speed = 10;

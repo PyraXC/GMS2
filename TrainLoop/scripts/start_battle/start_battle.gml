@@ -2,10 +2,11 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 //arg0
 function start_battle(argument0){
+	//array_push(global.obj_list, self);
 	Player1.returnx = Player1.x;
 	Player1.returny = Player1.y;
 	o_gameState.enemies = argument0.enemies;
-	o_gameState.mainEnemy = other;
+	o_gameState.mainEnemy = argument0;
 	o_gameState.enemyLen = array_length(argument0.enemies);
 	//room_goto(rm_battle1);
 	Player1.x = 100;

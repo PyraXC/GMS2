@@ -37,8 +37,8 @@ switch(menu_level){
 			case 2: menu_level = 2; pos = 0; break;
 			//Quit Game
 			case 3: 
-			run_battle(); 
 			o_gameState.mainEnemy.state = "Invincibility";
+			run_battle(); 
 			instance_destroy();
 			break;
 		}

@@ -1,11 +1,12 @@
 state = "Idle";
 instance = id;
-hp = 25;
-defend = 0.5;
+hp = 5;
+defend = 1;
 damage = 5;
 xp = 10;
 run_speed = 6;
 rng = irandom_range(1, 3);
+index = 0;
 ix = 0;
 iy = 0;
 target = Player1;

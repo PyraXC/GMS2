@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "o_health_potion",
-  "spriteId": null,
+  "spriteId": {
+    "name": "s_health_pot",
+    "path": "sprites/s_health_pot/s_health_pot.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,

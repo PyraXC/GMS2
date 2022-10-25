@@ -2,7 +2,10 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "o_extra_action",
-  "spriteId": null,
+  "spriteId": {
+    "name": "s_extra_action",
+    "path": "sprites/s_extra_action/s_extra_action.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,

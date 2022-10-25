@@ -47,6 +47,10 @@ switch(state){
 		
 	case "P1":
 	#region Player Turn
+	//Player wins
+	if(turnList == []){
+		state = "End Battle";
+	}
 	#endregion
 		break;
 
@@ -71,6 +75,11 @@ switch(state){
 	#endregion
 		break;
 		
+	case "End Battle":
+		mainEnemy.state = "Defeated";
+	
+		break;
+	
 	case "Pause":
 	
 	

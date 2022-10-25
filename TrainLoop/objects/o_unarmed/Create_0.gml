@@ -3,3 +3,6 @@ durability = infinity;
 crit = 0;
 weapon = "Unarmed";
 index = 0;
+state = "NONE";
+xspeed = irandom_range(-5,5);
+yspeed = irandom_range(-5, -1);

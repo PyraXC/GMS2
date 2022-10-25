@@ -52,6 +52,7 @@ switch(menu_level){
 	#region Items Menu
 	case 2:
 		with(Player1){
+			item = item_inventory[o_battle_menu.pos];
 			state = o_battle_menu.option[o_battle_menu.menu_level, o_battle_menu.pos];
 		}
 		menu_level = 0;
@@ -62,7 +63,6 @@ switch(menu_level){
 	#region Attack Menu
 	case 4:
 		with(Player1){
-		//if(equip == noone){equip = o_unarmed;}
 		state = o_battle_menu.option[o_battle_menu.menu_level, o_battle_menu.pos];
 		target = o_gameState.turnList[o_battle_menu.lr];
 		actions--;
@@ -76,3 +76,4 @@ switch(menu_level){
 	}
 }
 //cout(option[menu_level]);
+cout(menu_level);

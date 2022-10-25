@@ -11,4 +11,6 @@ ix = 0;
 iy = 0;
 target = Player1;
 enemies = [o_skeleton_king,o_skeleton_king,o_skeleton_king];
+drops = [o_health_potion, o_health_potion, o_health_potion, o_knife, o_extra_action];
+drop = rng;
 //cout(id);

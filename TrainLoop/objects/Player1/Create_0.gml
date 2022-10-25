@@ -1,8 +1,7 @@
 #region Menus
 attack_list = ["Stab", "Thrust", "Sweep", "Overhead"];
-item_inventory = [
-//o_bone, o_bone, o_health_potion, o_health_potion
-];
+//stabList = map("Katana" = s_katana_stab, "Knife" = s_knife_stab, "Unarmed" = s_unarmed_stab);
+item_inventory = [];
 weapon_inventory = [];
 equip = o_unarmed;
 item = noone;

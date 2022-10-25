@@ -238,6 +238,7 @@ switch (state)
 	#region Extra Action Item
 	actions += item.damage;
 	item.durability--;
+	state = "Battle";
 	#endregion
 		break;
 

@@ -1,6 +1,12 @@
 #region Menus
 attack_list = ["Stab", "Thrust", "Sweep", "Overhead"];
-//stabList = map("Katana" = s_katana_stab, "Knife" = s_knife_stab, "Unarmed" = s_unarmed_stab);
+var stabList = ds_map_create();
+s_stab_katana = stabList[? "Katana"];
+s_stab_knife = stabList[? "Knife"];
+s_stab_short_sword = stabList[? "Short Sword"];
+s_stab_unarmed = stabList[? "Unarmed"];
+ds_map_secure_save(stabList, "savefile");
+ds_map_destroy(stabList);
 item_inventory = [];
 weapon_inventory = [];
 equip = o_unarmed;

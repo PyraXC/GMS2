@@ -11,7 +11,7 @@ switch(state){
 		break;
 		
 	case "Collect":
-	approach(x, Player1.x, 4);
-	approach(y, Player1.y, 4);
+	x = approach(x, Player1.x, 10);
+	y = approach(y, Player1.y-16, 10);
 		break;
 }

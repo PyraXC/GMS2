@@ -4,5 +4,5 @@ crit = 40;
 weapon = "Katana";
 index = 0;
 state = "NONE";
-xspeed = irandom_range(-5,5);
-yspeed = irandom_range(-5, -2);
+xspeed = irandom_range(-6,6);
+yspeed = irandom_range(-6, -3);

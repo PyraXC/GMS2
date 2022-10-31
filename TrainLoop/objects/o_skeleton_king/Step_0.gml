@@ -1,9 +1,10 @@
 switch(state){
 	case "Idle":
 	image_alpha = 100;
-	image_xscale = sin(distance_to_object(Player1));
+	image_xscale = sign(distance_to_object(Player1));
 	set_state_sprite(s_skeleton_king_idle, 1, 0);
-		if(abs(distance_to_object(target)) < 200){
+		if(abs(distance_to_object(Player1)) < 200){
+			
 			state = "Attack";
 		}
 		break;
@@ -80,7 +81,7 @@ switch(state){
 		
 	case "Death":
 	#region ded
-	drop_item(drops, drop);
+	drop_item(drop_list, drops);
 	array_delete(o_gameState.turnList, index, 1);
 	o_gameState.enemyLen--;
 	instance_destroy(self);

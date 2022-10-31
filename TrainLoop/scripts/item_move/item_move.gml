@@ -11,11 +11,11 @@ function item_move(argument0, argument1) {
 	{
 		y += yspeed;
 	}
-	else{
+	if(place_meeting(x, y+1, o_wall)){
 		state = "Collect";
 	}
-	xspeed -= 0.1;
-	yspeed +=0.1;
+	xspeed -= 0.2;
+	yspeed += 0.2;
 	if(xspeed < 0){xspeed = 0;}
 	if(yspeed > 5){yspeed = 5;}	
 }

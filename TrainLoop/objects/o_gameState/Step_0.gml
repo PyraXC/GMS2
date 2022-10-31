@@ -48,6 +48,7 @@ switch(state){
 	case "P1":
 	#region Player Turn
 	//Player wins
+	//test_run_all();
 	if(turnList == []){
 		state = "End Battle";
 	}

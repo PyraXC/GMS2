@@ -20,6 +20,7 @@ state = "Move";
 ix = 0;
 iy = 0;
 defend = 1;
+iDefend = defend;
 actions = 1;
 delay = 15;
 #region Move stuff

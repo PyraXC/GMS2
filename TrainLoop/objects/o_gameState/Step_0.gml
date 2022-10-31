@@ -4,9 +4,6 @@ switch(state){
 	i = 0;
 	enemyLen = 0;
 	alarm[0] = -1;
-	while!instance_exists(o_hud){
-		instance_create_layer(Player1.x, Player1.y, "Instances", o_hud);
-	}
 
 	//instance_deactivate_object(o_battle_menu);
 		break;
@@ -47,15 +44,24 @@ switch(state){
 		
 	case "P1":
 	#region Player Turn
-	//Player wins
+	//Player
 	//test_run_all();
-	if(turnList == []){
+	if(!instance_exists(o_hud)){
+		instance_create_layer(Player1.x, Player1.y, "Instances", o_hud);	
+	}
+	if(enemyLen == 0){
 		state = "End Battle";
 	}
 	#endregion
 		break;
 
 	case "Enemy":
+	if(!instance_exists(o_hud)){
+		instance_create_layer(Player1.x, Player1.y, "Instances", o_hud);	
+	}
+	if(enemyLen == 0){
+		state = "End Battle";
+	}
 	//cout("Enemy Phase");
 	#region Enemy Turn
 	Player1.actions = 0;
@@ -77,7 +83,9 @@ switch(state){
 		break;
 		
 	case "End Battle":
+	instance_destroy(o_hud);
 		mainEnemy.state = "Defeated";
+		//cout("Won");
 	
 		break;
 	
@@ -89,3 +97,4 @@ switch(state){
 //cout(id);
 //cout(state);
 //cout(mainEnemy);
+//cout(enemyLen);

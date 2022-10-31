@@ -76,4 +76,4 @@ switch(menu_level){
 	}
 }
 //cout(option[menu_level]);
-cout(menu_level);
+//cout(menu_level);

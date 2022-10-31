@@ -13,4 +13,5 @@ function run_battle(){
 	for(var j = 0; j < array_length(global.obj_list); j++;){
 		instance_activate_object(global.obj_list[j]);
 	}
+	instance_destroy(o_hud);
 }

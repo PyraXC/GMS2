@@ -28,6 +28,7 @@ switch(state){
 	case "Choose Attack":
 		if(rng == 1){
 			state = "Battle Attack";
+			rng = irandom_range(1,3);
 			//cout("RNG 1");
 		}
 		if(rng == 2){

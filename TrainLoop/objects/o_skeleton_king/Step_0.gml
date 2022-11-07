@@ -83,6 +83,7 @@ switch(state){
 	case "Death":
 	#region ded
 	drop_item(drop_list, drops);
+	index = find_self(o_gameState.turnList);
 	array_delete(o_gameState.turnList, index, 1);
 	o_gameState.enemyLen--;
 	instance_destroy(self);

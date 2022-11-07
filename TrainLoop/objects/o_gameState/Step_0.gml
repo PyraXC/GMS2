@@ -98,3 +98,5 @@ switch(state){
 //cout(state);
 //cout(mainEnemy);
 //cout(enemyLen);
+cout(i);
+cout(turnList);

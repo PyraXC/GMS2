@@ -1,4 +1,4 @@
-var camera_id = o_camera.camera;
+camera_id = o_camera.camera;
 var view_width = camera_get_view_width(camera_id);
 var view_height = camera_get_view_height(camera_id);
 display_set_gui_size(view_width, view_height)

@@ -66,7 +66,7 @@ switch (state)
 				}
 			idle_time++;
 			run_speed = i_run_speed;
-			set_state_sprite(s_idle, 0.25, 0);
+			set_state_sprite(s_move, 0.25, 0);
 			hsp = 0;
 			if idle_time >= 120
 				{
@@ -79,7 +79,7 @@ switch (state)
 		{
 			idle_time++;
 			run_speed = i_run_speed;
-			set_state_sprite(s_idle, 0.25, 0);
+			set_state_sprite(s_move, 0.25, 0);
 			if idle_time >= 120
 				{
 					state = "Idle2";
@@ -128,7 +128,7 @@ switch (state)
 	
 	case "Battle":
 	#region Battle Start
-	set_state_sprite(s_idle, 1, 0);
+	set_state_sprite(s_move, 1, 0);
 	hsp = 0;
 	in_air();
 	if(!place_meeting(x, y+1, o_wall)){
@@ -197,6 +197,7 @@ switch (state)
 
 	case "Knockback":
 	#region
+	defend = iDefend;
 	knockback_state(s_knockback, "Battle");
 	#endregion
 		break;

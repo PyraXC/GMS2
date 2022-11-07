@@ -7,7 +7,7 @@
     "path": "sprites/s_camera/s_camera.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,

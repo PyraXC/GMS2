@@ -2,8 +2,12 @@ if creator == noone or creator == other or ds_list_find_index(hit_objects, other
 	{
 		exit;
 	}
-
-other.hp -= damage * other.defend;
+if creator.object_index == Player1{
+	other.hp -= (damage*crit_chance(creator.equip.crit)) * other.defend;
+}
+else{
+	other.hp -= damage * other.defend;
+}
 if(other.state != "Defend"){
 	other.state = "Knockback";
 }

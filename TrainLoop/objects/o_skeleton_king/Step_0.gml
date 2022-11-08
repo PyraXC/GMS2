@@ -76,7 +76,7 @@ switch(state){
 	#region Player Ran
 	set_state_sprite(s_skeleton_king_inv, 1, 0);
 	if(alarm[1] == -1){alarm[1] = 300;}
-	image_alpha = alarm[1];
+	//image_alpha = alarm[1];
 	#endregion
 		break;
 		
@@ -88,7 +88,18 @@ switch(state){
 	o_gameState.enemyLen--;
 	instance_destroy(self);
 	#endregion
+	break;
+	
+	case "Defeated":
+	#region ded
+	set_state_sprite(s_skeleton_king_die, 1, 0);
+	if animation_end(){
+		instance_destroy(self);
+	}
+	#endregion
+	break;
 }
+if(image_xscale != 1 or image_xscale != 0){image_xscale = 1; }
 //cout(state);
 //cout(ix);
 //cout(x);

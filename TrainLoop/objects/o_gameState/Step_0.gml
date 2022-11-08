@@ -83,7 +83,7 @@ switch(state){
 		break;
 		
 	case "End Battle":
-	instance_destroy(o_hud);
+		win_battle();
 		mainEnemy.state = "Defeated";
 		//cout("Won");
 	

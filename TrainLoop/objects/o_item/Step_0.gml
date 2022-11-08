@@ -9,6 +9,10 @@ switch(state){
 	case "Drop":
 	item_move(xspeed, yspeed);
 		break;
+	
+	case "Idle":
+	set_state_sprite(s_empty, 1, 0);
+		break;
 		
 	case "Collect":
 	x = approach(x, Player1.x, 10);

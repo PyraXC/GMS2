@@ -53,13 +53,13 @@ switch(state){
 		}
 		}
 		else{
-			set_state_sprite(s_skeleton_king_walk, 1, 0);
+			set_state_sprite(s_skeleton_king_idle, 1, 0);
 			approach_target(Player1);
 		}
 		break;
 		
 	case "Return":
-		set_state_sprite(s_skeleton_king_walk, 1, 0);
+		set_state_sprite(s_skeleton_king_idle, 1, 0);
 		var dir = sign(distance_to_object(Player1));
 		if(x != ix){
 			move_and_collide(dir*run_speed*2, 0);
@@ -82,11 +82,16 @@ switch(state){
 		
 	case "Death":
 	#region ded
+	set_state_sprite(s_skeleton_king_die, 1, 0);
+	if(animation_hit_frame(10)){
 	drop_item(drop_list, drops);
 	index = find_self(o_gameState.turnList);
 	array_delete(o_gameState.turnList, index, 1);
 	o_gameState.enemyLen--;
+	}
+	if(animation_end()){
 	instance_destroy(self);
+	}
 	#endregion
 	break;
 	

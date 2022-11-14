@@ -50,6 +50,7 @@ switch(state){
 		instance_create_layer(Player1.x, Player1.y, "Instances", o_hud);	
 	}
 	if(enemyLen == 0){
+		alarm[1] = 300;
 		state = "End Battle";
 	}
 	#endregion
@@ -60,15 +61,22 @@ switch(state){
 		instance_create_layer(Player1.x, Player1.y, "Instances", o_hud);	
 	}
 	if(enemyLen == 0){
+		alarm[1] = 300;
 		state = "End Battle";
+		break;
 	}
+	cout(enemyLen);
+	cout(turnList);
 	//cout("Enemy Phase");
 	#region Enemy Turn
 	Player1.actions = 0;
+
+	if(turnList[i].state != "Death"){
 	while(alarm[0] = -1){
 		alarm[0] = 6000;
 		turnList[i].index = i;
 		turnList[i].state = "Choose Attack";
+	}
 	}
 	if(turnList[i].state == "Battle"){
 		alarm[0] = -1;
@@ -83,10 +91,11 @@ switch(state){
 		break;
 		
 	case "End Battle":
+	if(alarm[1] = -1){
 		win_battle();
 		mainEnemy.state = "Defeated";
 		//cout("Won");
-	
+	}
 		break;
 	
 	case "Pause":
@@ -98,5 +107,5 @@ switch(state){
 //cout(state);
 //cout(mainEnemy);
 //cout(enemyLen);
-cout(i);
-cout(turnList);
+//cout(i);
+//cout(turnList);

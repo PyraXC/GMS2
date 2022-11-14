@@ -83,14 +83,17 @@ switch(state){
 	case "Death":
 	#region ded
 	set_state_sprite(s_skeleton_king_die, 1, 0);
+	if(animation_hit_frame(0)){
+		index = find_self(o_gameState.turnList);
+		array_delete(o_gameState.turnList, index, 1);
+		o_gameState.enemyLen--;
+	}
+	if(animation_hit_frame(7)){	instance_create_layer(x-98*image_xscale, y-12, "Instances", o_crown);}
 	if(animation_hit_frame(10)){
 	drop_item(drop_list, drops);
-	index = find_self(o_gameState.turnList);
-	array_delete(o_gameState.turnList, index, 1);
-	o_gameState.enemyLen--;
 	}
 	if(animation_end()){
-	instance_destroy(self);
+		instance_destroy(self);
 	}
 	#endregion
 	break;
@@ -98,6 +101,7 @@ switch(state){
 	case "Defeated":
 	#region ded
 	set_state_sprite(s_skeleton_king_die, 1, 0);
+	if(animation_hit_frame(7)){	instance_create_layer(x-98*image_xscale, y-12, "Instances", o_crown);}
 	if animation_end(){
 		instance_destroy(self);
 	}

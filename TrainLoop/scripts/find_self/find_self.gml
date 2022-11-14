@@ -5,8 +5,8 @@ function find_self(argument0){
 	var arry = argument0;
 	for(var i = 0; i < array_length(arry); i++;){
 		if(arry[i] == instance){
-			cout("Here");
-			cout(i);
+			//cout("Here");
+			//cout(i);
 			return i;
 		}
 	}

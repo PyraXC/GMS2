@@ -98,5 +98,5 @@ switch(state){
 //cout(state);
 //cout(mainEnemy);
 //cout(enemyLen);
-cout(i);
+//cout(i);
 cout(turnList);

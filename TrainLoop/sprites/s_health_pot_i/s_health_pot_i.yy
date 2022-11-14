@@ -29,6 +29,9 @@
   "gridY": 4,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"4f109513-86ae-4ce9-b7e8-d7169a793dd3",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"04e793ad-ae59-42fc-81c2-ea850f3440a1",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e14783f3-da26-4c98-8c01-4426988c82ff",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c70fcbd6-dcf4-4ddf-a15c-adc133ac72f5",},
   ],
   "sequence": {
     "resourceType": "GMSequence",
@@ -40,12 +43,15 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 1.0,
+    "length": 4.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","spriteId":null,"keyframes":{"Keyframes":[
             {"id":"f13c1812-0c7f-47df-879a-de0b2046c123","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"4f109513-86ae-4ce9-b7e8-d7169a793dd3","path":"sprites/s_health_pot_i/s_health_pot_i.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"f7c76ac1-5772-4eb1-b927-34f41d0f6deb","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"04e793ad-ae59-42fc-81c2-ea850f3440a1","path":"sprites/s_health_pot_i/s_health_pot_i.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"ae3088bb-208d-426b-9b38-faa1b7c496a1","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e14783f3-da26-4c98-8c01-4426988c82ff","path":"sprites/s_health_pot_i/s_health_pot_i.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"b5923995-6714-4c8d-9f49-d5a962b3d6ed","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c70fcbd6-dcf4-4ddf-a15c-adc133ac72f5","path":"sprites/s_health_pot_i/s_health_pot_i.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"isCreationTrack":false,"modifiers":[],},
     ],
     "visibleRange": null,

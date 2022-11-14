@@ -9,6 +9,7 @@ function start_battle(argument0){
 	o_gameState.mainEnemy = argument0;
 	o_gameState.enemyLen = array_length(argument0.enemies);
 	//room_goto(rm_battle1);
+	Player1.image_xscale = 1;
 	Player1.x = o_arena.x;
 	Player1.y = o_arena.y;
 	o_gameState.state = "Battle";

@@ -13,7 +13,8 @@ if pos < 0 {pos = op_length - 1;}
 lr += right_key - left_key;
 if lr >= array_length(o_gameState.turnList){lr = 0;}
 if lr < 0 {lr = array_length(o_gameState.turnList) - 1;}
-		
+Player1.target = o_gameState.turnList[lr];
+
 if(return_key){ 
 	switch(menu_level){
 		case 0:  break;

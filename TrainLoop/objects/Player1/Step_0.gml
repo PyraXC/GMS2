@@ -80,13 +80,17 @@ switch (state)
 			idle_time++;
 			run_speed = i_run_speed;
 			set_state_sprite(s_move, 0.25, 0);
+			if input.jump
+				{
+					state = "Jump";
+				}
 			if idle_time >= 120
 				{
 					state = "Idle2";
 				}
 		}
 	
-	if input.jump and not (input.left && input.right)
+	if input.jump
 		{
 		if run_speed == max_run_speed
 			{
@@ -332,3 +336,4 @@ if hp > current_hp
 //cout(ix);
 //cout(weapon_inventory);
 //cout(global.obj_list);
+cout(target);

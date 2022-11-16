@@ -10,6 +10,7 @@ function air_movement(){
 		if input.left {hsp = -max_hsp;}
 		if input.right {hsp = max_hsp;}
 		if !input.left && !input.right{hsp = 0;}
+		if input.left && input.right{hsp = 0;}
 			move_and_collide(hsp, vsp);
 		
 		

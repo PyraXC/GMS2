@@ -3,10 +3,10 @@ function dodge(){
 	if (vsp < 15) vsp += grav;
 	if (vsp > 15) vsp = 15;
 
-	if (place_meeting(x,y+1, o_wall)) and jump_input == 0
+	if (place_meeting(x,y+1, o_wall)) and jump_input == 1
 		{
 			vsp =  1 * -jump_speed 
-			jump_input = 1;
+			jump_input = 0;
 		}
 	//Verticle Collision
 	if(place_meeting(x, y+vsp, o_wall)) and vsp > 0 && lag_count == 0

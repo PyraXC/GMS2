@@ -130,11 +130,17 @@ switch (state)
 			break;
 			#endregion
 	
+	case "Fishing":
+	#region fishing
+	
+	#endregion
+		break;
+	
 	case "Battle":
 	#region Battle Start
 	set_state_sprite(s_move, 1, 0);
 	hsp = 0;
-	in_air();
+	dodge();
 	if(!place_meeting(x, y+1, o_wall)){
 		}
 	else{
@@ -153,6 +159,7 @@ switch (state)
 			}
 			else if(input.jump){
 				alarm[1] = delay;
+				jump_input = 1;
 				state = "Dodge";
 			}
 		}
@@ -336,4 +343,4 @@ if hp > current_hp
 //cout(ix);
 //cout(weapon_inventory);
 //cout(global.obj_list);
-cout(target);
+//cout(image_xscale);

@@ -14,6 +14,7 @@ item = noone;
 #endregion
 target = noone;
 hp = 100;
+money = 0;
 max_hp = hp;
 current_hp = max_hp;
 state = "Move";

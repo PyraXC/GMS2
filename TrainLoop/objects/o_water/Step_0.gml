@@ -1,28 +1,39 @@
 switch(state){
 	case "Not Fishing":
+	alarm[0] = -1;
+	alarm[1] = -1;
 	if(abs(Player1.x - x) < 40 && abs(Player1.y - y) < 20){
 	if(!instance_exists(o_interact)){
 		instance_create_layer(x, y-64, "InstancesTop", o_interact);
 	}
 	if(Player1.input.jump){
-		Player1.state = "Fishing";
+		Player1.state = "Start Fishing";
 		instance_destroy(o_interact)
 		state = "Fishin";
-		alarm[0] = irandom_range(60*20, 60*120);
+		//alarm[0] = irandom_range(60*20, 60*120);
+		alarm[0] = 180;
 	}
 	}
 	else{		instance_destroy(o_interact);}
 		break;
 		
 	case "Fishin":
-	with(Player1){
-		if(input.left or input.right or input.jump or input.attack){
-			state = "Move";
-		}
+	while(fish == noone){
+		fish = drop_list[irandom(array_length(drop_list)-1)];
+		fish = instance_create_layer(x, y, "InstancesTop", fish);
+		cout(fish);
+		//instance_deactivate_object(fish);
 	}
+	//make ripples randomly idk
 		break;
 		
 	case "FISHHH":
+	//show indicator
+	cout("!!!");
+	cout(alarm[1]);
+		break;
+		
+	case "Fish On":
 	
 		break;
 }

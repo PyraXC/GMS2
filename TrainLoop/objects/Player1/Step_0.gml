@@ -130,10 +130,75 @@ switch (state)
 			break;
 			#endregion
 	
+	case "Start Fishing":
+	set_state_sprite(s_start_fishing, 1, 0);
+		if animation_end(){state = "Fishing";}
+		break;
+		
 	case "Fishing":
 	#region fishing
-	
+	set_state_sprite(s_fishing, 1, 0);
+	if((input.left or input.right or input.jump or input.attack) && o_water.state != "FISHHH"){
+		state = "Fish Off";
+		cout("STAHP");
+	}else if (input.jump && o_water.state == "FISHHH"){
+		k = 0;
+		state = "Fish On";
+		fish = o_water.fish;
+		o_water.alarm[1] = -1;
+	}
 	#endregion
+		break;
+		
+	case "Fish Off":
+	o_water.state = "Not Fishing";
+	set_state_sprite(s_stop_fishing, 1, 0);
+	if(animation_end()){
+		state = "Move";
+	}
+		break;
+	
+	case "Fish On":
+	if(k == 0){
+	fish = o_water.fish;
+	lr = irandom(2);
+	if(object_get_parent(fish) == o_fish){
+		timer = fish.time;
+		inputs = fish.health;
+	}else{
+		timer = 60 * 5;
+		inputs = 20;
+	}
+	k++;
+	}
+	if(timer > 0){
+		if(lr == 1){
+			set_state_sprite(s_fishing_L, 1, 0);
+			if(input.left and input.jump){
+				inputs--;
+			}
+			if(input.right and input.jump){
+				inputs++;
+			}
+		}
+		if(lr == 2){
+			set_state_sprite(s_fishing_R, 1, 0);
+			if(input.right and input.jump){
+				inputs--;
+			}
+			if(input.left and input.jump){
+				inputs++;
+			}
+		}
+		if(inputs <= 0){
+			//catch fish
+			cout("Caught Fish");
+		}
+		timer--;
+	}
+	else{
+		cout("Line Snapped");
+	}
 		break;
 	
 	case "Battle":
@@ -344,3 +409,4 @@ if hp > current_hp
 //cout(weapon_inventory);
 //cout(global.obj_list);
 //cout(image_xscale);
+cout(state);

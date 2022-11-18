@@ -12,6 +12,12 @@ weapon_inventory = [];
 equip = o_unarmed;
 item = noone;
 #endregion
+#region Fishing
+fish = noone;
+lr = 0;
+inputs = 0;
+k = 0;
+#endregion
 target = noone;
 hp = 100;
 money = 0;

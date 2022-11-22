@@ -6,4 +6,5 @@ obj = o_small_fish;
 nme = "Small Fish";
 state = "Idle";
 size = irandom_range(0, 4) + irandom_range(2, 16); 
-hp = 10 + size;
+//hp = 10 + size;
+hp = 1;

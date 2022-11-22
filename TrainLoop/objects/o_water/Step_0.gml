@@ -7,9 +7,11 @@ switch(state){
 		if(!instance_exists(o_interact)){
 			instance_create_layer(x, y-64, "InstancesTop", o_interact);
 		}
-		if(Player1.input.jump){
+		if(Player1.input.jump && (Player1.state == "Move" or Player1.state == "Idle")){
 			Player1.state = "Start Fishing";
-			instance_destroy(o_interact)
+			instance_destroy(o_interact);
+			instance_destroy(fish);
+			fish = noone;
 			state = "Fishin";
 			//alarm[0] = irandom_range(60*20, 60*120);
 			alarm[0] = 180;

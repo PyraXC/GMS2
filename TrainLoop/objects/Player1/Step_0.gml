@@ -153,14 +153,17 @@ switch (state)
 		break;
 		
 	case "Fish Off":
+	#region stop fishin
 	o_water.state = "Not Fishing";
 	set_state_sprite(s_stop_fishing, 1, 0);
 	if(animation_end()){
 		state = "Move";
 	}
+	#endregion
 		break;
 	
 	case "Fish On":
+	#region REEEEL
 	if(k == 0){
 	fish = o_water.fish;
 	lr = choose(1, 2);
@@ -216,6 +219,7 @@ switch (state)
 		timer = 0;
 		k = 0;
 	}
+	#endregion
 		break;
 		
 	case "Catch":
@@ -336,7 +340,7 @@ switch (state)
 	#region Health Item
 	hp += item.damage;
 	item.durability--;
-	state = "Battle";
+	state = prev_state;
 	#endregion
 		break;
 		

@@ -14,7 +14,7 @@ for(var i = 0; i < op_length; i++)
 		if pos == i{_c = c_yellow;}
 		draw_text_color(vx+op_border, vy + op_space*i+op_border, option[menu_level, i], _c, _c, _c, _c, 1); 
 	}
-	if(menu_level == 1)//Draw Weapons
+	if(menu_level == 1)//Draw Weapons/allow equip
 	{
 		var drw = Player1.weapon_inventory[i];
 		var str1 = drw.weapon + " " + string(drw.durability);
@@ -23,21 +23,22 @@ for(var i = 0; i < op_length; i++)
 		draw_text_color(vx+op_border, vy + op_space*i+op_border, str1, _c, _c, _c, _c, 1);
 		draw_sprite(Player1.weapon_inventory[i].icon, 0, vx+width+op_border+20, vy+24+op_space*i);
 	}
-	if(menu_level == 2){//draw items
+	if(menu_level == 2){//draw items/allow use
 		var drw = Player1.item_inventory[i];
 		var _c = c_ltgrey;
 		if pos == i{_c = c_yellow;}
 		draw_text_color(vx+op_border, vy + op_space*i+op_border, drw.item, _c, _c, _c, _c, 1); 
 		draw_sprite(drw.icon, drw.durability, vx+width+op_border+16, vy+24+op_space*i);
 	}
-	if(menu_level == 3){
-		cout("Fish?");
+	if(menu_level == 3){//draw fish inv
+		if(array_length(Player1.fish_inventory) != 0){
 		var drw = Player1.fish_inventory[i];
 		var _c = c_ltgrey;
 		if pos == i{_c = c_yellow;}
-		draw_text_color(vx+op_border, vy + op_space*i+op_border, drw.nme + drw.size, _c, _c, _c, _c, 1); 
+		draw_text_color(vx+op_border, vy + op_space*i+op_border, drw.nme + " " + string(drw.size) + "in", _c, _c, _c, _c, 1); 
+		}	
 	}
-	if(menu_level == 4)//Draw Attacks/Target indicator
+	if(menu_level == 4)//Draw Something idk yet
 	{
 		var _c = c_ltgrey;
 		if pos == i{_c = c_yellow;}
@@ -45,23 +46,4 @@ for(var i = 0; i < op_length; i++)
 	}
 }
 
-/*
-if (menu_level == 2 && pos == 1){
-	c = c_white;
-	draw_set_font(f_one_sm);
-	draw_sprite_ext(sprite_index, image_index, x, y, width/sprite_width, height/sprite_height, 0, c_dkgray, 1);
-	draw_text_color(x + op_border, y, "   ^^^", c, c, c, c, 1);
-	for(var i = 0; i < array_length(menu[0]); i++){
-		draw_text_color(x+op_border, y + 8 + (10)*i, menu[0, i], c, c, c, c, 1);
-	}
-}
-if (menu_level == 2 && pos == 2){
-	c = c_white;
-	draw_set_font(f_one_smaller);
-	draw_sprite_ext(sprite_index, image_index, x, y, width/sprite_width, height/sprite_height, 0, c_dkgray, 1);
-	for(var i = 0; i < array_length(menu[1]); i++){
-		draw_text_color(x + 3, y - 5 + (9)*i, menu[1, i], c, c, c, c, 1);
-	}
-}
-*/
 //cout(width);

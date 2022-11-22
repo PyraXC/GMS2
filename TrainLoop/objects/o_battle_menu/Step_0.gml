@@ -58,6 +58,7 @@ switch(menu_level){
 		with(Player1){
 			item = item_inventory[o_battle_menu.pos];
 			state = o_battle_menu.option[o_battle_menu.menu_level, o_battle_menu.pos];
+			prev_state = "Battle";
 		}
 		menu_level = 0;
 		pos = 0;

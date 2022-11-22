@@ -27,7 +27,11 @@ for(var i = 0; i < array_length(Player1.item_inventory);i++;){
 }
 	option[2] = arry;
 	arry = [];
+for(var i = 0; i < array_length(Player1.fish_inventory); i++;){
+	option[3, i] = Player1.fish_inventory[i].nme;
+}
 for(var i = 0; i < array_length(Player1.attack_list);i++;){
 	option[4, i] = Player1.attack_list[i];
 }
+
 }

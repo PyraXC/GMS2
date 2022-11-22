@@ -22,6 +22,7 @@ switch (state)
 	
 	if input.right and not input.left
 		{
+			can_jump();
 			move_and_collide(run_speed, 0);
 			//run_speed = run_speed
 			image_xscale = 1;
@@ -41,6 +42,7 @@ switch (state)
 		}
 	if input.left and not input.right
 		{
+			can_jump();
 			move_and_collide(-run_speed, 0);
 			//run_speed = approach(run_speed, max_run_speed, 0.2);
 			image_xscale = -1;
@@ -60,9 +62,10 @@ switch (state)
 		}
 	if not input.left and not input.right
 		{
-			if input.jump
+			can_jump();
+			if input.pause
 				{
-					state = "Jump";
+					state = "Paused";
 				}
 			idle_time++;
 			run_speed = i_run_speed;
@@ -77,27 +80,18 @@ switch (state)
 	
 	if input.left and input.right
 		{
+			can_jump();
 			idle_time++;
 			run_speed = i_run_speed;
 			set_state_sprite(s_move, 0.25, 0);
-			if input.jump
+			if input.pause
 				{
-					state = "Jump";
+					state = "Paused";
 				}
 			if idle_time >= 120
 				{
 					state = "Idle2";
 				}
-		}
-	
-	if input.jump
-		{
-		if run_speed == max_run_speed
-			{
-				jump_speed += 2;
-			}
-			jump_input = 1;
-			state = "Jump";
 		}
 		
 	if !place_meeting(x, y+1, o_wall)
@@ -132,7 +126,14 @@ switch (state)
 	
 	case "Start Fishing":
 	set_state_sprite(s_start_fishing, 1, 0);
-		if animation_end(){state = "Fishing";}
+	if animation_end(){
+		state = "Fishing";
+		fish = noone;
+		lr = 0;
+		inputs = 0;
+		k = 0;
+		rng = 0;
+	}
 		break;
 		
 	case "Fishing":
@@ -143,8 +144,9 @@ switch (state)
 		cout("STAHP");
 	}else if (input.jump && o_water.state == "FISHHH"){
 		k = 0;
-		state = "Fish On";
 		fish = o_water.fish;
+		state = "Fish On";
+		o_water.state = "Fish On";
 		o_water.alarm[1] = -1;
 	}
 	#endregion
@@ -161,43 +163,66 @@ switch (state)
 	case "Fish On":
 	if(k == 0){
 	fish = o_water.fish;
-	lr = irandom(2);
-	if(object_get_parent(fish) == o_fish){
+	lr = choose(1, 2);
+	if(object_get_parent(fish.obj) == o_fish){
 		timer = fish.time;
-		inputs = fish.health;
+		inputs = fish.hp;
 	}else{
 		timer = 60 * 5;
-		inputs = 20;
+		inputs = 30;
 	}
 	k++;
 	}
 	if(timer > 0){
+		if(k ==1){
+			alarm[6+lr] = irandom_range(2,8)*30;
+			k++;
+		}
 		if(lr == 1){
 			set_state_sprite(s_fishing_L, 1, 0);
 			if(input.left and input.jump){
 				inputs--;
+				cout(inputs);
 			}
 			if(input.right and input.jump){
 				inputs++;
+				cout(inputs);
 			}
 		}
 		if(lr == 2){
 			set_state_sprite(s_fishing_R, 1, 0);
 			if(input.right and input.jump){
 				inputs--;
+				cout(inputs);
 			}
 			if(input.left and input.jump){
 				inputs++;
+				cout(inputs);
 			}
 		}
 		if(inputs <= 0){
-			//catch fish
-			cout("Caught Fish");
+			state = "Catch";
+			fish.state = "Collect";
+			o_water.fish = noone;
+			lr = 0;
+			timer = 0;
+			k = 0;
 		}
 		timer--;
 	}
 	else{
-		cout("Line Snapped");
+		state = "Fish Off";
+		lr = 0;
+		timer = 0;
+		k = 0;
+	}
+		break;
+		
+	case "Catch":
+	set_state_sprite(s_stop_fishing, 1, 0);
+	if animation_end(){
+		state = "Move";
+		o_water.state = "Not Fishing";
 	}
 		break;
 	
@@ -343,6 +368,14 @@ switch (state)
 	#region dead lmao
 	game_restart();
 	#endregion
+	
+	case "Paused":
+	#region Pause Menu
+	if(!instance_exists(o_pause_menu)){
+		instance_create_layer(x, y, "InstancesTop", o_pause_menu);
+	}
+	#endregion
+		break;
 		
 	case "Idle2":
 		#region Idle2
@@ -409,4 +442,4 @@ if hp > current_hp
 //cout(weapon_inventory);
 //cout(global.obj_list);
 //cout(image_xscale);
-cout(state);
+//cout(state);

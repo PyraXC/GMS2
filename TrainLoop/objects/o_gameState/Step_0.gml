@@ -65,8 +65,6 @@ switch(state){
 		state = "End Battle";
 		break;
 	}
-	cout(enemyLen);
-	cout(turnList);
 	//cout("Enemy Phase");
 	#region Enemy Turn
 	Player1.actions = 0;

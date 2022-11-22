@@ -7,6 +7,7 @@ function get_input() {
 	defend = keyboard_check_pressed(ord("K"));
 	run = keyboard_check(vk_shift);
 	jump = keyboard_check_pressed(vk_space);
+	pause = keyboard_check_pressed(vk_escape);
 
 	
 	r = keyboard_check_pressed(ord("D"));

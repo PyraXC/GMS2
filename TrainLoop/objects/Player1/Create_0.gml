@@ -9,6 +9,7 @@ ds_map_secure_save(stabList, "savefile");
 ds_map_destroy(stabList);
 item_inventory = [];
 weapon_inventory = [];
+fish_inventory = [];
 equip = o_unarmed;
 item = noone;
 #endregion
@@ -17,6 +18,7 @@ fish = noone;
 lr = 0;
 inputs = 0;
 k = 0;
+rng = 0;
 #endregion
 target = noone;
 hp = 100;

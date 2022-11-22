@@ -1,2 +1,9 @@
-time = 60*10;
-health = 40;
+time = 60*20;
+bite = 200;
+sprite = s_small_fish;
+sprite_index = s_empty;
+obj = o_small_fish;
+nme = "Small Fish";
+state = "Idle";
+size = irandom_range(0, 4) + irandom_range(2, 16); 
+hp = 10 + size;

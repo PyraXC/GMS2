@@ -1,5 +1,6 @@
 state = "Idle";
 status = "None";
+status_turns = 0;
 instance = id;
 hp = 20;
 defend = 1;

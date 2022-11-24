@@ -46,6 +46,13 @@ switch(state){
 	#region Player Turn
 	//Player
 	//test_run_all();
+	if effects == 0{
+		status_effect(Player1, Player1.status);
+		effects++;
+		if Player1.status_turns == 0{
+			Player1.status = "None";
+		}
+	}
 	if(!instance_exists(o_hud)){
 		instance_create_layer(Player1.x, Player1.y, "Instances", o_hud);	
 	}
@@ -68,11 +75,16 @@ switch(state){
 	//cout("Enemy Phase");
 	#region Enemy Turn
 	Player1.actions = 0;
+	effects = 0;
 
 	if(turnList[i].state != "Death"){
 		while(alarm[0] = -1){
 			alarm[0] = 6000;
 			turnList[i].index = i;
+			if turnList[i].status_turns == 0{
+				turnList[i].status = "None";
+			}
+			status_effect(turnList[i], turnList[1].status);
 			if(turnList[i].status != "Topple"){
 				turnList[i].state = "Choose Attack";
 			}

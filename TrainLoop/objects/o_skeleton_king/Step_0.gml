@@ -1,4 +1,3 @@
-show_status();
 switch(state){
 	case "Idle":
 	image_alpha = 100;

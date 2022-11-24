@@ -21,7 +21,6 @@ if(return_key){
 		case 2:  menu_level = 0; break;
 		case 3:  menu_level = 0; break;
 		case 4:  menu_level = 0; break;
-	
 	}
 }
 if accept_key{
@@ -74,4 +73,4 @@ switch(menu_level){
 	}
 }
 //cout(option[menu_level]);
-cout(menu_level);
+//cout(menu_level);

@@ -6,3 +6,4 @@ enemies = noone;
 enemyLen = 0;
 turnList = [];
 i = 0;
+effects = 0;

@@ -229,6 +229,12 @@ switch (state)
 		o_water.state = "Not Fishing";
 	}
 		break;
+		
+	case "Coin Flip":
+	if(!instance_exists(o_cf_menu)){
+		instance_create_layer(x, y, "InstancesTop", o_cf_menu);
+	}
+		break;
 	
 	case "Battle":
 	#region Battle Start
@@ -493,4 +499,4 @@ if hp > current_hp
 //cout(global.obj_list);
 //cout(image_xscale);
 //cout(state);
-cout(status);
+//cout(status);

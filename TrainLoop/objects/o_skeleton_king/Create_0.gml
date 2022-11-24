@@ -1,6 +1,7 @@
 state = "Idle";
+status = "None";
 instance = id;
-hp = 5;
+hp = 20;
 defend = 1;
 damage = 5;
 xp = 10;
@@ -10,9 +11,10 @@ index = 0;
 ix = 0;
 iy = 0;
 target = Player1;
-enemies = [o_skeleton_king,o_skeleton_king,o_skeleton_king];
+enemies = [o_skeleton_king,
+o_skeleton_king,o_skeleton_king, o_skeleton_king
+];
 drop_list = [o_health_potion, o_health_potion, 
 o_health_potion, o_knife, o_extra_action
 ];
 drops = 1;
-//cout(id);

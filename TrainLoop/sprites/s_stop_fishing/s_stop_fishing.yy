@@ -74,7 +74,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Player",
-    "path": "folders/Sprites/Player.yy",
+    "name": "fishing",
+    "path": "folders/Sprites/Player/fishing.yy",
   },
 }

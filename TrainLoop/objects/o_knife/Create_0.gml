@@ -1,5 +1,5 @@
 damage = 4;
-durability = 1;
+durability = 10;
 crit = 10;
 weapon = "Knife";
 index = 0;

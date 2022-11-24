@@ -1,3 +1,4 @@
+show_status();
 switch(state){
 	case "Idle":
 	image_alpha = 100;
@@ -12,7 +13,7 @@ switch(state){
 	case "Attack":
 		set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
-			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 1, 1, image_xscale);
+			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 1, 1, "None", 0, image_xscale);
 		}
 		if(animation_end()){
 			state = "Idle";
@@ -45,7 +46,7 @@ switch(state){
 		if(abs(x - Player1.x) <= 96){
 			set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
-			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 2, 40, image_xscale);
+			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 2, 6, "Bleed", 100, image_xscale);
 		}
 		if(animation_end()){
 			//cout("Here");
@@ -108,6 +109,7 @@ switch(state){
 	#endregion
 	break;
 }
+
 if(image_xscale != 1 or image_xscale != 0){image_xscale = 1; }
 //cout(state);
 //cout(ix);

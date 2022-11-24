@@ -6,8 +6,10 @@
 ///@arg knockback_y
 ///@arg lifespan
 ///@arg damage
+///@arg status
+///@arg status_chance
 ///@arg xscale
-function create_hitbox(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8) {
+function create_hitbox(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9, argument10) {
 
 	var x_position = argument0;
 	var y_position = argument1;
@@ -17,7 +19,9 @@ function create_hitbox(argument0, argument1, argument2, argument3, argument4, ar
 	var knockback_y = argument5;
 	var lifespan = argument6;
 	var damage = argument7;
-	var xscale = argument8;
+	var status = argument8
+	var statrng = argument9;
+	var xscale = argument10;
 
 	var hitbox = instance_create_layer(x_position, y_position, "Instances", o_hitbox);
 	hitbox.sprite_index = sprite;
@@ -26,7 +30,8 @@ function create_hitbox(argument0, argument1, argument2, argument3, argument4, ar
 	hitbox.knockback_y = knockback_y;
 	hitbox.alarm[0] = lifespan;
 	hitbox.damage = damage;
+	hitbox.status = status;
+	hitbox.statrng = statrng;
 	hitbox.image_xscale = xscale;
-
 
 }

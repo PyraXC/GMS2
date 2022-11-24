@@ -321,7 +321,53 @@ switch (state)
 	#region Stab Attack
 	set_state_sprite(s_attack, 1, 0);
 	if(animation_hit_frame(3)){
-		create_hitbox(x, y, self, s_attack_damage, 0, 0, 1, 1*equip.damage, image_xscale);
+		create_hitbox(x, y, self, s_attack_damage, 0, 0, 1, 1*equip.damage, "None", 0, image_xscale);
+	}
+	if(animation_end()){
+		state = "Return";
+	}
+	
+	#endregion
+		break;
+		
+	case "Sweep":
+	#region Knife Approach
+	set_state_sprite(s_move, 1, 0);
+	approach_target(target);
+	if(abs(x - target.x) < 64){
+		state = "Sweep Attack";
+	}
+	#endregion
+		break;
+		
+	case "Sweep Attack":
+	#region Stab Attack
+	set_state_sprite(s_sweep, 1, 0);
+	if(animation_hit_frame(3)){
+		create_hitbox(x, y, self, s_sweep_damage, 0, 0, 1, 1*equip.damage, "Break", 100, image_xscale);
+	}
+	if(animation_end()){
+		state = "Return";
+	}
+	
+	#endregion
+		break;
+		
+	case "Overhead":
+	#region Knife Approach
+	set_state_sprite(s_move, 1, 0);
+	approach_target(target);
+	if(abs(x - target.x) < 64){
+		state = "Overhead Attack";
+	}
+	#endregion
+		break;
+		
+	case "Overhead Attack":
+	#region Stab Attack
+	set_state_sprite(s_overhead, 1, 0);
+	if(animation_hit_frame(3)){
+		create_hitbox(x, y, self, s_overhead_damage, 0, 0, 1, 1*equip.damage, "Topple", 100, image_xscale);
 	}
 	if(animation_end()){
 		state = "Return";
@@ -447,3 +493,4 @@ if hp > current_hp
 //cout(global.obj_list);
 //cout(image_xscale);
 //cout(state);
+cout(status);

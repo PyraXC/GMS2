@@ -22,11 +22,12 @@ rng = 0;
 #endregion
 target = noone;
 prev_state = "Move";
-hp = 100;
+hp = 20;
 money = 0;
 max_hp = hp;
 current_hp = max_hp;
 state = "Move";
+status = "None";
 ix = 0;
 iy = 0;
 defend = 1;

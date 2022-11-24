@@ -70,11 +70,17 @@ switch(state){
 	Player1.actions = 0;
 
 	if(turnList[i].state != "Death"){
-	while(alarm[0] = -1){
-		alarm[0] = 6000;
-		turnList[i].index = i;
-		turnList[i].state = "Choose Attack";
-	}
+		while(alarm[0] = -1){
+			alarm[0] = 6000;
+			turnList[i].index = i;
+			if(turnList[i].status != "Topple"){
+				turnList[i].state = "Choose Attack";
+			}
+			else{
+				alarm[0] = -1;
+				i++;
+			}
+		}
 	}
 	if(turnList[i].state == "Battle"){
 		alarm[0] = -1;

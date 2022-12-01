@@ -26,16 +26,18 @@ switch(state){
 		break;
 		
 	case "Choose Attack":
+	rng = irandom_range(1,3);
+	projectile = 0;
 		if(rng == 1){
 			state = "Battle Attack";
 			rng = irandom_range(1,3);
 			//cout("RNG 1");
 		}
 		if(rng == 2){
-			state = "Battle Attack";
+			state = "Ranged Attack";
 			//cout("RNG 2");
 		}
-		else{
+		if(rng == 3){
 			state = "Battle Attack";
 			//cout("RNG 3");
 			}
@@ -45,7 +47,7 @@ switch(state){
 		if(abs(x - Player1.x) <= 96){
 			set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
-			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 2, 6, "Bleed", 100, image_xscale);
+			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 2, 6, "Bleed", 20, image_xscale);
 		}
 		if(animation_end()){
 			//cout("Here");
@@ -56,6 +58,45 @@ switch(state){
 			set_state_sprite(s_skeleton_king_idle, 1, 0);
 			approach_target(Player1);
 		}
+		break;
+		
+	case "Ranged Attack":
+		if(abs(x - Player1.x) <= 600){
+			set_state_sprite(s_skeleton_king_ranged_attack, 1, 0);
+			if(animation_hit_frame(6) and projectile = 0){
+				proj = instance_create_layer(x, y, "Instances", o_king_projectile1);
+				proj.creator = self;	
+				rng = irandom_range(1,2);
+				if rng == 1{
+					state = "Projectile Wait";
+					alarm[9] = 90;
+				}else{
+					//state = "Ranged Follow Up";
+					state = "Projectile Wait";
+					alarm[9] = 90;
+				}
+			}/*else if(projectile != 0){
+				set_state_sprite(s_skeleton_king_idle, 1, 0);
+			}
+			else if(!object_exists(proj)){
+				set_state_sprite(s_skeleton_king_idle, 1, 0);
+				if(!object_exists(o_king_projectile1)){
+					
+				}
+			}
+		}
+		else{
+			set_state_sprite(s_skeleton_king_idle, 1, 0);
+			approach_target(Player1);*/
+		}
+		break;
+		
+	case "Projectile Wait":
+		set_state_sprite(s_skeleton_king_idle, 1, 0);
+		if(alarm[9] == -1){
+			state = "Return";
+		}
+		
 		break;
 		
 	case "Return":
@@ -110,6 +151,7 @@ switch(state){
 }
 
 if(image_xscale != 1 or image_xscale != 0){image_xscale = 1; }
+//cout(proj);
 //cout(state);
 //cout(ix);
 //cout(x);

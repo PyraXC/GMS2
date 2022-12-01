@@ -6,7 +6,7 @@ height = 60;
 op_border = 10;
 op_space = 20;
 //pause
-vy =0;
+vy = 0;
 vx=0;
 option[0,0] = "Attack";
 option[0, 1] = "Equipment";

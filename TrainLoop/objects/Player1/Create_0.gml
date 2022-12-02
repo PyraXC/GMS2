@@ -1,5 +1,5 @@
 #region Menus
-attack_list = ["Stab", "Thrust", "Sweep", "Overhead"];
+attack_list = ["Stab", "Sweep", "Overhead"];
 var stabList = ds_map_create();
 s_stab_katana = stabList[? "Katana"];
 s_stab_knife = stabList[? "Knife"];
@@ -34,6 +34,7 @@ iy = 0;
 defend = 1;
 iDefend = defend;
 actions = 1;
+item_actions = 1;
 delay = 15;
 #region Move stuff
 run_speed = 6;

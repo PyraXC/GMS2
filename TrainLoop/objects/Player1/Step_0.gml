@@ -247,7 +247,7 @@ switch (state)
 		if(actions == 0 && o_gameState.state != "End Battle"){ o_gameState.state = "Enemy";}
 		if(o_gameState.state == "P1"){
 			while(!instance_exists(o_battle_menu)){
-				instance_create_layer(x, y-128, "Instances", o_battle_menu);
+				instance_create_layer(x, y-128, "InstancesTop", o_battle_menu);
 			}
 		}
 		else if(o_gameState.state == "Enemy"){

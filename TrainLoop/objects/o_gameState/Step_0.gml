@@ -49,6 +49,7 @@ switch(state){
 	if effects == 0{
 		status_effect(Player1, Player1.status);
 		effects++;
+		if Player1.hp <= 0{Player1.state = "Death";}
 		if Player1.status_turns == 0{
 			Player1.status = "None";
 		}
@@ -75,6 +76,7 @@ switch(state){
 	//cout("Enemy Phase");
 	#region Enemy Turn
 	Player1.actions = 0;
+	Player1.item_actions = 0;
 	effects = 0;
 
 	if(turnList[i].state != "Death"){
@@ -85,6 +87,9 @@ switch(state){
 				turnList[i].status = "None";
 			}
 			status_effect(turnList[i], turnList[i].status);
+			if(turnList[i].hp <= 0){
+				turnList[i].state = "Death";
+			}
 			if(turnList[i].status != "Topple"){
 				turnList[i].state = "Choose Attack";
 			}
@@ -102,6 +107,7 @@ switch(state){
 		i=0;
 		state = "P1";
 		Player1.actions++;
+		Player1.item_actions++;
 	}
 	#endregion
 		break;
@@ -124,4 +130,3 @@ switch(state){
 //cout(mainEnemy);
 //cout(enemyLen);
 //cout(i);
-//cout(turnList);

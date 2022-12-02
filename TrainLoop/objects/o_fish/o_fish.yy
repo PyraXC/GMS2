@@ -29,7 +29,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "fishing",
-    "path": "folders/Objects/fishing.yy",
+    "name": "Fishing",
+    "path": "folders/Objects/Fishing.yy",
   },
 }

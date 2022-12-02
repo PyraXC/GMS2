@@ -54,16 +54,24 @@ switch(menu_level){
 		break; #endregion
 	#region Items Menu
 	case 2:
-	if(array_length(Player1.item_inventory) > 0){
-		with(Player1){
-			item = item_inventory[o_battle_menu.pos];
-			state = o_battle_menu.option[o_battle_menu.menu_level, o_battle_menu.pos];
-			prev_state = "Battle";
+	if(Player1.item_actions > 0){
+		if(array_length(Player1.item_inventory) > 0){
+			with(Player1){
+				item = item_inventory[o_battle_menu.pos];
+				state = o_battle_menu.option[o_battle_menu.menu_level, o_battle_menu.pos];
+				prev_state = "Battle";
+				item_actions--;
+			}
+			menu_level = 0;
+			pos = 0;
+			lr = 0;
+			instance_destroy();
 		}
+	}else{
 		menu_level = 0;
 		pos = 0;
 		lr = 0;
-		instance_destroy();
+		cout("No Actions");
 	}
 		break; #endregion
 	#region Attack Menu

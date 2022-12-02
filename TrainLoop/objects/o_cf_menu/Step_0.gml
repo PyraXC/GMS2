@@ -17,6 +17,7 @@ if(return_key){
 	switch(menu_level){
 		case 0:  
 			Player1.state = "Move";
+			o_coin_flip.state = "Not Gambling";
 			instance_destroy();
 		break;
 		case 1:  menu_level = 0; break;		

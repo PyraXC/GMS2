@@ -1,5 +1,5 @@
 damage = 6;
-durability = 15;
+durability = 8;
 crit = 20;
 weapon = "Katana";
 index = 0;

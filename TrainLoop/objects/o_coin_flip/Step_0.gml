@@ -6,10 +6,14 @@ switch(state){
 		}
 		if(Player1.input.jump && (Player1.state == "Move" or Player1.state == "Idle")){
 			Player1.state = "Coin Flip";
+			state = "GAMBLING";
 			instance_destroy(o_interact);
 		}
 	}
 	else{		instance_destroy(o_interact);}
+		break;
+		
+	case "GAMBLING":
 		break;
 }
 //cout(net_gain);

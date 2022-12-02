@@ -1,2 +1,2 @@
-create_hitbox(x, y, self, sprite_index, 0, 0, 1, damage, "Fire", 40, image_xscale);
+create_hitbox(x, y, creator, s_skeleton_king_projectile1, 1, 1, 2, 3, "Fire", 40, image_xscale);
 instance_destroy();

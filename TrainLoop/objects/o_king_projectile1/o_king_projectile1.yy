@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "o_king_projectile1",
   "spriteId": {
-    "name": "s_skeleton_projectile1",
-    "path": "sprites/s_skeleton_projectile1/s_skeleton_projectile1.yy",
+    "name": "s_skeleton_king_projectile1",
+    "path": "sprites/s_skeleton_king_projectile1/s_skeleton_king_projectile1.yy",
   },
   "solid": false,
   "visible": true,

@@ -3,6 +3,7 @@ status = "None";
 status_turns = 0;
 instance = id;
 hp = 20;
+max_hp = hp;
 defend = 1;
 damage = 5;
 xp = 10;

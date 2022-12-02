@@ -5,6 +5,9 @@ function status_effect(argument0, argument1){
 	var status = argument1;
 	
 	if status == "None"{exit;}
+	if status == "Fire"{
+		target.hp -= (1/5) * target.max_hp;
+	}
 	if(status == "Bleed"){
 		target.hp -= (1/10) * target.max_hp;
 	}

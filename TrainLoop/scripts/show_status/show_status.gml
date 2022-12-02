@@ -9,4 +9,7 @@ function show_status(){
 	if(status == "Bleed"){
 		draw_sprite(s_bleed, 0, x, y - (sprite_height));
 	}
+	if(status == "Fire"){
+		draw_sprite(s_fire, 0, x, y - (sprite_height));
+	}
 }

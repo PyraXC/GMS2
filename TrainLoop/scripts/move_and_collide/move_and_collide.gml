@@ -15,6 +15,4 @@ function move_and_collide(argument0, argument1) {
 	{
 		y += yspeed;
 	}
-
-
 }

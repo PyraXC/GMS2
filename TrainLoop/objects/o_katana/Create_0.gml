@@ -1,6 +1,6 @@
-damage = 8;
+damage = 6;
 durability = 15;
-crit = 40;
+crit = 20;
 weapon = "Katana";
 index = 0;
 state = "NONE";

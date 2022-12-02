@@ -84,7 +84,7 @@ switch(state){
 			if turnList[i].status_turns == 0{
 				turnList[i].status = "None";
 			}
-			status_effect(turnList[i], turnList[1].status);
+			status_effect(turnList[i], turnList[i].status);
 			if(turnList[i].status != "Topple"){
 				turnList[i].state = "Choose Attack";
 			}

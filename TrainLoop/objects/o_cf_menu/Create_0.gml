@@ -1,5 +1,6 @@
 global.font_main = font_add_sprite(f_one, 32, true, 1);
 pos = 0;
+flip = 0;
 width = 100;
 widthList = ds_list_create();
 height = 60;

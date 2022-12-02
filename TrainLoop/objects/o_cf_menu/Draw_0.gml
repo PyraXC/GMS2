@@ -1,6 +1,7 @@
 //draw_sprite_ext(sprite_index, image_index, x, y, width/sprite_width, height/sprite_height, 0, c_grey, 1);
 draw_sprite_ext(sprite_index, image_index, vx, vy, (width+op_border*5)/sprite_width, (height+op_space)/sprite_height, 0, c_grey, 1);
-draw_sprite_ext(s_coinflip, lr, x + width/2 + 16, y-84, 2, 2, 0, c_white, 1);
+draw_sprite_ext(s_coinflip, lr, x + width/2 + 4, y-84, 2, 2, 0, c_white, 1);
+draw_sprite_ext(s_coinflip, flip, x + width + 20, y-84, 2, 2, 0, c_white, 1);
 draw_set_font(f_one);
 draw_set_valign(fa_top);
 draw_set_halign(fa_left);

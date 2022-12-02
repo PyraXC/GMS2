@@ -1,6 +1,6 @@
 damage = 4;
 durability = 10;
-crit = 10;
+crit = 5;
 weapon = "Knife";
 index = 0;
 state = "NONE";

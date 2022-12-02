@@ -34,10 +34,11 @@ if instance_exists(Player1)
 		array_push(global.obj_list, creator);
 		instance_deactivate_object(creator);
 	}
-	if other.object_index == Player1 && o_gameState.state == "Overworld"
+	if other.object_index == Player1 && (o_gameState.state == "Battle" or o_gameState.state == "Enemy" or o_gameState.state == "P1")
 	{
 		if other.hp <= 0
 		{
+			other.state = "Death";
 			//ini_open("save.ini")
 			//ini_write_real("Scores", "Kills", other.kills);
 			//var highscore = ini_read_real("Scores", "highscore", 0);

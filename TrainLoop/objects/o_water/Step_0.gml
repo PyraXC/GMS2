@@ -17,7 +17,7 @@ switch(state){
 			alarm[0] = 180;
 		}
 	}
-	else{		instance_destroy(o_interact);}
+	else{ instance_destroy(o_interact);}
 		break;
 		
 	case "Fishin":

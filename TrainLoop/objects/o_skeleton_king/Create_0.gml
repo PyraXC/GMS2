@@ -11,6 +11,8 @@ rng = irandom_range(1, 3);
 index = 0;
 ix = 0;
 iy = 0;
+projectile = 0;
+proj = noone;
 target = Player1;
 enemies = [o_skeleton_king,
 o_skeleton_king,o_skeleton_king, o_skeleton_king

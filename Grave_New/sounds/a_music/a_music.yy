@@ -1,4 +1,8 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "a_music",
+  "conversionMode": 0,
   "compression": 0,
   "volume": 0.25,
   "preload": false,
@@ -11,13 +15,9 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "a_music",
-  "duration": 154.3625,
+  "duration": 154.3575,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "a_music",
-  "tags": [],
-  "resourceType": "GMSound",
 }

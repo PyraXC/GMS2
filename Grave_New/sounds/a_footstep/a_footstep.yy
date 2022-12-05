@@ -1,4 +1,8 @@
 {
+  "resourceType": "GMSound",
+  "resourceVersion": "1.0",
+  "name": "a_footstep",
+  "conversionMode": 0,
   "compression": 0,
   "volume": 0.7,
   "preload": false,
@@ -11,13 +15,9 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "a_footstep",
-  "duration": 0.119286,
+  "duration": 0.114286,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "a_footstep",
-  "tags": [],
-  "resourceType": "GMSound",
 }

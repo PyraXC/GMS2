@@ -328,6 +328,7 @@ switch (state)
 	set_state_sprite(s_attack, 1, 0);
 	if(animation_hit_frame(3)){
 		create_hitbox(x, y, self, s_attack_damage, 0, 0, 1, 1*equip.damage + 2, "None", 0, image_xscale);
+		audio_play_sound(a_medium_hit, 1, 0);	
 	}
 	if(animation_end()){
 		state = "Return";
@@ -351,6 +352,7 @@ switch (state)
 	set_state_sprite(s_sweep, 1, 0);
 	if(animation_hit_frame(3)){
 		create_hitbox(x, y, self, s_sweep_damage, 0, 0, 1, 1*equip.damage, "Break", 100, image_xscale);
+		audio_play_sound(a_swipe, 1, 0);
 	}
 	if(animation_end()){
 		state = "Return";
@@ -374,6 +376,7 @@ switch (state)
 	set_state_sprite(s_overhead, 1, 0);
 	if(animation_hit_frame(3)){
 		create_hitbox(x, y, self, s_overhead_damage, 0, 0, 1, 1*equip.damage, "Topple", 100, image_xscale);
+		audio_play_sound(a_medium_hit, 1, 0);
 	}
 	if(animation_end()){
 		state = "Return";

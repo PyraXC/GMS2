@@ -13,6 +13,7 @@ switch(state){
 		set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
 			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 1, 1, "None", 0, image_xscale);
+			audio_play_sound(a_medium_hit, 1, 0);
 		}
 		if(animation_end()){
 			state = "Idle";
@@ -48,6 +49,7 @@ switch(state){
 			set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
 			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 2, 6, "Bleed", 0, image_xscale);
+			audio_play_sound(a_medium_hit, 1, 0);
 		}
 		if(animation_end()){
 			//cout("Here");
@@ -66,6 +68,7 @@ switch(state){
 			if(animation_hit_frame(6) and projectile = 0){
 				proj = instance_create_layer(x, y, "Instances", o_king_projectile1);
 				proj.creator = self;	
+				audio_play_sound(a_swipe, 1, 0);
 				rng = irandom_range(1,2);
 				if rng == 1{
 					state = "Projectile Wait";

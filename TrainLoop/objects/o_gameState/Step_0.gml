@@ -78,7 +78,6 @@ switch(state){
 	Player1.actions = 0;
 	Player1.item_actions = 0;
 	effects = 0;
-
 	if(turnList[i].state != "Death"){
 		while(alarm[0] = -1){
 			alarm[0] = 6000;
@@ -96,6 +95,13 @@ switch(state){
 			else{
 				alarm[0] = -1;
 				i++;
+				if(i >= enemyLen){
+					i=0;
+					state = "P1";
+					Player1.actions++;
+					Player1.item_actions++;
+					exit;
+				}
 			}
 		}
 	}

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSound",
   "resourceVersion": "1.0",
-  "name": "a_hit",
+  "name": "a_medium_hit",
   "conversionMode": 0,
   "compression": 0,
   "volume": 1.0,
@@ -14,8 +14,8 @@
     "name": "audiogroup_default",
     "path": "audiogroups/audiogroup_default",
   },
-  "soundFile": "a_hit",
-  "duration": 0.205147,
+  "soundFile": "a_medium_hit",
+  "duration": 0.217642,
   "parent": {
     "name": "Sounds",
     "path": "folders/Sounds.yy",

@@ -236,6 +236,10 @@ switch (state)
 	}
 		break;
 	
+	case "Noone":
+	set_state_sprite(s_idle, 1, 0);
+		break;
+	
 	case "Battle":
 	#region Battle Start
 	set_state_sprite(s_move, 1, 0);
@@ -504,3 +508,4 @@ if hp > current_hp
 //cout(image_xscale);
 //cout(state);
 //cout(status);
+//cout(global.midTransition);

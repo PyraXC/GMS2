@@ -1,0 +1,10 @@
+time = 60*5;
+bite = 50;
+sprite = s_crawfish;
+sprite_index = s_empty;
+obj = o_crawfish;
+nme = "Carwfish";
+state = "Idle";
+size = irandom_range(0, 1) + irandom_range(1, 3); 
+hp = 6 + size;
+//hp = 1;

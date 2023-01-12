@@ -31,7 +31,7 @@ option[3,0] = "Running";
 for(var i = 0; i < array_length(Player1.attack_list);i++;){
 	option[4, i] = Player1.attack_list[i];
 }
-*/
+
 
 	menu[0, 0] = "AD/Left Right To Move";
 	menu[0, 1] = "J/Space To Roll";
@@ -62,7 +62,7 @@ for(var i = 0; i < array_length(Player1.attack_list);i++;){
 	controls[4] = "2-> 2-> 2";
 	controls[5] = "2-> 1-> 2";
 	controls[6] = "2-> 2-> 1";
-
+*/
 op_length = 0;
 menu_level = 0;
 lr = 0;

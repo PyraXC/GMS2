@@ -1,0 +1,10 @@
+time = 60*12;
+bite = 120;
+sprite = s_catfish;
+sprite_index = s_empty;
+obj = o_catfish;
+nme = "Catfish";
+state = "Idle";
+size = irandom_range(0, 12) + irandom_range(6, 22); 
+hp = 12 + size;
+//hp = 1;

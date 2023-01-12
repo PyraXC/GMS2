@@ -1,10 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "o_small_fish",
+  "name": "o_crawfish",
   "spriteId": {
-    "name": "s_small_fish",
-    "path": "sprites/s_small_fish/s_small_fish.yy",
+    "name": "s_crawfish",
+    "path": "sprites/s_crawfish/s_crawfish.yy",
   },
   "solid": false,
   "visible": true,

@@ -13,7 +13,7 @@
     "name": "s_skeleton_king_default_attack",
     "path": "sprites/s_skeleton_king_default_attack/s_skeleton_king_default_attack.yy",
   },
-  "persistent": false,
+  "persistent": true,
   "parentObjectId": {
     "name": "o_miniboss",
     "path": "objects/o_miniboss/o_miniboss.yy",
@@ -38,6 +38,8 @@
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":1,"eventType":2,"collisionObjectId":null,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":9,"eventType":2,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":7,"eventType":2,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":1,"eventType":3,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],

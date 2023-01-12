@@ -20,8 +20,13 @@ switch(state){
 		}
 		break;
 		
+	case "Noone":
+	set_state_sprite(s_skeleton_king_idle, 1, 0);
+		break;
+		
 	case "Battle":
 	set_state_sprite(s_skeleton_king_idle, 1, 0);
+	in_air();
 	//cout(instance);
 		
 		break;
@@ -159,3 +164,4 @@ if(image_xscale != 1 or image_xscale != 0){image_xscale = 1; }
 //cout(ix);
 //cout(x);
 //cout(id);
+//cout(alarm[7]);

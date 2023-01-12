@@ -1,0 +1,10 @@
+time = 60*6;
+bite = 80;
+sprite = s_popeyed_goldfish;
+sprite_index = s_empty;
+obj = o_popeyed;
+nme = "Pop-Eyed Goldfish";
+state = "Idle";
+size = irandom_range(0, 2) + irandom_range(2, 6); 
+hp = 4 + size;
+//hp = 1;

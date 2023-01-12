@@ -1,3 +1,6 @@
+global.grav = 0.5;
+global.i_grav = 0.5;
+
 function air_movement(){
 	if state == "Aerial Lag" //Landing lag
 		{
@@ -14,7 +17,7 @@ function air_movement(){
 			move_and_collide(hsp, vsp);
 		
 		
-	if (vsp < 15) vsp += grav;
+	if (vsp < 15) vsp += global.grav;
 	if (vsp > 15) vsp = 15;
 	if(wall_jump_count > 8) wall_jump_count = 8;
 
@@ -64,5 +67,5 @@ function air_movement(){
 			}
 			vsp = 0; 
 		}
-grav = i_grav;
+global.grav = global.i_grav;
 }

@@ -13,8 +13,8 @@ switch(state){
 			instance_destroy(fish);
 			fish = noone;
 			state = "Fishin";
-			//alarm[0] = irandom_range(60*20, 60*120);
-			alarm[0] = 180;
+			alarm[0] = irandom_range(60*1, 60*10);
+			//alarm[0] = 180;
 		}
 	}
 	else{ instance_destroy(o_interact);}

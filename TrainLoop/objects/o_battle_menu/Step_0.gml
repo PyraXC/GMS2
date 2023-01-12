@@ -36,11 +36,9 @@ switch(menu_level){
 			case 1: menu_level = 1; pos = 0; break;
 			//Settings
 			case 2: menu_level = 2; pos = 0; break;
-			//Quit Game
+			//Run battle
 			case 3: 
-			o_gameState.mainEnemy.state = "Invincibility";
-			run_battle(); 
-			instance_destroy();
+			transition_to_battle(rm_test);
 			break;
 		}
 		break; #endregion

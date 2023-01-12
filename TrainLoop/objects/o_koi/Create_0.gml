@@ -1,0 +1,10 @@
+time = 60*15;
+bite = 100;
+sprite = s_koi;
+sprite_index = s_empty;
+obj = o_koi;
+nme = "Koi Fish";
+state = "Idle";
+size = irandom_range(0, 10) + irandom_range(6, 16); 
+hp = 20 + size;
+//hp = 1;

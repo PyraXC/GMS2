@@ -1,0 +1,10 @@
+time = 60*7;
+bite = 80;
+sprite = s_killifish;
+sprite_index = s_empty;
+obj = o_killifish;
+nme = "Killifish";
+state = "Idle";
+size = irandom_range(0, 2) + irandom_range(1, 4); 
+hp = 6 + size;
+//hp = 1;

@@ -7,7 +7,7 @@ function place_transition(transition){
 	layer_sequence_create(lay, 0, 0, transition);
 }
 
-function TransitionsStart(_roomTarget, _typeOut, _typeIn)
+function RoomTransitionsStart(_roomTarget, _typeOut, _typeIn)
 {	
 	//don't change room
 	/*if(_roomTarget == -1){
@@ -31,10 +31,28 @@ function TransitionsStart(_roomTarget, _typeOut, _typeIn)
 	//}
 }
 
+function FadeOut(){
+	if(!global.midTransition){
+		global.midTransition = true;
+		place_transition(sq_fade_black);
+		return true;
+	}
+		else return false;
+}
+function FadeIn(){
+	if(!global.midTransition){
+		global.midTransition = true;
+		place_transition(sq_fade_in);
+		return true;
+	}
+		else return false;
+}
+
 function TransitionChangeRoom()
 {
 	room_goto(global.roomTarget);
 }
+
 
 function TransitionFinished(){
 	layer_sequence_destroy(self.elementID);

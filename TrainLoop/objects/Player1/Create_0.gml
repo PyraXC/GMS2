@@ -57,6 +57,7 @@ i = 0;
 i2 = 0;
 lag_count = 0;
 kills = 0;
+skele = noone;
 //Dependencies
 input = instance_create_layer(0, 0, "Instances", o_input);
 global.obj_list = [];

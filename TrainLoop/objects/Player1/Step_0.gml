@@ -11,6 +11,20 @@ switch (state)
 		i = 0;
 		grav = i_grav;
 	#endregion
+	/*
+	if keyboard_check_pressed(vk_enter){
+		skele = instance_nearest(x, y, o_skeleton_king);
+		instance_deactivate_object(skele);
+	}
+	if keyboard_check_pressed(vk_end){
+		skele.state = "Invincibility";
+	}
+	if keyboard_check_pressed(vk_shift){
+		instance_activate_object(skele);
+	}
+	if keyboard_check_pressed(vk_decimal){
+		room_goto(rm_battle1);
+	}*/
 	if input.run
 	{
 		run_speed = max_run_speed;

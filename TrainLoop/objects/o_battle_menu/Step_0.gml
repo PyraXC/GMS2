@@ -38,7 +38,7 @@ switch(menu_level){
 			case 2: menu_level = 2; pos = 0; break;
 			//Run battle
 			case 3: 
-			transition_to_battle(rm_test);
+			transition_to_battle();
 			break;
 		}
 		break; #endregion

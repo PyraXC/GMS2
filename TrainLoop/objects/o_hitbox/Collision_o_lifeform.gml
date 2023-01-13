@@ -33,9 +33,10 @@ if instance_exists(Player1)
 	{
 		add_screen_shake(4, 10);
 		o_gameState.turn = "Enemy";
-		start_battle(creator);
+		//transition_to_battle(rm_battle1);
+		/*start_battle(creator);
 		array_push(global.obj_list, creator);
-		instance_deactivate_object(creator);
+		instance_deactivate_object(creator);*/
 	}
 	if other.object_index == Player1 && (o_gameState.state == "Battle" or o_gameState.state == "Enemy" or o_gameState.state == "P1")
 	{

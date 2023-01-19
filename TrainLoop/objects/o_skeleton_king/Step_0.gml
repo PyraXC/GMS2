@@ -159,9 +159,9 @@ switch(state){
 }
 
 if(image_xscale != 1 or image_xscale != 0){image_xscale = 1; }
-if state != "Battle"{
-	cout(state);
-}
+//if state != "Battle"{
+	//cout(state);
+//}
 //cout(proj);
 //cout(ix);
 //cout(x);

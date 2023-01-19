@@ -14,3 +14,4 @@ window_set_rectangle(150, 150, 1920, 1080);
 surface_resize(application_surface, width, height);
 camera = camera_create_view(0, 0, viewSize.smallWidth, viewSize.smallHeight);
 view_set_camera(DEFAULT_VIEW, camera);
+transition = noone;

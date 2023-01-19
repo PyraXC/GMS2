@@ -33,7 +33,9 @@ if instance_exists(Player1)
 	{
 		add_screen_shake(4, 10);
 		o_gameState.turn = "Enemy";
-		//transition_to_battle(rm_battle1);
+		var transition = instance_create_layer(0, 0, "Instances", o_transition);
+		transition.creator = creator; 
+		transition.turn = "Enemy";
 		/*start_battle(creator);
 		array_push(global.obj_list, creator);
 		instance_deactivate_object(creator);*/

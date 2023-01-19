@@ -4,7 +4,7 @@ global.roomTarget = -1;
 function place_transition(transition){
 	if(layer_exists("transition")) layer_destroy("transition");
 	var lay = layer_create(-9999, "transition");
-	layer_sequence_create(lay, 0, 0, transition);
+	layer_sequence_create(lay, Player1.x, Player1.y, transition);
 }
 
 function RoomTransitionsStart(_roomTarget, _typeOut, _typeIn)
@@ -40,12 +40,12 @@ function FadeOut(){
 		else return false;
 }
 function FadeIn(){
-	if(!global.midTransition){
+	//if(!global.midTransition){
 		global.midTransition = true;
 		place_transition(sq_fade_in);
 		return true;
-	}
-		else return false;
+	//}
+		//else return false;
 }
 
 function TransitionChangeRoom()

@@ -192,7 +192,7 @@ switch (state)
 	}
 	if(timer > 0){
 		if(k ==1){
-			alarm[6+lr] = irandom_range(2,8)*30;
+			alarm[6+lr] = irandom_range(2,6)*30;
 			k++;
 		}
 		if(lr == 1){
@@ -220,6 +220,7 @@ switch (state)
 		if(inputs <= 0){
 			state = "Catch";
 			fish.state = "Collect";
+			fish.depth = -1;
 			o_water.fish = noone;
 			lr = 0;
 			timer = 0;

@@ -1,7 +1,7 @@
 
-function transition_to_battle(){
+function transition_to_battle(turn){
 	FadeOut();
 	state = "Noone";
 	Player1.state = "Noone";
-	alarm[7] = 25;
+	alarm[7] = 15;
 }

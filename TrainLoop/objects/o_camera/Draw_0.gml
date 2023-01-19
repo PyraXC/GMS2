@@ -1,4 +1,5 @@
 var cam = camera;
+transition = layer_get_id("transition");
 if(keyboard_check(vk_alt)){
 	camera_set_view_size(cam, viewSize.bigWidth, viewSize.bigHeight);
 }else if(keyboard_check(vk_control)){
@@ -19,3 +20,7 @@ y = lerp(y, target_y, 0.15);
 var VW = camera_get_view_width(cam);
 var VH = camera_get_view_height(cam);
 camera_set_view_pos(cam, player.x - VW/2 + 192, player.y - VH/2 - 160);
+if(layer_get_id("transition")){
+	//layer_x(transition, player.x - VW/2 + 192);
+	//layer_y(transition, player.y - VH/2 - 160);
+}

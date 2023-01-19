@@ -1,6 +1,7 @@
 switch(state){
 	case "Overworld":
 	turnList = [];
+	turn = noone;
 	i = 0;
 	enemyLen = 0;
 	alarm[0] = -1;
@@ -38,7 +39,13 @@ switch(state){
 			}
 		}
 		cout(turnList);
-		state = turn;
+		if turn = "Enemy"{
+			alarm[1] = 300;
+			state = "Noone";
+		}
+		else{
+			state = turn;
+		}
 	#endregion
 		break;
 		
@@ -58,7 +65,7 @@ switch(state){
 		instance_create_layer(Player1.x, Player1.y, "Instances", o_hud);	
 	}
 	if(enemyLen == 0){
-		alarm[1] = 300;
+		alarm[1] = 60;
 		state = "End Battle";
 	}
 	#endregion
@@ -136,3 +143,4 @@ switch(state){
 //cout(mainEnemy.state);
 //cout(enemyLen);
 //cout(i);
+//cout(turn);

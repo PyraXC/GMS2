@@ -113,10 +113,7 @@ switch (state)
 			state = "Jump";
 		}
 	
-	if animation_end()
-		{
-			state = "Move";
-		}
+
 	break;
 #endregion
 
@@ -124,6 +121,7 @@ switch (state)
 	#region Jump
 	#region stuff
 	set_state_sprite(s_jump, 1, 0);
+	air_movement();
 	if i == 0
 	{
 		grav = 0;
@@ -133,7 +131,6 @@ switch (state)
 	{
 		grav = i_grav;
 	}
-		air_movement();
 			#endregion
 			break;
 			#endregion
@@ -524,3 +521,4 @@ if hp > current_hp
 //cout(state);
 //cout(status);
 //cout(global.midTransition);
+//cout(jump_input);

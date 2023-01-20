@@ -2,10 +2,7 @@
   "resourceType": "GMTileSet",
   "resourceVersion": "1.0",
   "name": "TileSet1",
-  "spriteId": {
-    "name": "s_water",
-    "path": "sprites/s_water/s_water.yy",
-  },
+  "spriteId": null,
   "tileWidth": 32,
   "tileHeight": 32,
   "tilexoff": 0,

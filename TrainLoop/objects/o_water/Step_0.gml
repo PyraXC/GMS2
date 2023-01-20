@@ -4,12 +4,15 @@ switch(state){
 	alarm[0] = -1;
 	alarm[1] = -1;
 	if(abs(Player1.x - x) < 40 && abs(Player1.y - y) < 20){
-		if(!instance_exists(o_interact)){
-			instance_create_layer(x, y-64, "InstancesTop", o_interact);
+		if(!interactable){
+			interact = instance_create_layer(x, y-64, "InstancesTop", o_interact);
+			interact.depth = -1;
+			interactable = 1;
 		}
 		if(Player1.input.jump && (Player1.state == "Move" or Player1.state == "Idle")){
 			Player1.state = "Start Fishing";
-			instance_destroy(o_interact);
+			instance_destroy(interact);
+			interactable = 0;
 			instance_destroy(fish);
 			fish = noone;
 			state = "Fishin";
@@ -17,7 +20,10 @@ switch(state){
 			//alarm[0] = 180;
 		}
 	}
-	else{ instance_destroy(o_interact);}
+	else{ 
+		instance_destroy(interact);
+		interactable = 0;
+		}
 		break;
 		
 	case "Fishin":

@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "gmtest",
-    "path": "folders/Scripts/gmtest.yy",
+    "name": "Scripts",
+    "path": "folders/Scripts.yy",
   },
 }

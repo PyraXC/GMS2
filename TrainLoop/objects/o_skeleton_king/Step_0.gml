@@ -12,7 +12,7 @@ switch(state){
 	case "Attack":
 		set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
-			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 1, 1, "None", 0, image_xscale);
+			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 1, 0, "None", 0, image_xscale);
 			audio_play_sound(a_medium_hit, 1, 0);
 		}
 		if(animation_end()){

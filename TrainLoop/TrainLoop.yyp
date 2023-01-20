@@ -71,7 +71,7 @@
     {"id":{"name":"o_item","path":"objects/o_item/o_item.yy",},"order":3,},
     {"id":{"name":"animation_end","path":"scripts/animation_end/animation_end.yy",},"order":11,},
     {"id":{"name":"s_skeleton_king_ranged_attac","path":"sprites/s_skeleton_king_ranged_attac/s_skeleton_king_ranged_attac.yy",},"order":1,},
-    {"id":{"name":"can_jump","path":"scripts/can_jump/can_jump.yy",},"order":4,},
+    {"id":{"name":"can_jump","path":"scripts/can_jump/can_jump.yy",},"order":35,},
     {"id":{"name":"s_move","path":"sprites/s_move/s_move.yy",},"order":0,},
     {"id":{"name":"animation_hit_frame","path":"scripts/animation_hit_frame/animation_hit_frame.yy",},"order":6,},
     {"id":{"name":"s_box_jump","path":"sprites/s_box_jump/s_box_jump.yy",},"order":11,},

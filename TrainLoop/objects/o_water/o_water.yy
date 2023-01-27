@@ -3,8 +3,8 @@
   "resourceVersion": "1.0",
   "name": "o_water",
   "spriteId": {
-    "name": "s_water",
-    "path": "sprites/s_water/s_water.yy",
+    "name": "s_water_orig",
+    "path": "sprites/s_water_orig/s_water_orig.yy",
   },
   "solid": false,
   "visible": true,

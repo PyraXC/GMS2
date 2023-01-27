@@ -29,32 +29,39 @@ if accept_key{
 switch(menu_level){
 	#region main menu
 	case 0:
-	cout( o_input.queue);
-	if array_equals(o_input.queue, ["u","u","d","d","l","r","l","r","a","df","j"]){
-		Player1.state = "Battle Debug";
-		instance_destroy();
-		exit;
-	}
 		switch(pos){
-			//play
-			case 0: menu_level = 4; pos = 0; break;
-			//Equipment
-			case 1: menu_level = 1; pos = 0; break;
-			//Settings
-			case 2: menu_level = 2; pos = 0; break;
-			//Run battle
-			case 3: 
-			transition_to_battle();
+			//Check Enemy
+			case 0: menu_level = 1; pos = 0; break;
+			//Replace Eemy
+			case 1: menu_level = 2; pos = 0; break;
+			//Drop Items
+			case 2: menu_level = 3; pos = 0; break;
+			//Change Status
+			case 3: menu_level = 4; pos = 0; break; 
+			//Choose Attack
+			case 4: menu_level = 5; pos = 0; break;
+			//Enemy Attack
+			case 5: menu_level = 6; pos = 0; break;
+			//Exit
+			case 6: menu_level = 7; pos = 0; break;
 			break;
 		}
 		break; #endregion
-	#region Equip Menu
+	#region Check Enemy
 	case 1:
+	target = o_gameState.turnList[o_battle_debug_menu.lr];
+	cout("HP"+target.hp);
+	cout("Def"+target.defend);
+	cout("Drops"+target.drop_list);
+	cout("Xp"+target.xp);
+	cout("Status Left"+target.status_turns);
+	
 	if(array_length(Player1.weapon_inventory) > 0){
 		Player1.equip =  Player1.weapon_inventory[pos];
 		menu_level = 0;
 		pos = 0;
 	}
+	
 		break; #endregion
 	#region Items Menu
 	case 2:
@@ -79,9 +86,9 @@ switch(menu_level){
 	}
 		break; #endregion
 	#region Attack Menu
-	case 4:
+	case 6:
 		with(Player1){
-		state = o_battle_menu.option[o_battle_menu.menu_level, o_battle_menu.pos];
+		state = o_battle_debug_menu.option[o_battle_debug_menu.menu_level, o_battle_debug_menu.pos];
 		target = o_gameState.turnList[o_battle_menu.lr];
 		actions--;
 		}
@@ -91,6 +98,8 @@ switch(menu_level){
 		//instance_deactivate_object(self);
 		instance_destroy();
 		break; #endregion
+		
+	
 	}
 }
 //cout(option[menu_level]);

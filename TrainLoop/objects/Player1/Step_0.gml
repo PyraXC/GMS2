@@ -1,5 +1,21 @@
+#region debug stuff
+if(keyboard_check_pressed(vk_decimal)){
+	Player1.x = instance_nearest(x, y, o_enemy).x;
+	Player1.y = instance_nearest(x, y, o_enemy).y;
+}
+#endregion
+
+
 switch (state)
 {
+	case "Battle Debug":
+	#region battle editor
+	if(!instance_exists(o_battle_debug_menu)){
+		instance_create_layer(x, y, "Instances", o_battle_debug_menu);
+		cout("here");
+	}
+	#endregion
+	break;
 	case "Move":
 	#region Move State
 	#region Stuff

@@ -14,4 +14,8 @@ function get_input() {
 	l = keyboard_check_pressed(ord("A"));
 	d = keyboard_check_pressed(ord("S"));
 	u = keyboard_check_pressed(ord("W"));
+	j = keyboard_check_pressed(vk_space);
+	a = keyboard_check_pressed(ord("J"));
+	rn = keyboard_check_pressed(vk_shift);
+	df = keyboard_check_pressed(ord("K"));
 }

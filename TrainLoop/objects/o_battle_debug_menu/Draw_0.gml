@@ -16,6 +16,7 @@ for(var i = 0; i < op_length; i++)
 	}
 	if(menu_level == 1)//Check Enemy
 	{
+		var target = Player1.target;
 		draw_arrow(target.x, target.y-target.sprite_height-16, target.x, target.y-target.sprite_height, 16);
 	}
 	if(menu_level == 2){//Change Enemies

@@ -1,5 +1,5 @@
 #region debug stuff
-if(keyboard_check_pressed(vk_decimal)){
+if(keyboard_check_pressed(vk_f1)){
 	Player1.x = instance_nearest(x, y, o_enemy).x;
 	Player1.y = instance_nearest(x, y, o_enemy).y;
 }

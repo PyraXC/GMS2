@@ -16,7 +16,12 @@ for(var i = 0; i < op_length; i++)
 	}
 	if(menu_level == 1)//Check Enemy
 	{
-		var target = Player1.target;
+		var target = o_gameState.turnList[lr];
+		cout(lr);
+		var _c = c_ltgrey;
+		if pos == i{_c = c_yellow;}
+		draw_text_color(vx+op_border, vy + op_space*i+op_border, Player1.attack_list[i], _c, _c, _c, _c, 1); 
+		
 		draw_arrow(target.x, target.y-target.sprite_height-16, target.x, target.y-target.sprite_height, 16);
 	}
 	if(menu_level == 2){//Change Enemies

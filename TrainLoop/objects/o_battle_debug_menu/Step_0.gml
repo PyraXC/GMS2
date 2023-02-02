@@ -43,24 +43,23 @@ switch(menu_level){
 			//Enemy Attack
 			case 5: menu_level = 6; pos = 0; break;
 			//Exit
-			case 6: menu_level = 7; pos = 0; break;
+			case 6: 
+				Player1.state = "Battle";
+				instance_create_layer(x, y, "Instances", o_battle_menu);
+				instance_destroy();
+			
+			break;
 			break;
 		}
 		break; #endregion
 	#region Check Enemy
 	case 1:
-	target = o_gameState.turnList[o_battle_debug_menu.lr];
-	cout("HP"+target.hp);
-	cout("Def"+target.defend);
-	cout("Drops"+target.drop_list);
-	cout("Xp"+target.xp);
-	cout("Status Left"+target.status_turns);
-	
-	if(array_length(Player1.weapon_inventory) > 0){
-		Player1.equip =  Player1.weapon_inventory[pos];
-		menu_level = 0;
-		pos = 0;
-	}
+	var target = o_gameState.turnList[lr];
+	cout("HP"+string(target.hp));
+	cout("Def"+string(target.defend));
+	cout("Drops"+string(target.drop_list));
+	cout("Xp"+string(target.xp));
+	cout("Status Left"+string(target.status_turns));
 	
 		break; #endregion
 	#region Items Menu
@@ -103,4 +102,5 @@ switch(menu_level){
 	}
 }
 //cout(option[menu_level]);
+
 //cout(menu_level);

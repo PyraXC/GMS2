@@ -15,6 +15,9 @@ option[0, 3] = "Change Status";
 option[0, 4] = "Attack";
 option[0, 5] = "Enemy Attack";
 option[0, 6] = "Return to Fight";
+
+
+option[1, 0] = "";
 //equip
 /*
 for(var i = 0; i < array_length(Player1.weapon_inventory);i++;){

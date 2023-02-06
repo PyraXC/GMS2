@@ -1,8 +1,8 @@
 switch(state){
 	case "Not Gambling":
-		if(abs(Player1.x - x) < 40 && abs(Player1.y - y) < 20){
+		if(abs(Player1.x - x) < 40 && abs(Player1.y - y) < 40){
 		if(!interactable){
-			interact = instance_create_layer(x, y-64, "InstancesTop", o_interact);
+			interact = instance_create_layer(x, y, "InstancesTop", o_interact);
 			interact.depth = -1;
 			interactable = 1;
 		}

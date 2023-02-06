@@ -85,7 +85,7 @@ switch(menu_level){
 	}
 		break; #endregion
 	#region Attack Menu
-	case 6:
+	case 7:
 		with(Player1){
 		state = o_battle_debug_menu.option[o_battle_debug_menu.menu_level, o_battle_debug_menu.pos];
 		target = o_gameState.turnList[o_battle_menu.lr];

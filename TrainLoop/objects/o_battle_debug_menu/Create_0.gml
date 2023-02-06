@@ -11,13 +11,19 @@ vx=0;
 option[0,0] = "Check";
 option[0, 1] = "Replace";
 option[0, 2] = "Give Items";
-option[0, 3] = "Change Status";
-option[0, 4] = "Attack";
-option[0, 5] = "Enemy Attack";
-option[0, 6] = "Return to Fight";
+option[0, 3] = "Give Weapons";
+option[0, 4] = "Change Status";
+option[0, 5] = "Attack";
+option[0, 6] = "Enemy Attack";
+option[0, 7] = "Return to Fight";
 
-
-option[1, 0] = "";
+for(var i = 0; i<global.weapon_list; i++){
+	option[4, i] = global.weapon_list[i];
+}
+for(var i = 0; i<global.item_list; i++){
+	option[3, i] = global.item_list[i];
+}
+//option[1, 0] = "";
 //equip
 /*
 for(var i = 0; i < array_length(Player1.weapon_inventory);i++;){

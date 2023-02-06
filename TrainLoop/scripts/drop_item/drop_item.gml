@@ -1,5 +1,5 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+global.weapon_list = [o_katana, o_knife, o_unarmed];
+global.item_list = [o_health_potion, o_extra_action];
 ///argument0
 ///argument1
 function drop_item(argument0, argument1){
@@ -12,6 +12,6 @@ function drop_item(argument0, argument1){
 		drop = instance_create_layer(x, y, "Instances", drop_list[rng]);
 		drop.state = "Drop";
 		drop.alarm[0] = 60;
-		array_delete(drop_list, rng, 1);	
+		array_delete(drop_list, rng, 1);
 	}	
 }

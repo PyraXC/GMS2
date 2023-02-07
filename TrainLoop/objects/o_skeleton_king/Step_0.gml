@@ -23,6 +23,14 @@ switch(state){
 	case "Noone":
 	set_state_sprite(s_skeleton_king_idle, 1, 0);
 		break;
+	
+	case "Battle Debug":
+		Player1.state = "Battle Debug";
+		o_gameState.state = "P1";
+		o_gameState.debug = 0;
+		return_state = "Battle";
+		state = "Battle";
+		break;
 		
 	case "Battle":
 	set_state_sprite(s_skeleton_king_idle, 1, 0);
@@ -33,9 +41,9 @@ switch(state){
 		
 	case "Choose Attack":
 	rng = irandom_range(1,3);
-	projectile = 0;
+	//projectile = 0;
 		if(rng == 1){
-			state = "Battle Attack";
+			state = "Overhead Swing";
 			rng = irandom_range(1,3);
 			//cout("RNG 1");
 		}
@@ -44,12 +52,12 @@ switch(state){
 			//cout("RNG 2");
 		}
 		if(rng == 3){
-			state = "Battle Attack";
+			state = "Overhead Swing";
 			//cout("RNG 3");
 			}
 		break;
 		
-	case "Battle Attack":
+	case "Overhead Swing":
 		if(abs(x - Player1.x) <= 96){
 			set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
@@ -103,6 +111,7 @@ switch(state){
 		set_state_sprite(s_skeleton_king_idle, 1, 0);
 		if(alarm[9] == -1){
 			state = "Return";
+				projectile = 0;
 		}
 		
 		break;
@@ -117,7 +126,7 @@ switch(state){
 			}
 		}
 		else{
-			state = "Battle";
+			state = return_state;
 		}
 		break;
 		

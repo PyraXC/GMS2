@@ -1,4 +1,5 @@
 state = "Idle";
+return_state = "Battle";
 status = "None";
 status_turns = 0;
 instance = id;
@@ -23,4 +24,5 @@ o_skeleton_king,o_skeleton_king, o_skeleton_king
 drop_list = [o_health_potion, o_health_potion, 
 o_health_potion, o_knife, o_extra_action
 ];
+attack_list = ["Overhead Swing", "Ranged Attack"];
 drops = 1;

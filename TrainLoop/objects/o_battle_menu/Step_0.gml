@@ -83,6 +83,7 @@ switch(menu_level){
 		with(Player1){
 		state = o_battle_menu.option[o_battle_menu.menu_level, o_battle_menu.pos];
 		target = o_gameState.turnList[o_battle_menu.lr];
+		return_state = "Battle";
 		actions--;
 		}
 		menu_level = 0;

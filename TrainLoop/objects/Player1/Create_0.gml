@@ -27,6 +27,7 @@ money = 1000;
 max_hp = hp;
 current_hp = max_hp;
 state = "Move";
+return_state = "Move";
 status = "None";
 status_turns = 0;
 ix = 0;

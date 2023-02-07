@@ -3,9 +3,10 @@ pos = 0;
 width = 100;
 widthList = ds_list_create();
 height = 60;
-op_border = 10;
+op_border = 16;
 op_space = 20;
 //pause
+target = noone;
 vy = 0;
 vx=0;
 option[0,0] = "Check";
@@ -17,10 +18,11 @@ option[0, 5] = "Attack";
 option[0, 6] = "Enemy Attack";
 option[0, 7] = "Return to Fight";
 
-for(var i = 0; i<global.weapon_list; i++){
+
+for(var i = 0; i<array_length(global.weapon_list); i++){
 	option[4, i] = global.weapon_list[i];
 }
-for(var i = 0; i<global.item_list; i++){
+for(var i = 0; i<array_length(global.item_list); i++){
 	option[3, i] = global.item_list[i];
 }
 //option[1, 0] = "";

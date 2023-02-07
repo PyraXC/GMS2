@@ -450,7 +450,7 @@ switch (state)
 		}
 		else{
 			if(instance_exists(target)){cout(target.hp);}
-			state = "Battle";
+			state = return_state;
 		}
 		#endregion
 		break;
@@ -538,3 +538,4 @@ if hp > current_hp
 //cout(status);
 //cout(global.midTransition);
 //cout(jump_input);
+cout(return_state);

@@ -72,6 +72,7 @@ switch(state){
 		break;
 
 	case "Enemy":
+	if(!debug){
 	if(!instance_exists(o_hud)){
 		instance_create_layer(Player1.x, Player1.y, "Instances", o_hud);	
 	}
@@ -121,6 +122,7 @@ switch(state){
 		state = "P1";
 		Player1.actions++;
 		Player1.item_actions++;
+	}
 	}
 	#endregion
 		break;

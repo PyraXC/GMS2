@@ -113,6 +113,7 @@
     {"name":"s_skeleton_king_walk","order":2,"path":"sprites/s_skeleton_king_walk/s_skeleton_king_walk.yy",},
     {"name":"s_wall","order":1,"path":"sprites/s_wall/s_wall.yy",},
     {"name":"o_katana","order":2,"path":"objects/o_katana/o_katana.yy",},
+    {"name":"debug_battle_menu_update","order":36,"path":"scripts/debug_battle_menu_update/debug_battle_menu_update.yy",},
     {"name":"o_pause_menu","order":18,"path":"objects/o_pause_menu/o_pause_menu.yy",},
     {"name":"o_coin","order":4,"path":"objects/o_coin/o_coin.yy",},
     {"name":"o_unarmed","order":3,"path":"objects/o_unarmed/o_unarmed.yy",},

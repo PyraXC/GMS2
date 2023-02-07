@@ -33,4 +33,3 @@ case "Battle":
 	break;
 	#endregion
 }
-cout(player.x);

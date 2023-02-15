@@ -21,7 +21,7 @@ k = 0;
 rng = 0;
 #endregion
 target = noone;
-prev_state = "Move";
+//prev_state = "Move";
 hp = 20;
 money = 1000;
 max_hp = hp;

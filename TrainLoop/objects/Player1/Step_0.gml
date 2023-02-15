@@ -12,10 +12,10 @@ switch (state)
 	#region battle editor
 	if(!instance_exists(o_battle_debug_menu)){
 		instance_create_layer(x, y, "Instances", o_battle_debug_menu);
-		cout("here");
 	}
 	#endregion
 	break;
+	
 	case "Move":
 	#region Move State
 	#region Stuff
@@ -419,23 +419,36 @@ switch (state)
 
 	case "Bone":
 	#region Bone Item
-	
+	set_state_sprite(s_throw_bone, 1, 0);
+	if animation_end(){
+		var bone = instance_create_layer(x, y, "Instances", o_bone_projectile);
+		bone.creator = Player1;
+		bone.target = target;
+		item.durability--;
+		state = return_state;
+	}
 	#endregion
 		break;
 		
 	case "Health Potion":
 	#region Health Item
-	hp += item.damage;
-	item.durability--;
-	state = prev_state;
+	set_state_sprite(s_drink_health, 1, 0);
+	if animation_end(){
+		hp += item.damage;
+		item.durability--;
+		state = return_state;
+	}
 	#endregion
 		break;
 		
 	case "Extra Action":
 	#region Extra Action Item
-	actions += item.damage;
-	item.durability--;
-	state = "Battle";
+	set_state_sprite(s_drink_action, 1, 0);
+	if animation_end(){
+		actions += item.damage;
+		item.durability--;
+		state = return_state;
+	}
 	#endregion
 		break;
 
@@ -538,4 +551,4 @@ if hp > current_hp
 //cout(status);
 //cout(global.midTransition);
 //cout(jump_input);
-cout(return_state);
+//cout(return_state);

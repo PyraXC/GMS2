@@ -70,11 +70,6 @@ switch(menu_level){
 	#region Check Enemy
 	case 1:
 	target = o_gameState.turnList[lr];
-	cout("HP"+string(target.hp));
-	cout("Def"+string(target.defend));
-	cout("Drops"+string(target.drop_list));
-	cout("Xp"+string(target.xp));
-	cout("Status Left"+string(target.status_turns));
 	
 		break; #endregion
 	#region Change Enemies
@@ -84,7 +79,7 @@ switch(menu_level){
 			with(Player1){
 				item = item_inventory[o_battle_menu.pos];
 				state = o_battle_menu.option[o_battle_menu.menu_level, o_battle_menu.pos];
-				prev_state = "Battle";
+				return_state = "Battle";
 				item_actions--;
 			}
 			menu_level = 0;

@@ -15,6 +15,13 @@ for(var i = 0; i < op_length; i++)
 		if pos == i{_c = c_yellow;}
 		draw_text_color(vx+op_border, vy + op_space*i+op_border, option[menu_level, i], _c, _c, _c, _c, 1); 
 	}
+	if(menu_level == 1)//Check Enemy
+	{
+		var _c = c_ltgrey;
+		draw_text_color(vx+op_border, vy + op_space*i+op_border, option[menu_level, i], _c, _c, _c, _c, 1); 
+		var target = o_gameState.turnList[lr];
+		draw_arrow(target.x, target.y-target.sprite_height-16, target.x, target.y-target.sprite_height, 16);
+	}
 	if(menu_level == 2){//Change Enemies
 
 	}
@@ -53,9 +60,4 @@ if(menu_level == 7)//Check Enemy
 		draw_text_color(vx+op_border, vy + op_space*i+op_border, drw, _c, _c, _c, _c, 1); 
 	}
 }
-if(menu_level == 1)//Check Enemy
-	{
-		var target = o_gameState.turnList[lr];
-		draw_arrow(target.x, target.y-target.sprite_height-16, target.x, target.y-target.sprite_height, 16);
-	}
 

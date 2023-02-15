@@ -65,7 +65,7 @@ switch(state){
 		instance_create_layer(Player1.x, Player1.y, "Instances", o_hud);	
 	}
 	if(enemyLen == 0){
-		alarm[1] = 60;
+		alarm[2] = 200;
 		state = "End Battle";
 	}
 	#endregion
@@ -77,9 +77,8 @@ switch(state){
 		instance_create_layer(Player1.x, Player1.y, "Instances", o_hud);	
 	}
 	if(enemyLen == 0){
-		alarm[1] = 300;
+		alarm[2] = 200;
 		state = "End Battle";
-		break;
 	}
 	//cout("Enemy Phase");
 	#region Enemy Turn
@@ -128,7 +127,7 @@ switch(state){
 		break;
 		
 	case "End Battle":
-	if(alarm[1] = -1){
+	if(alarm[2] == -1){
 		win_battle();
 		mainEnemy.state = "Defeated";
 		//cout("Won");

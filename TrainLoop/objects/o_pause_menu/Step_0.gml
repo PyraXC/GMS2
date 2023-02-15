@@ -54,7 +54,7 @@ switch(menu_level){
 		with(Player1){
 			item = item_inventory[o_pause_menu.pos];
 			state = o_pause_menu.option[o_pause_menu.menu_level, o_pause_menu.pos];
-			prev_state = "Paused";
+			return_state = "Paused";
 		}
 		menu_level = 0;
 		pos = 0;

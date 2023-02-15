@@ -34,8 +34,13 @@ if(target != noone){
 	arry = [];
 	for(var i = 0; i < array_length(o_battle_debug_menu.target.attack_list);i++;){
 		option[7, i] = o_battle_debug_menu.target.attack_list[i];
-		cout("attack " + string(i)); 
+		//cout("attack " + string(i)); 
 	}
+	option[1,0]=("HP "+string(target.hp));
+	option[1,1] = ("Def "+string(target.defend));
+	option[1,2] =("Drops "+string(target.drop_list));
+	option[1,3] =("Xp "+string(target.xp));
+	option[1,4] =("Status Left "+string(target.status_turns));
 }
 
 }

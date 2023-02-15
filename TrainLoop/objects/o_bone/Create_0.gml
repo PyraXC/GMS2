@@ -5,3 +5,6 @@ index = 0;
 state = "NONE";
 xspeed = irandom_range(-8,8);
 yspeed = irandom_range(-8, -4);
+icon = s_bone_i;
+spr = s_bone;
+obj = self;

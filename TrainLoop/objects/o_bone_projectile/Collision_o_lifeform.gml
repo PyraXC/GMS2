@@ -1,4 +1,5 @@
-if(other == target){	
-	create_hitbox(x, y, creator, s_bone, 0, 0, 1, damage, "Noone", 0, image_xscale);
-	instance_destroy();
+if(other.id == target){	
+	
+	create_hitbox(x, y, creator, s_bone, 1, 1, 2, damage, "None", 0, image_xscale);
+	instance_destroy(self);
 }

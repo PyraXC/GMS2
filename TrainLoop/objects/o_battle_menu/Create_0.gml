@@ -5,6 +5,7 @@ widthList = ds_list_create();
 height = 60;
 op_border = 10;
 op_space = 20;
+target = Player1.target;
 //pause
 vy = 0;
 vx=0;

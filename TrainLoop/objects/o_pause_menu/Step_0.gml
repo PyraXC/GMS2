@@ -72,5 +72,8 @@ switch(menu_level){
 		break; #endregion
 	}
 }
+if(Player1.state == "Battle"){
+	instance_destroy();
+}
 //cout(option[menu_level]);
 //cout(menu_level);

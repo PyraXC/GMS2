@@ -14,9 +14,9 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"af2a3635-aede-49a8-a53d-0ce866c653fb",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"2e438464-5703-4371-b60d-b46b7596ad5d",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"146d8d95-d0a1-4320-af68-3fad54e011ed",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b65f277e-9df6-4a09-86e3-c8cf67b555aa",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"6f832496-a7b2-44c2-80a3-b8f24f4ff838",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"698b4b07-40f3-485a-b08b-b86d57aa2014",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"44ebaa2d-5fe9-4745-98a5-76847d0209f0",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -58,9 +58,9 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"af2a3635-aede-49a8-a53d-0ce866c653fb","path":"sprites/s_drink_health/s_drink_health.yy",},},},"Disabled":false,"id":"e3987272-72d6-411a-b86a-147cf339da99","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"2e438464-5703-4371-b60d-b46b7596ad5d","path":"sprites/s_drink_health/s_drink_health.yy",},},},"Disabled":false,"id":"bbd25f5d-bfbd-4c16-8e98-ac1f08993c42","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"146d8d95-d0a1-4320-af68-3fad54e011ed","path":"sprites/s_drink_health/s_drink_health.yy",},},},"Disabled":false,"id":"3bb22d6d-19ea-4fa5-b3cd-30a1e69c93f5","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b65f277e-9df6-4a09-86e3-c8cf67b555aa","path":"sprites/s_drink_health/s_drink_health.yy",},},},"Disabled":false,"id":"3d543505-cc9b-4505-adf9-59a6260bc775","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"6f832496-a7b2-44c2-80a3-b8f24f4ff838","path":"sprites/s_drink_health/s_drink_health.yy",},},},"Disabled":false,"id":"29b01796-b1b7-464a-8e9e-fdd7ec93fb74","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"698b4b07-40f3-485a-b08b-b86d57aa2014","path":"sprites/s_drink_health/s_drink_health.yy",},},},"Disabled":false,"id":"c8c37d46-a97c-4a16-b9e2-d4f6272428be","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"44ebaa2d-5fe9-4745-98a5-76847d0209f0","path":"sprites/s_drink_health/s_drink_health.yy",},},},"Disabled":false,"id":"f3d72b35-a2ac-472e-8ee8-3e5cfbed1422","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

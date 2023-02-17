@@ -19,7 +19,7 @@ projectile = 0;
 proj = noone;
 target = Player1;
 enemies = [o_skeleton_king,
-//o_skeleton_king,o_skeleton_king, o_skeleton_king
+o_skeleton_king,o_skeleton_king, o_skeleton_king
 ];
 drop_list = [o_health_potion, o_health_potion, 
 o_health_potion, o_knife, o_extra_action

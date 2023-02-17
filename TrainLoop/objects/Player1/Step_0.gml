@@ -421,7 +421,7 @@ switch (state)
 	#region Bone Item
 	set_state_sprite(s_throw_bone, 1, 0);
 	if animation_end(){
-		var bone = instance_create_layer(x, y, "Instances", o_bone_projectile);
+		var bone = instance_create_layer(x, y-64, "InstancesTop", o_bone_projectile);
 		bone.creator = Player1;
 		bone.target = target;
 		item.durability--;
@@ -552,3 +552,4 @@ if hp > current_hp
 //cout(global.midTransition);
 //cout(jump_input);
 //cout(return_state);
+//cout(target);

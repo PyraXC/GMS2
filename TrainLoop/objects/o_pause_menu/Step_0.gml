@@ -45,7 +45,7 @@ switch(menu_level){
 	#region Equip Menu
 	case 1:
 	if(array_length(Player1.weapon_inventory) > 0){
-		Player1.equip = Player1.weapon_inventory[pos];
+		Player1.weapon = Player1.weapon_inventory[pos];
 	}
 		break; #endregion
 	#region Items Menu

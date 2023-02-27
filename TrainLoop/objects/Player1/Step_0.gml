@@ -26,6 +26,8 @@ switch (state)
 		idle_time = 0;
 		i = 0;
 		grav = i_grav;
+		actions = 1;
+		item_actions = 1;
 	#endregion
 	/*
 	if keyboard_check_pressed(vk_enter){
@@ -359,7 +361,7 @@ switch (state)
 	#region Stab Attack
 	set_state_sprite(s_attack, 1, 0);
 	if(animation_hit_frame(3)){
-		create_hitbox(x, y, self, s_attack_damage, 0, 0, 1, 1*equip.damage + 2, "None", 0, image_xscale);
+		create_hitbox(x, y, self, s_attack_damage, 0, 0, 1, 1*weapon.damage + 2, "None", 0, image_xscale);
 		audio_play_sound(a_medium_hit, 1, 0);	
 	}
 	if(animation_end()){
@@ -383,7 +385,7 @@ switch (state)
 	#region Stab Attack
 	set_state_sprite(s_sweep, 1, 0);
 	if(animation_hit_frame(3)){
-		create_hitbox(x, y, self, s_sweep_damage, 0, 0, 1, 1*equip.damage, "Break", 100, image_xscale);
+		create_hitbox(x, y, self, s_sweep_damage, 0, 0, 1, 1*weapon.damage, "Break", 100, image_xscale);
 		audio_play_sound(a_swipe, 1, 0);
 	}
 	if(animation_end()){
@@ -407,7 +409,7 @@ switch (state)
 	#region Stab Attack
 	set_state_sprite(s_overhead, 1, 0);
 	if(animation_hit_frame(3)){
-		create_hitbox(x, y, self, s_overhead_damage, 0, 0, 1, 1*equip.damage, "Topple", 100, image_xscale);
+		create_hitbox(x, y, self, s_overhead_damage, 0, 0, 1, 1*weapon.damage, "Topple", 100, image_xscale);
 		audio_play_sound(a_medium_hit, 1, 0);
 	}
 	if(animation_end()){
@@ -553,3 +555,4 @@ if hp > current_hp
 //cout(jump_input);
 //cout(return_state);
 //cout(target);
+cout(weapon_inventory);

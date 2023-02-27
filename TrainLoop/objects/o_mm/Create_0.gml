@@ -6,7 +6,7 @@ op_border = 12;
 op_space = 18
 //pause
 option[0,0] = "Start Game";
-option[0, 1] = "Equipment";
+option[0, 1] = "Weapons";
 option[0, 2] = "Settings";
 option[0, 3] = "Quit Game";
 //equip

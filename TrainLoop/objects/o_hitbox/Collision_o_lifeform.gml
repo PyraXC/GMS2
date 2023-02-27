@@ -3,7 +3,7 @@ if creator == noone or creator == other or ds_list_find_index(hit_objects, other
 		exit;
 	}
 if creator.object_index == Player1{
-	other.hp -= (damage*crit_chance(creator.equip.crit)) * other.defend;
+	other.hp -= (damage*crit_chance(creator.weapon.crit)) * other.defend;
 	if creator.status == "Fire" && status == "None"{
 		calc_status(other, "Fire", 50);
 	}else{calc_status(other, status, statrng);}
@@ -20,7 +20,7 @@ if(other.state != "Defend"){
 if instance_exists(Player1)
 {
 	if creator.object_index == Player1{
-		Player1.equip.durability -= 1;
+		Player1.weapon.durability -= 1;
 	}
 	if creator.object_index == Player1 && other.hp <= 0 and other.state != "Death"
 	{

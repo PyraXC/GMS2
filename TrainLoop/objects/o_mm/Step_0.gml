@@ -14,7 +14,7 @@ switch(menu_level){
 		switch(pos){
 			//play
 			case 0: room = rm_Graveyard; pos = 0; break;
-			//Equipment
+			//Weapon
 			case 1: menu_level = 1; pos = 0; break;
 			//Settings
 			case 2: menu_level = 2; pos = 0; break;

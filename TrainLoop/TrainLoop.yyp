@@ -140,6 +140,7 @@
     {"id":{"name":"palette","path":"sprites/palette/palette.yy",},},
     {"id":{"name":"o_hitbox","path":"objects/o_hitbox/o_hitbox.yy",},},
     {"id":{"name":"o_interact","path":"objects/o_interact/o_interact.yy",},},
+    {"id":{"name":"s_bone_damage","path":"sprites/s_bone_damage/s_bone_damage.yy",},},
     {"id":{"name":"s_stop_fishing","path":"sprites/s_stop_fishing/s_stop_fishing.yy",},},
     {"id":{"name":"o_gameState","path":"objects/o_gameState/o_gameState.yy",},},
     {"id":{"name":"s_pixel","path":"sprites/s_pixel/s_pixel.yy",},},

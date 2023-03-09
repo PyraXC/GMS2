@@ -106,6 +106,7 @@
     {"name":"palette","order":5,"path":"sprites/palette/palette.yy",},
     {"name":"o_hitbox","order":1,"path":"objects/o_hitbox/o_hitbox.yy",},
     {"name":"o_interact","order":14,"path":"objects/o_interact/o_interact.yy",},
+    {"name":"s_bone_damage","order":6,"path":"sprites/s_bone_damage/s_bone_damage.yy",},
     {"name":"s_stop_fishing","order":4,"path":"sprites/s_stop_fishing/s_stop_fishing.yy",},
     {"name":"o_gameState","order":1,"path":"objects/o_gameState/o_gameState.yy",},
     {"name":"s_pixel","order":22,"path":"sprites/s_pixel/s_pixel.yy",},

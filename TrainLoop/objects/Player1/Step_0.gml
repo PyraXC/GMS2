@@ -385,7 +385,7 @@ switch (state)
 	#region Stab Attack
 	set_state_sprite(s_sweep, 1, 0);
 	if(animation_hit_frame(3)){
-		create_hitbox(x, y, self, s_sweep_damage, 0, 0, 1, 1*weapon.damage, "Break", 100, image_xscale);
+		create_hitbox(x, y, self, s_sweep_damage, 0, 0, 1, max(1, weapon.damage-2), "Break", 100, image_xscale);
 		audio_play_sound(a_swipe, 1, 0);
 	}
 	if(animation_end()){
@@ -555,4 +555,4 @@ if hp > current_hp
 //cout(jump_input);
 //cout(return_state);
 //cout(target);
-cout(weapon_inventory);
+//cout(weapon_inventory);

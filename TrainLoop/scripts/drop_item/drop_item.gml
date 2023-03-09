@@ -1,5 +1,5 @@
 global.weapon_list = [o_katana, o_knife, o_unarmed];
-global.item_list = [o_health_potion, o_extra_action];
+global.item_list = [o_bone, o_health_potion, o_extra_action];
 ///@arg drop list
 ///@arg drops
 function drop_item(argument0, argument1){

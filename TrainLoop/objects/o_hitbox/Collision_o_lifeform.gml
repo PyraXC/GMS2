@@ -3,7 +3,7 @@ if creator == noone or creator == other or ds_list_find_index(hit_objects, other
 		exit;
 	}
 if creator.object_index == Player1{
-	other.hp -= (damage*crit_chance(creator.weapon.crit)) * other.defend;
+	other.hp -= floor((damage*crit_chance(creator.weapon.crit)) * other.defend);
 	if creator.status == "Fire" && status == "None"{
 		calc_status(other, "Fire", 50);
 	}else{calc_status(other, status, statrng);}
@@ -42,9 +42,11 @@ if instance_exists(Player1)
 	}
 	if other.object_index == Player1 && (o_gameState.state == "Battle" or o_gameState.state == "Enemy" or o_gameState.state == "P1")
 	{
-		if other.hp <= 0
+		if other.hp == 0
 		{
+			other.xp *= 1.5;
 			other.state = "Death";
+		
 			//ini_open("save.ini")
 			//ini_write_real("Scores", "Kills", other.kills);
 			//var highscore = ini_read_real("Scores", "highscore", 0);
@@ -53,6 +55,9 @@ if instance_exists(Player1)
 			//		ini_write_real("Scores", "highscore", other.kills);
 			//	}
 			//ini_close();
+		}
+		else if other.hp < 0{
+			other.state = "Death";
 		}
 		else
 		{

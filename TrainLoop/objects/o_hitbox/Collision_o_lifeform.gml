@@ -3,6 +3,7 @@ if creator == noone or creator == other or ds_list_find_index(hit_objects, other
 		exit;
 	}
 if creator.object_index == Player1{
+	cout("hit");
 	other.hp -= floor((damage*crit_chance(creator.weapon.crit)) * other.defend);
 	if creator.status == "Fire" && status == "None"{
 		calc_status(other, "Fire", 50);

@@ -26,7 +26,7 @@ var padding_x = 8;
 var padding_y = 8;
 draw_rectangle_color(start_x, start_y, start_x +text_width + padding_x, start_y + text_height + padding_y, c_black, c_black, c_black, c_black, false); 
 draw_text(start_x + padding_x/2, start_y + padding_y, text);
-var equip = "Weapon: " + string(Player1.weapon.weapon);
+var equip = "Weapon: " + string(Player1.weapon.item);
 var start_x2 = text_width + start_x*2;
 text_width = string_width(equip);
 draw_rectangle_color(start_x2, start_y, start_x2 +text_width + padding_x, start_y + text_height + padding_y, c_black, c_black, c_black, c_black, false); 

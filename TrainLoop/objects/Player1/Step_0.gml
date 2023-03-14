@@ -11,7 +11,8 @@ switch (state)
 	case "Battle Debug":
 	#region battle editor
 	if(!instance_exists(o_battle_debug_menu)){
-		instance_create_layer(x, y, "Instances", o_battle_debug_menu);
+		var temp = instance_create_layer(x, y, "InstancesTop", o_battle_debug_menu);
+		temp.depth--;
 	}
 	#endregion
 	break;
@@ -385,7 +386,7 @@ switch (state)
 	#region Stab Attack
 	set_state_sprite(s_sweep, 1, 0);
 	if(animation_hit_frame(3)){
-		create_hitbox(x, y, self, s_sweep_damage, 0, 0, 1, max(1, weapon.damage-2), "Break", 100, image_xscale);
+		create_hitbox(x, y, self, s_sweep_damage, 0, 0, 10, max(1, weapon.damage-2), "Break", 100, image_xscale);
 		audio_play_sound(a_swipe, 1, 0);
 	}
 	if(animation_end()){

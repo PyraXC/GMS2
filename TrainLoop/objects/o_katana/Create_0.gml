@@ -1,7 +1,7 @@
 damage = 6;
 durability = 8;
 crit = 20;
-weapon = "Katana";
+item = "Katana";
 index = 0;
 state = "NONE";
 xspeed = irandom_range(-6,6);

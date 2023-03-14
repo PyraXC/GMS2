@@ -4,10 +4,12 @@ right_key =keyboard_check_pressed(ord("D"));
 left_key =keyboard_check_pressed(ord("A")); 
 accept_key = keyboard_check_pressed(vk_space);
 return_key = keyboard_check_pressed(vk_backspace);
-var VW = camera_get_view_width(o_camera.camera);
-var VH = camera_get_view_height(o_camera.camera);
-vx = Player1.x - VW/2 + 192;
-vy = Player1.y - VH/2 - 96;
+
+//vx = Player1.x - VW/2 + 196;
+//vy = Player1.y - VH/2 - 88;
+vx = camera_get_view_x(o_camera.camera);
+vy = camera_get_view_x(o_camera.camera)+VH/2;
+cout(string(vx) + " " + string(vy));
 pos += down_key - up_key;
 if pos >= op_length{pos = 0;}
 if pos < 0 {pos = op_length - 1;}

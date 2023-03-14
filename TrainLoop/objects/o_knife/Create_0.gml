@@ -1,7 +1,7 @@
 damage = 4;
 durability = 5;
 crit = 10;
-weapon = "Knife";
+item = "Knife";
 index = 0;
 state = "NONE";
 xspeed = irandom_range(-6,6);

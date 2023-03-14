@@ -23,7 +23,7 @@ function create_hitbox(argument0, argument1, argument2, argument3, argument4, ar
 	var statrng = argument9;
 	var xscale = argument10;
 
-	var hitbox = instance_create_layer(x_position, y_position, "Instances", o_hitbox);
+	var hitbox = instance_create_layer(x_position, y_position, "InstancesTop", o_hitbox);
 	hitbox.sprite_index = sprite;
 	hitbox.creator = creator;
 	hitbox.knockback = knockback;

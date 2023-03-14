@@ -24,5 +24,6 @@ o_skeleton_king,o_skeleton_king, o_skeleton_king
 drop_list = [o_health_potion, o_health_potion, 
 o_health_potion, o_knife, o_extra_action
 ];
+print_drop_list = "HP Pot:60% Knife:20% ExAct:20%";
 attack_list = ["Overhead Swing", "Ranged Attack"];
 drops = 1;

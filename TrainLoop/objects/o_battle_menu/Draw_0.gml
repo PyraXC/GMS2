@@ -18,7 +18,7 @@ for(var i = 0; i < op_length; i++)
 	{
 		var _c = c_ltgrey;
 		if pos == i{_c = c_yellow;}
-		draw_text_color(vx+op_border, vy + op_space*i+op_border, Player1.weapon_inventory[i].weapon, _c, _c, _c, _c, 1); 
+		draw_text_color(vx+op_border, vy + op_space*i+op_border, Player1.weapon_inventory[i].item, _c, _c, _c, _c, 1); 
 		draw_sprite(Player1.weapon_inventory[i].icon, 0, vx+width+op_border+16, vy+24+op_space*i);
 	}
 	if(menu_level == 2){//draw items

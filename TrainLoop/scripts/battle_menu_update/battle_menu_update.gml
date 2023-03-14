@@ -12,7 +12,7 @@ for(var i = 0; i < array_length(Player1.weapon_inventory);i++;){
 	temp = Player1.weapon_inventory[i];
 	instance_activate_object(temp);
 	//instance_activate_object(temp);
-	array_push(arry, temp.weapon);
+	array_push(arry, temp.item);
 	temp.index = i;
 }
 	option[1] = arry;

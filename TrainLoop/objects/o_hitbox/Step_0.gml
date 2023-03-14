@@ -1,0 +1,1 @@
+set_state_sprite(sprite_index, 1, 0);

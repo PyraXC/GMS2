@@ -7,8 +7,8 @@ return_key = keyboard_check_pressed(vk_backspace);
 
 //vx = Player1.x - VW/2 + 196;
 //vy = Player1.y - VH/2 - 88;
-vx = camera_get_view_x(o_camera.camera);
-vy = camera_get_view_x(o_camera.camera)+VH/2;
+vx = camera_get_view_x(o_camera.camera) + (24);
+vy = camera_get_view_x(o_camera.camera)+VH/2 + (83);
 cout(string(vx) + " " + string(vy));
 pos += down_key - up_key;
 if pos >= op_length{pos = 0;}

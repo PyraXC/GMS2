@@ -544,7 +544,7 @@ if hp > current_hp
 //show_debug_message(launch_speed_y);
 //show_debug_message(tether_range);
 //show_debug_message(zero_degree_meter);
-//show_debug_message(hp);
+show_debug_message(hp);
 //cout(lag_count);
 //cout(ix);
 //cout(weapon_inventory);

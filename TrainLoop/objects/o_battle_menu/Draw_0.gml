@@ -16,18 +16,27 @@ for(var i = 0; i < op_length; i++)
 	}
 	if(menu_level == 1)//Draw Weapons
 	{
+		var drw = Player1.weapon_inventory[i];
+		var drw_i = drw.icon;
+		var drw_x = vx+width+op_border+16;
+		var drw_y = vy+8+op_space*i;
 		var _c = c_ltgrey;
 		if pos == i{_c = c_yellow;}
-		draw_text_color(vx+op_border, vy + op_space*i+op_border, Player1.weapon_inventory[i].item, _c, _c, _c, _c, 1); 
-		draw_sprite(Player1.weapon_inventory[i].icon, 0, vx+width+op_border+16, vy+24+op_space*i);
+		draw_text_color(vx+op_border, vy + op_space*i+op_border, drw.item, _c, _c, _c, _c, 1); 
+		draw_sprite(drw_i, 0, drw_x, drw_y);
+		draw_rectangle(drw_x - 1, drw_y - 1, drw_x+sprite_get_width(drw_i), drw_y+sprite_get_height(drw_i), true);
 	}
 	if(menu_level == 2){//draw items
 		var drw = Player1.item_inventory[i];
+		var drw_i = drw.icon;
+		var drw_x = vx+width+op_border+16;
+		var drw_y = vy+8+op_space*i;
 		var _c = c_ltgrey;
 		var target = Player1.target;
 		if pos == i{_c = c_yellow;}
 		draw_text_color(vx+op_border, vy + op_space*i+op_border, drw.item, _c, _c, _c, _c, 1); 
-		draw_sprite(drw.icon, drw.durability, vx+width+op_border+16, vy+24+op_space*i);
+		draw_sprite(drw_i, drw.durability, drw_x, drw_y);
+		draw_rectangle(drw_x - 1, drw_y -1, drw_x + sprite_get_width(drw_i), drw_y + sprite_get_height(drw_i), true);
 		draw_arrow(target.x, target.y-target.sprite_height-16, target.x, target.y-target.sprite_height, 16);
 	}
 	if(menu_level == 4)//Draw Attacks/Target indicator

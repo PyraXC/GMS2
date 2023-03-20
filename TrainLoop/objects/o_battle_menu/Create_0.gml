@@ -9,6 +9,8 @@ target = Player1.target;
 //pause
 vy = 0;
 vx=0;
+VW = camera_get_view_width(o_camera.camera);
+VH = camera_get_view_height(o_camera.camera);
 option[0,0] = "Attack";
 option[0, 1] = "Equipment";
 option[0, 2] = "Items";

@@ -10,7 +10,7 @@ if creator.object_index == Player1{
 	}else{calc_status(other, status, statrng);}
 }
 else{
-	other.hp -= damage * other.defend;
+	other.hp -= ceil(damage * other.defend);
 	if creator.status == "Fire" && status == "None"{
 		calc_status(other, "Fire", 50);
 	}else{calc_status(other, status, statrng);}

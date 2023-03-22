@@ -43,16 +43,16 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"fishing","folderPath":"folders/Sprites/Player/fishing.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Movement","folderPath":"folders/Sprites/Player/Movement.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Skele","folderPath":"folders/Sprites/Skele.yy",},
+    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UI","folderPath":"folders/Sprites/UI.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Weapons","folderPath":"folders/Sprites/Weapons.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
-    {"resourceType":"GMFolder","resourceVersion":"1.0","name":"UI","folderPath":"folders/Sprites/UI.yy",},
   ],
   "IncludedFiles": [],
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.2.0.71",
+    "IDEVersion": "2023.2.1.75",
   },
   "resources": [
     {"id":{"name":"o_mm","path":"objects/o_mm/o_mm.yy",},},

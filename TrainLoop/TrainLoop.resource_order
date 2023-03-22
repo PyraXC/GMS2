@@ -28,10 +28,10 @@
     {"name":"fishing","order":13,"path":"folders/Sprites/Player/fishing.yy",},
     {"name":"Movement","order":14,"path":"folders/Sprites/Player/Movement.yy",},
     {"name":"Skele","order":2,"path":"folders/Sprites/Skele.yy",},
+    {"name":"UI","order":10,"path":"folders/Sprites/UI.yy",},
     {"name":"Weapons","order":6,"path":"folders/Sprites/Weapons.yy",},
     {"name":"Tile Sets","order":1,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":7,"path":"folders/Timelines.yy",},
-    {"name":"UI","order":10,"path":"folders/Sprites/UI.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"o_mm","order":7,"path":"objects/o_mm/o_mm.yy",},

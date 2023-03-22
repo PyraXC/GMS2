@@ -19,4 +19,4 @@ switch(state){
 	y = approach(y, Player1.y-16, 10);
 		break;
 }
-//cout(state);
+cout("Active?");

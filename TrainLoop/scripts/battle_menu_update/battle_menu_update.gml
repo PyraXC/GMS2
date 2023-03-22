@@ -10,8 +10,9 @@ for(var i = 0; i < array_length(option[menu_level]); i++){
 	var arry = [];
 for(var i = 0; i < array_length(Player1.weapon_inventory);i++;){
 	temp = Player1.weapon_inventory[i];
-	instance_activate_object(temp);
 	//instance_activate_object(temp);
+	//instance_activate_object(temp);
+	cout(temp);
 	array_push(arry, temp.item);
 	temp.index = i;
 }
@@ -20,7 +21,7 @@ for(var i = 0; i < array_length(Player1.weapon_inventory);i++;){
 //setting
 for(var i = 0; i < array_length(Player1.item_inventory);i++;){
 	temp = Player1.item_inventory[i];
-	instance_activate_object(temp);
+	//instance_activate_object(temp);
 	//instance_activate_object(temp);
 	array_push(arry, temp.item);
 	temp.index = i;

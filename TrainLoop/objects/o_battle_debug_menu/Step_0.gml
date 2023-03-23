@@ -9,7 +9,7 @@ return_key = keyboard_check_pressed(vk_backspace);
 //vy = Player1.y - VH/2 - 88;
 vx = camera_get_view_x(o_camera.camera) + (24);
 vy = camera_get_view_x(o_camera.camera)+VH/2 + (83);
-cout(string(vx) + " " + string(vy));
+
 pos += down_key - up_key;
 if pos >= op_length{pos = 0;}
 if pos < 0 {pos = op_length - 1;}

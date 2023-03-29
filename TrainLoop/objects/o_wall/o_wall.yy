@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Game Functions",
-    "path": "folders/Objects/Game Functions.yy",
+    "name": "Misc",
+    "path": "folders/Objects/Misc.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -29,9 +29,9 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "s_wall",
-    "path": "sprites/s_wall/s_wall.yy",
+    "name": "s_wall_lr",
+    "path": "sprites/s_wall_lr/s_wall_lr.yy",
   },
   "spriteMaskId": null,
-  "visible": false,
+  "visible": true,
 }

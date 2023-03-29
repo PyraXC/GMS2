@@ -30,6 +30,21 @@ switch (state)
 		actions = 1;
 		item_actions = 1;
 	#endregion
+	if input.run
+	{
+		run_speed = max_run_speed;
+	}
+	else
+	{ 
+		run_speed = i_run_speed;
+	}
+	moveLR = input.right - input.left;
+	moveTD = input.up - input.down;
+	hsp = moveLR * run_speed;
+	vsp = -(moveTD * (run_speed/2));
+	move_and_collide_new(hsp, vsp);
+	can_jump();
+	
 	/*
 	if keyboard_check_pressed(vk_enter){
 		skele = instance_nearest(x, y, o_skeleton_king);
@@ -44,19 +59,12 @@ switch (state)
 	if keyboard_check_pressed(vk_decimal){
 		room_goto(rm_battle1);
 	}*/
-	if input.run
-	{
-		run_speed = max_run_speed;
-	}
-	else
-	{ 
-		run_speed = i_run_speed;
-	}
+
 	
-	if input.right and not input.left
+	/* if input.right and not input.left
 		{
 			can_jump();
-			move_and_collide(run_speed, 0);
+			move_and_collide_new(run_speed, 0);
 			//run_speed = run_speed
 			image_xscale = 1;
 			if !input.run{set_state_sprite(s_move, 0 + run_speed/10, 0);}
@@ -71,12 +79,13 @@ switch (state)
 		}
 		run_speed = i_run_speed;
 	}
+
 	//if animation_hit_frame(1){audio_play_sound(footstep_reverb, 1, 0);}
 		}
 	if input.left and not input.right
 		{
 			can_jump();
-			move_and_collide(-run_speed, 0);
+			move_and_collide_new(-run_speed, 0);
 			//run_speed = approach(run_speed, max_run_speed, 0.2);
 			image_xscale = -1;
 			if !input.run{set_state_sprite(s_move, 0 + run_speed/10, 0);}
@@ -126,8 +135,8 @@ switch (state)
 					state = "Idle2";
 				}
 		}
-		
-	if !place_meeting(x, y+1, o_wall)
+	*/	
+	if(!place_meeting(x, y+1, o_ground))
 		{
 			state = "Jump";
 		}
@@ -140,7 +149,7 @@ switch (state)
 	#region Jump
 	#region stuff
 	set_state_sprite(s_jump, 1, 0);
-	air_movement();
+	air_movement_new();
 	if i == 0
 	{
 		grav = 0;
@@ -459,7 +468,7 @@ switch (state)
 		#region return
 		set_state_sprite(s_move, 1, 0);
 		if(x != ix){
-			move_and_collide(-run_speed*2, 0);
+			move_and_collide_new(-run_speed*2, 0);
 			if(abs(ix-x) < run_speed*2){
 				x += (ix-x);
 			}

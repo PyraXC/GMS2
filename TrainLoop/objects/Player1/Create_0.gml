@@ -33,6 +33,7 @@ status = "None";
 status_turns = 0;
 ix = 0;
 iy = 0;
+z = 0;
 defend = 1;
 iDefend = defend;
 actions = 1;

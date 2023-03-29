@@ -480,7 +480,7 @@ switch (state)
 	case "Paused":
 	#region Pause Menu
 	if(!instance_exists(o_pause_menu)){
-		instance_create_layer(x, y, "InstancesTop", o_pause_menu);
+		instance_create_layer(x, y-128, "InstancesTop", o_pause_menu);
 	}
 	#endregion
 		break;

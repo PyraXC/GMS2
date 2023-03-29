@@ -18,8 +18,8 @@ iy = 0;
 projectile = 0;
 proj = noone;
 target = Player1;
-enemies = [o_skeleton_king,
-o_skeleton_king,o_skeleton_king, o_skeleton_king
+enemies = [o_skeleton_mage,
+o_skeleton_mage,o_skeleton_mage
 ];
 drop_list = 
 [

@@ -16,12 +16,21 @@ for(var i = 0; i < op_length; i++)
 	}
 	if(menu_level == 1)//Draw Weapons/allow equip
 	{
-		var drw = Player1.weapon_inventory[i];
+		/*var drw = Player1.weapon_inventory[i];
 		var str1 = drw.item + " " + string(drw.durability);
 		var _c = c_ltgrey;
 		if pos == i{_c = c_yellow;}
 		draw_text_color(vx+op_border, vy + op_space*i+op_border, str1, _c, _c, _c, _c, 1);
-		draw_sprite(Player1.weapon_inventory[i].icon, 0, vx+width+op_border+20, vy+24+op_space*i);
+		draw_sprite(Player1.weapon_inventory[i].icon, 0, vx+width+op_border+20, vy+24+op_space*i);*/
+		var drw = Player1.weapon_inventory[i];
+		var drw_i = drw.icon;
+		var drw_x = vx+width+op_border+16;
+		var drw_y = vy+8+op_space*i;
+		var _c = c_ltgrey;
+		if pos == i{_c = c_yellow;}
+		draw_text_color(vx+op_border, vy + op_space*i+op_border, drw.item, _c, _c, _c, _c, 1); 
+		draw_sprite(drw_i, 0, drw_x, drw_y);
+		draw_rectangle(drw_x - 1, drw_y - 1, drw_x+sprite_get_width(drw_i), drw_y+sprite_get_height(drw_i), true);
 	}
 	if(menu_level == 2){//draw items/allow use
 		var drw = Player1.item_inventory[i];

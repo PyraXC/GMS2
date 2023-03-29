@@ -1,2 +1,2 @@
-array_push(Player1.weapon_inventory, self);
+array_push(Player1.equip_inventory, self);
 instance_destroy();

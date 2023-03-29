@@ -4,8 +4,8 @@ right_key =keyboard_check_pressed(ord("D"));
 left_key =keyboard_check_pressed(ord("A")); 
 accept_key = keyboard_check_pressed(vk_space);
 return_key = keyboard_check_pressed(vk_backspace);
-vx = Player1.x-32;
-vy = Player1.y-160;
+vx = camera_get_view_x(o_camera.camera) + (24);
+vy = camera_get_view_x(o_camera.camera)+VH/2 + (83);
 pos += down_key - up_key;
 if pos >= op_length{pos = 0;}
 if pos < 0 {pos = op_length - 1;}

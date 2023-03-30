@@ -20,6 +20,10 @@ switch (state)
 	case "Move":
 	#region Move State
 	#region Stuff
+		moveLR = input.right - input.left;
+		moveTD = input.up - input.down;
+		hsp = moveLR * run_speed;
+		ysp = -(moveTD * (run_speed/2));
 		jump_speed = i_jump_speed;
 		air_speed = 0;
 		lag_count = 0;
@@ -29,6 +33,12 @@ switch (state)
 		grav = i_grav;
 		actions = 1;
 		item_actions = 1;
+		if(abs(moveLR) or abs(moveTD)){
+			set_state_sprite(s_move, 1, 0);
+		}
+		else{
+			set_state_sprite(s_idle, 1, 0);
+		}
 	#endregion
 	if input.run
 	{
@@ -38,11 +48,8 @@ switch (state)
 	{ 
 		run_speed = i_run_speed;
 	}
-	moveLR = input.right - input.left;
-	moveTD = input.up - input.down;
-	hsp = moveLR * run_speed;
-	vsp = -(moveTD * (run_speed/2));
-	move_and_collide_new(hsp, vsp);
+	
+	move_and_collide_new(hsp, ysp);
 	can_jump();
 	
 	/*
@@ -136,7 +143,7 @@ switch (state)
 				}
 		}
 	*/	
-	if(!place_meeting(x, y+1, o_ground))
+	if(!place_meeting(x, y+1, o_wall))
 		{
 			state = "Jump";
 		}
@@ -149,7 +156,7 @@ switch (state)
 	#region Jump
 	#region stuff
 	set_state_sprite(s_jump, 1, 0);
-	air_movement_new();
+	air_movement();
 	if i == 0
 	{
 		grav = 0;
@@ -371,7 +378,7 @@ switch (state)
 	#region Stab Attack
 	set_state_sprite(s_attack, 1, 0);
 	if(animation_hit_frame(3)){
-		create_hitbox(x, y, self, s_attack_damage, 0, 0, 1, 1*weapon.damage + 2, "None", 0, image_xscale);
+		create_hitbox(x, y, self, s_attack_damage, 0, 0, 1, 1*weapon.damage + 2, "None", 0, image_xscale, z);
 		audio_play_sound(a_medium_hit, 1, 0);	
 	}
 	if(animation_end()){
@@ -395,7 +402,7 @@ switch (state)
 	#region Stab Attack
 	set_state_sprite(s_sweep, 1, 0);
 	if(animation_hit_frame(3)){
-		create_hitbox(x, y, self, s_sweep_damage, 0, 0, 10, max(1, weapon.damage-2), "Break", 100, image_xscale);
+		create_hitbox(x, y, self, s_sweep_damage, 0, 0, 10, max(1, weapon.damage-2), "Break", 100, image_xscale, z);
 		audio_play_sound(a_swipe, 1, 0);
 	}
 	if(animation_end()){
@@ -419,7 +426,7 @@ switch (state)
 	#region Stab Attack
 	set_state_sprite(s_overhead, 1, 0);
 	if(animation_hit_frame(3)){
-		create_hitbox(x, y, self, s_overhead_damage, 0, 0, 1, 1*weapon.damage, "Topple", 100, image_xscale);
+		create_hitbox(x, y, self, s_overhead_damage, 0, 0, 1, 1*weapon.damage, "Topple", 100, image_xscale, z);
 		audio_play_sound(a_medium_hit, 1, 0);
 	}
 	if(animation_end()){
@@ -521,6 +528,7 @@ switch (state)
 	#endregion
 		break;	
 }
+depth = z;
 if hp >= max_hp
 	{
 		hp = max_hp;
@@ -566,3 +574,5 @@ if hp > current_hp
 //cout(return_state);
 //cout(target);
 //cout(weapon_inventory);
+
+//cout(z);

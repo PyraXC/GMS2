@@ -9,7 +9,8 @@
 ///@arg status
 ///@arg status_chance
 ///@arg xscale
-function create_hitbox(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9, argument10) {
+///@arg z
+function create_hitbox(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9, argument10, argument11) {
 
 	var x_position = argument0;
 	var y_position = argument1;
@@ -22,6 +23,7 @@ function create_hitbox(argument0, argument1, argument2, argument3, argument4, ar
 	var status = argument8
 	var statrng = argument9;
 	var xscale = argument10;
+	var z = argument11;
 
 	var hitbox = instance_create_layer(x_position, y_position, "InstancesTop", o_hitbox);
 	hitbox.sprite_index = sprite;
@@ -33,5 +35,6 @@ function create_hitbox(argument0, argument1, argument2, argument3, argument4, ar
 	hitbox.status = status;
 	hitbox.statrng = statrng;
 	hitbox.image_xscale = xscale;
+	hitbox.z = z;
 
 }

@@ -12,7 +12,7 @@ switch(state){
 	case "Attack":
 		set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
-			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 1, 0, "None", 0, image_xscale);
+			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 1, 0, "None", 0, image_xscale, z);
 			audio_play_sound(a_medium_hit, 1, 0);
 		}
 		if(animation_end()){
@@ -61,7 +61,7 @@ switch(state){
 		if(abs(x - Player1.x) <= 96){
 			set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
-			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 2, 6, "Bleed", 0, image_xscale);
+			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 2, 6, "Bleed", 0, image_xscale, z);
 			audio_play_sound(a_medium_hit, 1, 0);
 		}
 		if(animation_end()){
@@ -80,7 +80,8 @@ switch(state){
 			set_state_sprite(s_skeleton_king_ranged_attack, 1, 0);
 			if(animation_hit_frame(6) and projectile = 0){
 				proj = instance_create_layer(x, y, "Instances", o_king_projectile1);
-				proj.creator = self;	
+				proj.creator = self;
+				proj.z = z;
 				audio_play_sound(a_swipe, 1, 0);
 				rng = irandom_range(1,2);
 				if rng == 1{
@@ -176,3 +177,4 @@ if(image_xscale != 1 or image_xscale != 0){image_xscale = 1; }
 //cout(x);
 //cout(id);
 //cout(alarm[7]);
+//cout(z);

@@ -8,6 +8,8 @@ function win_battle(){
 	Player1.state = "Move";
 	Player1.x = Player1.returnx;
 	Player1.y = Player1.returny;
+	cout("returnz?? " + Player1.returnz);
+	Player1.z = Player1.returnz;
 	o_gameState.state = "Overworld";
 	o_gameState.i = 0;
 	for(var j = 0; j < array_length(global.obj_list); j++;){

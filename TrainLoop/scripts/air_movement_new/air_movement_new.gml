@@ -14,19 +14,19 @@ function air_movement_new(){
 		if input.right {hsp = max_hsp;}
 		if !input.left && !input.right{hsp = 0;}
 		if input.left && input.right{hsp = 0;}
-		move_and_collide_jump(hsp, vsp);
+		move_and_collide(hsp, vsp);
 		
 		
 	if (vsp < 15) vsp += global.grav;
 	if (vsp > 15) vsp = 15;
 	if(wall_jump_count > 8) wall_jump_count = 8;
 
-	if (place_meeting(x,y, o_ground)) and jump_input == 1
+	if (place_meeting(x,y, o_wall)) and jump_input == 1
 		{
 			vsp =  1 * -jump_speed 
 			jump_input = 0;
 		}
-	//Horizontal Collision 
+	//Horiontal Collision 
 	if(place_meeting(x+hsp, y, o_wall))
 		{
 			while(!place_meeting(x+sign(hsp), y, o_wall))

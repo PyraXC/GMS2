@@ -6,12 +6,14 @@ function start_battle(argument0, turn){
 	Player1.state = "Battle";
 	Player1.returnx = Player1.x;
 	Player1.returny = Player1.y;
+	Player1.returnz = Player1.z;
 	o_gameState.enemies = argument0.enemies;
 	o_gameState.mainEnemy = argument0;
 	o_gameState.enemyLen = array_length(argument0.enemies);
 	//room_goto(rm_battle1);
 	Player1.x = o_arena.x;
 	Player1.y = o_arena.y;
+	Player1.z = 0;
 	place_transition(sq_fade_in);
 	o_gameState.state = "Battle";
 	o_gameState.turn = turn;

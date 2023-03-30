@@ -49,7 +49,6 @@ grav = global.grav;
 hsp = 0;
 max_hsp = 6;
 vsp = 0;
-zspd = 0;
 z = 0;
 move = 0;
 wall_jump_count = 0;
@@ -58,10 +57,8 @@ i_run_speed = run_speed;
 i_jump_speed = jump_speed;
 #endregion
 i = 0;
-i2 = 0;
 lag_count = 0;
 kills = 0;
-skele = noone;
 //Dependencies
 input = instance_create_layer(0, 0, "Instances", o_input);
 global.obj_list = [];

@@ -15,3 +15,4 @@ case 1:
 	break;
 	
 }
+depth = z;

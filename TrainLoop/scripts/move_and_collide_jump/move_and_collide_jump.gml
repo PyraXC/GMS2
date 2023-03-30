@@ -26,12 +26,10 @@ function move_and_collide_jump(argument0, argument1) {
 	else if(z + yspeed <= ground.z){
 		while(!z+sign(yspeed) == ground.z){
 			y += sign(yspeed);	
-			z += sign(yspeed);	
 		}
 	}
 	else{
 		state = move;
 	}
-	cout(z);
-	
+
 }

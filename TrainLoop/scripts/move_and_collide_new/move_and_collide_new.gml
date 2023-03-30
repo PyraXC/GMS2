@@ -16,15 +16,18 @@ function move_and_collide_new(argument0, argument1) {
 			x += sign(xspeed);	 
 		}
 	}
-
-	if not place_meeting(x, y+yspeed, o_wall)
+	//if!(y-z+yspeed > o_wall.y){
+	if not place_meeting(x, y-z+yspeed, o_wall)
 	{
-		y += yspeed;
+		z -= yspeed;
+
 	}
-	else if(place_meeting(x, y+yspeed, o_wall)){
-		while(!place_meeting(x, y+sign(yspeed), o_wall))
+	//else if(y-z+yspeed <= o_wall.y){
+	else if(place_meeting(x, y-z+yspeed, o_wall)){
+	//while(!y-z+yspeed <= o_wall.y)
+		while(!place_meeting(x, y-z+sign(yspeed), o_wall))
 		{
-			y += sign(yspeed);	 
+			z -= sign(yspeed);	 
 		}
 	}
 	

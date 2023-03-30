@@ -8,6 +8,7 @@ function run_battle(){
 	Player1.state = "Move";
 	Player1.x = Player1.returnx;
 	Player1.y = Player1.returny;
+	Player1.z = Player1.returnz;
 	place_transition(sq_fade_in);
 	o_gameState.state = "Overworld";
 	o_gameState.i = 0;

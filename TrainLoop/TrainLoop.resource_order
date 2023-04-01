@@ -30,6 +30,7 @@
     {"name":"Fishing","order":8,"path":"folders/Sprites/Fishing.yy",},
     {"name":"Icons","order":4,"path":"folders/Sprites/Icons.yy",},
     {"name":"Items","order":7,"path":"folders/Sprites/Items.yy",},
+    {"name":"Particles","order":11,"path":"folders/Sprites/Particles.yy",},
     {"name":"fishing","order":13,"path":"folders/Sprites/Player/fishing.yy",},
     {"name":"Movement","order":14,"path":"folders/Sprites/Player/Movement.yy",},
     {"name":"Skele","order":2,"path":"folders/Sprites/Skele.yy",},
@@ -37,7 +38,6 @@
     {"name":"Weapons","order":6,"path":"folders/Sprites/Weapons.yy",},
     {"name":"Tile Sets","order":1,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":7,"path":"folders/Timelines.yy",},
-    {"name":"Particles","order":11,"path":"folders/Sprites/Particles.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"o_mm","order":5,"path":"objects/o_mm/o_mm.yy",},

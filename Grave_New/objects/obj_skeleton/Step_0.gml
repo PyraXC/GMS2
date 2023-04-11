@@ -366,12 +366,12 @@ switch (state)
 			state = "Roll";
 		}
 		
-		if input.attack_alt and animation_hit_frame_range(5, 8)
+		if input.attack_alt and animation_hit_frame_range(5, 9)
 		{
 			state = "Alt Three";
 		}
 		
-		if input.attack and animation_hit_frame_range(5, 8)
+		if input.attack and animation_hit_frame_range(5, 9)
 		{
 			state = "Alt Normal";
 		}

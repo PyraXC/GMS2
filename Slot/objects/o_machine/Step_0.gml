@@ -47,10 +47,10 @@
                 break;
             case "b":
             case "B":
-                cout << "Enter New Bet: ";
+                cout("Enter New Bet: ");
                 while (cin >> bet) {
                     if (bet > 9 || bet < 0) {
-                        cout << "Out Of Range Max Bet is 9X" << endl << "Bet 1-9" << endl;
+                        cout("Out Of Range Max Bet is 9X" + "\n"+ "Bet 1-9" + "\n");
                         continue;
                     }
                     M1.setBet(bet);

@@ -6,10 +6,6 @@ if creator == noone or creator == other or ds_list_find_index(hit_objects, other
 if creator.object_index == obj_skeleton && other.object_index == obj_skeleton2 exit;
 if creator.object_index == obj_skeleton2 && other.object_index == obj_skeleton exit;
 
-if creator.object_index == o_wizard && o_wizard.state == "Fireball Attack"
-{
-	if obj_skeleton.state == "Roll" {exit;}
-}
 
 other.hp -= damage;
 audio_play_sound(a_medium_hit, 4, false);
@@ -23,7 +19,7 @@ if instance_exists(obj_skeleton)
 {
 	if creator.object_index == obj_skeleton && other.hp <= 0 and other.state != "Death"
 	{
-		obj_skeleton.kills += 2;	
+		obj_skeleton.kills += 1;	
 	}
 	
 	if other.object_index == obj_skeleton or other.object_index == obj_skeleton2
@@ -60,6 +56,10 @@ if instance_exists(obj_skeleton)
 		other.alarm[0] = 120;
 		add_screen_shake(2, 5);
 	}	
+	if creator.object_index == o_wizard && o_wizard.state == "Fireball Attack"
+{
+	if obj_skeleton.state == "Roll" {exit;}
+}
 }
 ds_list_add(hit_objects, other);
 if other.state != "Death" and other.object_index != o_boss and other.object_index != o_wizard

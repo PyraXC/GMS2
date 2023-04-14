@@ -1,0 +1,6 @@
+{
+  "FolderOrderSettings": [],
+  "ResourceOrderSettings": [
+    {"name":"next_piece","order":1,"path":"scripts/next_piece/next_piece.yy",},
+  ],
+}

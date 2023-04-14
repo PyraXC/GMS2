@@ -1,0 +1,15 @@
+global.board = [[]];
+global.board[0][0] = 0;
+global.board[0][1] = 0;
+global.board[0][2] = 0;
+global.board[1][0] = 0;
+global.board[1][1] = 0;
+global.board[1][2] = 0;
+global.board[2][0] = 0;
+global.board[2][1] = 0;
+global.board[2][2] = 0;
+cout(global.board);
+player = o_player1;
+winner = noone;
+moves = 0;
+create_board();

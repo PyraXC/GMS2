@@ -14,6 +14,7 @@ switch(state){
 	//instance_create_layer(Player1.x-16, Player1.y-128, "Instances", o_battle_menu);
 		//instance_activate_object(o_battle_menu);
 		//if(instance_exists(o_battle_menu)){instance_deactivate_object(o_battle_menu);}	
+		o_camera.state = "Battle";
 		for(var j = array_length(enemies)-1; j >= 0 ; j--;){
 			enemy = enemies[j];
 			instance_create_layer(Player1.x + 256 + 96 * j, Player1.y, "Instances", enemy);

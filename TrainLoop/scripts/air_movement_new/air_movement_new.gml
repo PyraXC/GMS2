@@ -49,7 +49,7 @@ function air_movement_new(){
 			{
 				run_speed = i_run_speed;
 				state = "Move";
-				cout("land");
+				//cout("land");
 				//audio_play_sound(a_landing, 1, 0);
 			}
 			else

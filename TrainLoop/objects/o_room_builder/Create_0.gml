@@ -8,12 +8,12 @@ instance_create_layer(0, room_height, "InstancesTop", o_wall,
 //back wall
 instance_create_layer(0, room_height-256, "InstancesTop", o_wall,
 {
-	z : 256,
+	z : 0,
 	image_xscale : 10
 });
 
 //jump floor
-instance_create_layer(624+128, room_height, "InstancesTop", o_wall,
+instance_create_layer(624+0, room_height, "InstancesTop", o_wall,
 {
 	z : 0,
 	image_xscale : 10
@@ -21,7 +21,7 @@ instance_create_layer(624+128, room_height, "InstancesTop", o_wall,
 //jump back wall
 instance_create_layer(640+128, room_height-256, "InstancesTop", o_wall,
 {
-	z : 256,
+	z : 0,
 	image_xscale : 10
 });
 //player

@@ -4,9 +4,9 @@
 function crit_chance(argument0){
 	if(irandom_range(0, 100) < argument0){
 		instance_create_layer(x, y-sprite_height, "InstancesTop", o_crit);
-		return 2;
+		return 1;
 	}
 	else{
-		return 1;
+		return 0;
 	}
 }

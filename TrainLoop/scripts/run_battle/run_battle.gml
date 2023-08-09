@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 //arg0
 function run_battle(){
+	o_camera.state = "Overworld";
 	for(var i = 0; i < array_length(o_gameState.turnList); i++;){
 		instance_destroy(o_gameState.turnList[i]);
 	}

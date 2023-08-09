@@ -1,4 +1,4 @@
-if(z_axis(Player1, 10)){
+if(z_axis(Player1, 20)){
 	state = "Idle";
 	if(spr == s_coins){
 	Player1.money += damage;
@@ -8,4 +8,5 @@ if(z_axis(Player1, 10)){
 	instance_deactivate_object(self);
 	x = -1;
 	y = -1;
+	audio_play_sound(a_item_get, 5, 0);
 }

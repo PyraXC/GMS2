@@ -1,6 +1,6 @@
 switch(state){
 	case "Idle":
-	image_alpha = 100;
+	
 	image_xscale = sign(distance_to_object(Player1));
 	set_state_sprite(s_skeleton_king_idle, 1, 0);
 		if(abs(distance_to_object(Player1)) < 200){
@@ -12,8 +12,8 @@ switch(state){
 	case "Attack":
 		set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
-			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 1, 0, "None", 0, image_xscale, z);
-			audio_play_sound(a_medium_hit, 1, 0);
+			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 1, 0, "None", 0, image_xscale, z, 15);
+			audio_play_sound(a_medium_hit, 1, 0, 0.5);
 		}
 		if(animation_end()){
 			state = "Idle";
@@ -61,7 +61,7 @@ switch(state){
 		if(abs(x - Player1.x) <= 96){
 			set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
-			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 2, 6, "Bleed", 0, image_xscale, z);
+			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 2, 6, "Bleed", 0, image_xscale, z, 15);
 			audio_play_sound(a_medium_hit, 1, 0);
 		}
 		if(animation_end()){
@@ -178,3 +178,4 @@ if(image_xscale != 1 or image_xscale != 0){image_xscale = 1; }
 //cout(id);
 //cout(alarm[7]);
 //cout(z);
+//cout("King:" + string(depth));

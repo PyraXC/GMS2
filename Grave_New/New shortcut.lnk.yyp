@@ -39,7 +39,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.2.1.75",
+    "IDEVersion": "2023.6.0.89",
   },
   "resources": [
     {"id":{"name":"s_skeleton_attack_one","path":"sprites/s_skeleton_attack_one/s_skeleton_attack_one.yy",},},

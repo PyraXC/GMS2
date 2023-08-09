@@ -8,3 +8,6 @@ xspeed = irandom_range(-6,6);
 yspeed = irandom_range(-6, -3);
 icon = s_knife_i;
 obj = self;
+width = 10;
+create_shadow("small", self, y, z);
+type = "Short";

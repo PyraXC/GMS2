@@ -6,10 +6,20 @@ function status_effect(argument0, argument1){
 	
 	if status == "None"{exit;}
 	if status == "Fire"{
-		target.hp -= (1/5) * target.max_hp;
+		var dam = (1/5) * target.max_hp;
+		target.hp -= dam;
+		var indicator = instance_create_layer(x, y-sprite_height, "InstancesTop", o_damage_indicator);
+		indicator.target = target;
+		indicator.damage = dam;
+		indicator.status = "Fire";
 	}
 	if(status == "Bleed"){
-		target.hp -= (1/10) * target.max_hp;
+		var dam = (1/10) * target.max_hp;
+		target.hp -= dam;
+		var indicator = instance_create_layer(x, y-sprite_height, "InstancesTop", o_damage_indicator);
+		indicator.target = target;
+		indicator.damage = dam;
+		indicator.status = "Bleed";
 	}
 	target.status_turns--;
 }

@@ -1,5 +1,5 @@
 
-function transition_to_battle(turn){
+function transition_to_battle(){
 	FadeOut();
 	state = "Noone";
 	Player1.state = "Noone";

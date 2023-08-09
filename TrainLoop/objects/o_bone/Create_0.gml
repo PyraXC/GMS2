@@ -8,3 +8,4 @@ yspeed = irandom_range(-8, -4);
 icon = s_bone_i;
 spr = s_bone;
 obj = self;
+create_shadow("medium", self, y, z);

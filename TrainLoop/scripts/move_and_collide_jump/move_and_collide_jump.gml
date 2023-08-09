@@ -29,7 +29,7 @@ function move_and_collide_jump(argument0, argument1) {
 		}
 	}
 	else{
-		state = move;
+		state = "Move";
 	}
 
 }

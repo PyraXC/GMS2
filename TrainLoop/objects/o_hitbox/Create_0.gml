@@ -7,3 +7,4 @@ statrng = 0;
 depth = -1;
 hit_objects = ds_list_create();
 z = -1;
+width = 1;

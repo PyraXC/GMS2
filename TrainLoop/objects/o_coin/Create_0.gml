@@ -8,3 +8,4 @@ state = "Idle";
 icon = s_coin;
 spr = s_coins;
 obj = self;
+create_shadow("small", self, y, z);

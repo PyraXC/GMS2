@@ -30,3 +30,5 @@ o_extra_action
 print_drop_list = "HP Pot:60% Knife:20% ExAct:20%";
 attack_list = ["Overhead Swing", "Ranged Attack"];
 drops = 1;
+enemy_index = 8;
+create_shadow("large", self, y, z);

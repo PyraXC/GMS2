@@ -14,8 +14,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Misc",
-    "path": "folders/Objects/Misc.yy",
+    "name": "Game Functions",
+    "path": "folders/Objects/Game Functions.yy",
   },
   "parentObjectId": null,
   "persistent": true,

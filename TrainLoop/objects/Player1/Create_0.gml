@@ -1,5 +1,20 @@
 #region Menus
-attack_list = ["Stab", "Sweep", "Overhead"];
+ini_open("attackList.ini");
+attack_list_n = ["Blunt", "Short", "Long", "Slicing", "Polearm", "Ranged"];
+attack_list = [
+["Hit"],//Blunt 0
+["Stab"],//Short 1
+["Sweep"],//Long 2
+["Slice", "Overhead"],//Slicing 3
+["Thrust"],//Polearm 4
+["Shot"]//Ranged 5
+];
+for(var i = 0; i < array_length(attack_list); i++){
+	for(var j = 0; j < array_length(attack_list[i]); j++){
+		ini_write_real(attack_list_n[i], attack_list[i,j], 1);
+	}
+}
+ini_close();
 var stabList = ds_map_create();
 s_stab_katana = stabList[? "Katana"];
 s_stab_knife = stabList[? "Knife"];
@@ -11,7 +26,7 @@ item_inventory = [];
 weapon_inventory = [];
 equip_inventory = [];
 fish_inventory = [];
-weapon = o_unarmed;
+weapon = noone;
 item = noone;
 #endregion
 #region Fishing
@@ -50,6 +65,7 @@ hsp = 0;
 max_hsp = 6;
 vsp = 0;
 z = 0;
+wid = 32;
 move = 0;
 wall_jump_count = 0;
 i_grav = grav;
@@ -62,3 +78,4 @@ kills = 0;
 //Dependencies
 input = instance_create_layer(0, 0, "Instances", o_input);
 global.obj_list = [];
+create_shadow("large", self, y, z);

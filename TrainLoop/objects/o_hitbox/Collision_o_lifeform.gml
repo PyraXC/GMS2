@@ -1,17 +1,26 @@
-if(z_axis(Player1, 10)){
+if(z_axis(other, width)){
 	if creator == noone or creator == other or ds_list_find_index(hit_objects, other) != -1
 		{
 			exit;
 		}
 	if creator.object_index == Player1{
-		cout("hit");
-		other.hp -= floor((damage*crit_chance(creator.weapon.crit)) * other.defend);
+		var crit = crit_chance(creator.weapon.crit);
+		var dam = floor((damage* (crit+1)) * other.defend);
+		other.hp -= dam;
+		var indicator = instance_create_layer(-1000, -1000, "InstancesTop", o_damage_indicator);
+		indicator.target = other;
+		indicator.damage = dam;
+		indicator.crit = sign(crit);
 		if creator.status == "Fire" && status == "None"{
 			calc_status(other, "Fire", 50);
 		}else{calc_status(other, status, statrng);}
 	}
 	else{
-		other.hp -= ceil(damage * other.defend);
+		var dam = ceil(damage * other.defend);
+		other.hp -= dam;
+		var indicator = instance_create_layer(-1000, -1000, "InstancesTop", o_damage_indicator);
+		indicator.target = other;
+		indicator.damage = dam;
 		if creator.status == "Fire" && status == "None"{
 			calc_status(other, "Fire", 50);
 		}else{calc_status(other, status, statrng);}
@@ -24,8 +33,13 @@ if(z_axis(Player1, 10)){
 		if creator.object_index == Player1{
 			Player1.weapon.durability -= 1;
 		}
-		if creator.object_index == Player1 && other.hp <= 0 and other.state != "Death"
+		if creator.object_index == Player1 && other.hp == 0 and other.state != "Death"//Perfect Kill
 		{
+			Player1.kills += 1;	
+			other.state = "Death";
+			other.xp *= 1.5;
+			cout("Perfect Kill");
+		}else if( creator.object_index == Player1 && other.hp < 0 and other.state != "Death"){//Normal Kill
 			Player1.kills += 1;	
 			other.state = "Death";
 		}
@@ -46,7 +60,6 @@ if(z_axis(Player1, 10)){
 		{
 			if other.hp == 0
 			{
-				other.xp *= 1.5;
 				other.state = "Death";
 		
 				//ini_open("save.ini")
@@ -77,7 +90,7 @@ if(z_axis(Player1, 10)){
 }
 else
 {
-cout("Z Miss z=" + string(z) + " Player z=" + string(Player1.z));	
+//cout("Z Miss z=" + string(z) + " Player z=" + string(Player1.z));	
 }
 //other.knockback_speed = knockback * image_xscale;
 //other.knockback_speed_y = knockback_y;

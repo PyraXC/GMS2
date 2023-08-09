@@ -8,3 +8,4 @@ yspeed = irandom_range(-6, -3);
 icon = s_health_pot_i;
 spr = s_health_pot;
 obj = self;
+create_shadow("small", self, y, z);

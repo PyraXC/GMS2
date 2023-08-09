@@ -10,4 +10,5 @@ function find_self(argument0){
 			return i;
 		}
 	}
+	return -1;
 }

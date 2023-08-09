@@ -1,9 +1,13 @@
 damage = 6;
 durability = 8;
-crit = 20;
+crit = 25;
 item = "Katana";
 index = 0;
 state = "NONE";
 xspeed = irandom_range(-6,6);
 yspeed = irandom_range(-6, -3);
 icon = s_katana_i;
+width = 15;
+create_shadow("large", self, y, z);
+type = "Slicing";
+type2 = "Long";

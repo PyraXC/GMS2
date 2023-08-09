@@ -15,8 +15,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "MiniBoss",
-    "path": "folders/Objects/Enemies/MiniBoss.yy",
+    "name": "Enemies",
+    "path": "folders/Objects/Enemies.yy",
   },
   "parentObjectId": {
     "name": "o_miniboss",
@@ -38,8 +38,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "s_mage_idle1",
-    "path": "sprites/s_mage_idle1/s_mage_idle1.yy",
+    "name": "s_mage_idle",
+    "path": "sprites/s_mage_idle/s_mage_idle.yy",
   },
   "spriteMaskId": {
     "name": "s_skeleton_king_default_attack",

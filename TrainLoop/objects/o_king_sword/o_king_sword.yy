@@ -1,0 +1,46 @@
+{
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "o_king_sword",
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+  ],
+  "managed": true,
+  "overriddenProperties": [],
+  "parent": {
+    "name": "Weapons",
+    "path": "folders/Objects/Weapons.yy",
+  },
+  "parentObjectId": {
+    "name": "o_weapon",
+    "path": "objects/o_weapon/o_weapon.yy",
+  },
+  "persistent": true,
+  "physicsAngularDamping": 0.1,
+  "physicsDensity": 0.5,
+  "physicsFriction": 0.2,
+  "physicsGroup": 1,
+  "physicsKinematic": false,
+  "physicsLinearDamping": 0.1,
+  "physicsObject": false,
+  "physicsRestitution": 0.1,
+  "physicsSensor": false,
+  "physicsShape": 1,
+  "physicsShapePoints": [
+    {"x":0.0,"y":0.0,},
+    {"x":64.0,"y":0.0,},
+    {"x":64.0,"y":64.0,},
+    {"x":0.0,"y":64.0,},
+  ],
+  "physicsStartAwake": true,
+  "properties": [
+    {"resourceType":"GMObjectProperty","resourceVersion":"1.0","name":"z","filters":[],"listItems":[],"multiselect":false,"rangeEnabled":false,"rangeMax":160.0,"rangeMin":0.0,"value":"0","varType":0,},
+  ],
+  "solid": false,
+  "spriteId": {
+    "name": "s_king_sword",
+    "path": "sprites/s_king_sword/s_king_sword.yy",
+  },
+  "spriteMaskId": null,
+  "visible": true,
+}

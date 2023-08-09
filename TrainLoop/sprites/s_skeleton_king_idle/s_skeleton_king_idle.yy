@@ -14,10 +14,10 @@
   "For3D": false,
   "frames": [
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"a5151bb2-3a01-4781-8645-c7b0ff2faabb",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b326d7dc-c1ba-4b48-85a0-fb15c2d18d48",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"c574f1ad-77ce-4dcb-b124-21d20d4dc0ec",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"66e8037b-5ec2-4fbc-ab7f-4a19635a396c",},
     {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"510f13d5-d735-4807-a7c0-9f2cccc9845a",},
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"af28ed53-110e-4fa0-a4d9-77a8919ef7eb",},
   ],
   "gridX": 0,
   "gridY": 0,
@@ -60,10 +60,10 @@
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
             {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"a5151bb2-3a01-4781-8645-c7b0ff2faabb","path":"sprites/s_skeleton_king_idle/s_skeleton_king_idle.yy",},},},"Disabled":false,"id":"3051bd01-fc64-4b0f-8be5-11c7484f8157","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c574f1ad-77ce-4dcb-b124-21d20d4dc0ec","path":"sprites/s_skeleton_king_idle/s_skeleton_king_idle.yy",},},},"Disabled":false,"id":"fcc274d7-1455-486c-b8f5-a68c03c0c089","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"66e8037b-5ec2-4fbc-ab7f-4a19635a396c","path":"sprites/s_skeleton_king_idle/s_skeleton_king_idle.yy",},},},"Disabled":false,"id":"8b14820c-a6ee-44d9-b1ef-8f72f1a66cfa","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"510f13d5-d735-4807-a7c0-9f2cccc9845a","path":"sprites/s_skeleton_king_idle/s_skeleton_king_idle.yy",},},},"Disabled":false,"id":"c5fda16c-02a2-4095-92ad-db3b8fa8ca6e","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"af28ed53-110e-4fa0-a4d9-77a8919ef7eb","path":"sprites/s_skeleton_king_idle/s_skeleton_king_idle.yy",},},},"Disabled":false,"id":"f0f193e7-fc67-44da-a2cc-08fd36de63a9","IsCreationKey":false,"Key":4.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b326d7dc-c1ba-4b48-85a0-fb15c2d18d48","path":"sprites/s_skeleton_king_idle/s_skeleton_king_idle.yy",},},},"Disabled":false,"id":"75a30917-e350-48f3-9695-ce5d9ac37682","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"c574f1ad-77ce-4dcb-b124-21d20d4dc0ec","path":"sprites/s_skeleton_king_idle/s_skeleton_king_idle.yy",},},},"Disabled":false,"id":"fcc274d7-1455-486c-b8f5-a68c03c0c089","IsCreationKey":false,"Key":2.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"66e8037b-5ec2-4fbc-ab7f-4a19635a396c","path":"sprites/s_skeleton_king_idle/s_skeleton_king_idle.yy",},},},"Disabled":false,"id":"8b14820c-a6ee-44d9-b1ef-8f72f1a66cfa","IsCreationKey":false,"Key":3.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"510f13d5-d735-4807-a7c0-9f2cccc9845a","path":"sprites/s_skeleton_king_idle/s_skeleton_king_idle.yy",},},},"Disabled":false,"id":"c5fda16c-02a2-4095-92ad-db3b8fa8ca6e","IsCreationKey":false,"Key":4.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

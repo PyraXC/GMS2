@@ -2,6 +2,7 @@
 if(keyboard_check_pressed(vk_f1)){
 	Player1.x = instance_nearest(x, y, o_enemy).x;
 	Player1.y = instance_nearest(x, y, o_enemy).y;
+	Player1.z = instance_nearest(x, y, o_enemy).z;
 }
 #endregion
 
@@ -20,6 +21,9 @@ switch (state)
 	case "Move":
 	#region Move State
 	#region Stuff
+		if(!weapon && array_length(weapon_inventory) > 0){
+			weapon = weapon_inventory[0];
+		}
 		moveLR = input.right - input.left;
 		moveTD = input.up - input.down;
 		hsp = moveLR * run_speed;
@@ -33,6 +37,12 @@ switch (state)
 		grav = i_grav;
 		actions = 1;
 		item_actions = 1;
+		if(moveLR == 1){
+			image_xscale = 1;
+		}
+		else if(moveLR == -1){
+			image_xscale = -1;
+		}
 		if(abs(moveLR) or abs(moveTD)){
 			set_state_sprite(s_move, 1, 0);
 		}
@@ -51,6 +61,10 @@ switch (state)
 	
 	move_and_collide_new(hsp, ysp);
 	can_jump();
+	if input.pause
+	{
+		state = "Paused";
+	}
 	
 	/*
 	if keyboard_check_pressed(vk_enter){
@@ -147,6 +161,9 @@ switch (state)
 		{
 			state = "Jump";
 		}
+	/*if(!place_meeting(x, y+z, o_wall)){
+			state = "Jump";
+	}*/
 	
 
 	break;
@@ -363,6 +380,12 @@ switch (state)
 	knockback_state(s_knockback, "Battle");
 	#endregion
 		break;
+	
+	case "Read":
+	#region Identify
+	state = return_state;
+	#endregion
+		break;
 		
 	case "Stab":
 	#region Knife Approach
@@ -378,7 +401,7 @@ switch (state)
 	#region Stab Attack
 	set_state_sprite(s_attack, 1, 0);
 	if(animation_hit_frame(3)){
-		create_hitbox(x, y, self, s_attack_damage, 0, 0, 1, 1*weapon.damage + 2, "None", 0, image_xscale, z);
+		create_hitbox(x, y, self, s_attack_damage, 0, 0, 1, 1*weapon.damage + 2, "None", 0, image_xscale, z, 5);
 		audio_play_sound(a_medium_hit, 1, 0);	
 	}
 	if(animation_end()){
@@ -402,7 +425,7 @@ switch (state)
 	#region Stab Attack
 	set_state_sprite(s_sweep, 1, 0);
 	if(animation_hit_frame(3)){
-		create_hitbox(x, y, self, s_sweep_damage, 0, 0, 10, max(1, weapon.damage-2), "Break", 100, image_xscale, z);
+		create_hitbox(x, y, self, s_sweep_damage, 0, 0, 10, max(1, weapon.damage-2), "Break", 100, image_xscale, z, 35);
 		audio_play_sound(a_swipe, 1, 0);
 	}
 	if(animation_end()){
@@ -426,7 +449,7 @@ switch (state)
 	#region Stab Attack
 	set_state_sprite(s_overhead, 1, 0);
 	if(animation_hit_frame(3)){
-		create_hitbox(x, y, self, s_overhead_damage, 0, 0, 1, 1*weapon.damage, "Topple", 100, image_xscale, z);
+		create_hitbox(x, y, self, s_overhead_damage, 0, 0, 1, 1*weapon.damage, "Topple", 100, image_xscale, z, 5);
 		audio_play_sound(a_medium_hit, 1, 0);
 	}
 	if(animation_end()){
@@ -496,7 +519,7 @@ switch (state)
 	case "Paused":
 	#region Pause Menu
 	if(!instance_exists(o_pause_menu)){
-		instance_create_layer(x, y-128, "InstancesTop", o_pause_menu);
+		var pause_menu = instance_create_layer(-1000, -1000, "InstancesTop", o_pause_menu);
 	}
 	#endregion
 		break;
@@ -575,4 +598,5 @@ if hp > current_hp
 //cout(target);
 //cout(weapon_inventory);
 
-//cout(z);
+//cout("X:"+string(x)+" Y:"+string(y)+" Z:"+string(z));
+//cout(depth);

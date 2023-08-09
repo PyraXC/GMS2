@@ -2,13 +2,13 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 //arg0
 function win_battle(){
+	o_camera.state = "Overworld";
 	for(var i = 0; i < array_length(o_gameState.turnList); i++;){
 		instance_destroy(o_gameState.turnList[i]);
 	}
 	Player1.state = "Move";
 	Player1.x = Player1.returnx;
 	Player1.y = Player1.returny;
-	cout("returnz?? " + Player1.returnz);
 	Player1.z = Player1.returnz;
 	o_gameState.state = "Overworld";
 	o_gameState.i = 0;

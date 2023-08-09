@@ -1,11 +1,15 @@
+if(!instance_exists(o_hud)){
+	instance_create_layer(Player1.x, Player1.y, "Instances", o_hud);	
+}
+
 up_key = keyboard_check_pressed(ord("W"));
 down_key = keyboard_check_pressed(ord("S"));
 right_key =keyboard_check_pressed(ord("D")); 
 left_key =keyboard_check_pressed(ord("A")); 
 accept_key = keyboard_check_pressed(vk_space);
 return_key = keyboard_check_pressed(vk_backspace);
-vx = camera_get_view_x(o_camera.camera) + (24);
-vy = camera_get_view_x(o_camera.camera)+VH/2 + (83);
+vx = camera_get_view_x(o_camera.camera) + (20);
+vy = camera_get_view_y(o_camera.camera) + (80);
 pos += down_key - up_key;
 if pos >= op_length{pos = 0;}
 if pos < 0 {pos = op_length - 1;}

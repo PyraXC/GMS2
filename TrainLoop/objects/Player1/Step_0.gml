@@ -387,6 +387,18 @@ switch (state)
 	#endregion
 		break;
 		
+	case "Approach":
+	#region Knife Approach
+	set_state_sprite(s_move, 1, 0);
+	approach_target(target);
+	if(abs(x - target.x) < 64){
+		state = next_state;
+		next_state = "";
+		attack_type = weapon.type;
+	}
+	#endregion
+		break;
+		
 	case "Stab":
 	#region Knife Approach
 	set_state_sprite(s_move, 1, 0);
@@ -399,7 +411,13 @@ switch (state)
 		
 	case "Stab Attack":
 	#region Stab Attack
-	set_state_sprite(s_attack, 1, 0);
+	/*ini_open("attack_spritemaps.ini");
+	var map = ds_map_create();
+	ds_map_read(map, ini_read_string("Stabs", "Stabs", "UNDEFINED"));
+	ini_close();
+	var spr = ds_map_find_value(map, weapon.item);*/
+	var spr = attack_sprite("Stabs");
+	set_state_sprite(spr, 1, 0);
 	if(animation_hit_frame(3)){
 		create_hitbox(x, y, self, s_attack_damage, 0, 0, 1, 1*weapon.damage + 2, "None", 0, image_xscale, z, 5);
 		audio_play_sound(a_medium_hit, 1, 0);	
@@ -423,7 +441,8 @@ switch (state)
 		
 	case "Sweep Attack":
 	#region Stab Attack
-	set_state_sprite(s_sweep, 1, 0);
+	var spr = attack_sprite("Sweeps");
+	set_state_sprite(spr, 1, 0);
 	if(animation_hit_frame(3)){
 		create_hitbox(x, y, self, s_sweep_damage, 0, 0, 10, max(1, weapon.damage-2), "Break", 100, image_xscale, z, 35);
 		audio_play_sound(a_swipe, 1, 0);
@@ -447,9 +466,9 @@ switch (state)
 		
 	case "Overhead Attack":
 	#region Stab Attack
-	set_state_sprite(s_overhead, 1, 0);
+	set_state_sprite(s_overhead0, 1, 0);
 	if(animation_hit_frame(3)){
-		create_hitbox(x, y, self, s_overhead_damage, 0, 0, 1, 1*weapon.damage, "Topple", 100, image_xscale, z, 5);
+		create_hitbox(x, y, self, s_overhead, 0, 0, 1, 1*weapon.damage, "Topple", 100, image_xscale, z, 5);
 		audio_play_sound(a_medium_hit, 1, 0);
 	}
 	if(animation_end()){
@@ -521,6 +540,12 @@ switch (state)
 	if(!instance_exists(o_pause_menu)){
 		var pause_menu = instance_create_layer(-1000, -1000, "InstancesTop", o_pause_menu);
 	}
+	#endregion
+		break;
+	
+	case "Skill":
+	#region Skill Menu
+	
 	#endregion
 		break;
 		
@@ -597,6 +622,7 @@ if hp > current_hp
 //cout(return_state);
 //cout(target);
 //cout(weapon_inventory);
-
+//cout(weapon);
 //cout("X:"+string(x)+" Y:"+string(y)+" Z:"+string(z));
 //cout(depth);
+//cout(z);

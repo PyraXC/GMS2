@@ -16,6 +16,7 @@ option[0, 1] = "Equipment";
 option[0, 2] = "Items";
 option[0, 3] = "Identify";
 option[0, 4] = "Run";
+option[4, 0] = "";
 
 //equip
 /*

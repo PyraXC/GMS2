@@ -14,6 +14,12 @@ for(var i = 0; i < op_length; i++)
 		if pos == i{_c = c_yellow;}
 		draw_text_color(vx+op_border, vy + op_space*i+op_border, option[menu_level, i], _c, _c, _c, _c, 1); 
 	}
+		if(menu_level == 4)//Draw Something idk yet
+	{
+		var _c = c_ltgrey;
+		if pos == i{_c = c_yellow;}
+		draw_text_color(vx+op_border, vy+ op_space*i+op_border, "PLACEHOLDER", _c, _c, _c, _c, 1);
+	}
 	if(menu_level == 1)//Draw Weapons/allow equip
 	{
 		/*var drw = Player1.weapon_inventory[i];
@@ -46,12 +52,6 @@ for(var i = 0; i < op_length; i++)
 		if pos == i{_c = c_yellow;}
 		draw_text_color(vx+op_border, vy + op_space*i+op_border, drw.nme + " " + string(drw.size) + "in", _c, _c, _c, _c, 1); 
 		}	
-	}
-	if(menu_level == 4)//Draw Something idk yet
-	{
-		var _c = c_ltgrey;
-		if pos == i{_c = c_yellow;}
-		draw_text_color(vx+op_border, vy+ op_space*i+op_border, "PLACEHOLDER", _c, _c, _c, _c, 1);
 	}
 }
 

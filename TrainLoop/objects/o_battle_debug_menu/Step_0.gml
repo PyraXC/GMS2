@@ -66,7 +66,6 @@ switch(menu_level){
 				instance_destroy();
 			
 			break;
-			break;
 		}
 		break; #endregion
 	#region Check Enemy

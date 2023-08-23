@@ -33,17 +33,17 @@ switch(menu_level){
 	case 0:
 		switch(pos){
 
-			case 0: menu_level = 4; pos = 0; break;
+			case 0: 
+			Player1.state = "Skill";
+			instance_create_layer(0, 0, "InstancesTop", o_sp_menu);
+			instance_destroy(self);
+			break;
 
 			case 1: menu_level = 1; pos = 0; break;
 
 			case 2: menu_level = 2; pos = 0; break;
 			
-			case 3: 
-				menu_level = 3;
-				pos = 0;
-				lr = 0;
-			break;
+			case 3: menu_level = 3; pos = 0; lr = 0; break;
 		}
 		break; #endregion
 	#region Equip Menu

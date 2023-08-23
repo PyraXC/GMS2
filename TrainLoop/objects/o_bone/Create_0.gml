@@ -9,3 +9,4 @@ icon = s_bone_i;
 spr = s_bone;
 obj = self;
 create_shadow("medium", self, y, z);
+width = 32;

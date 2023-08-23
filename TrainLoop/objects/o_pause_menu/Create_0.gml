@@ -10,11 +10,11 @@ vy = -1000;
 vx = -1000;
 VW = camera_get_view_width(o_camera.camera);
 VH = camera_get_view_height(o_camera.camera);
-option[0,0] = "Somethin";
+option[0,0] = "Learn Skills";
 option[0, 1] = "Weaponry";
 option[0, 2] = "Items";
 option[0, 3] = "FISHH";
-
+option[4] = [];
 op_length = 0;
 menu_level = 0;
 lr = 0;

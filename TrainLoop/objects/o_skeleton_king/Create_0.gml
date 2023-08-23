@@ -32,3 +32,4 @@ attack_list = ["Overhead Swing", "Ranged Attack"];
 drops = 1;
 enemy_index = 8;
 create_shadow("large", self, y, z);
+width = 48;

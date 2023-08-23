@@ -9,3 +9,4 @@ icon = s_health_pot_i;
 spr = s_health_pot;
 obj = self;
 create_shadow("small", self, y, z);
+width = 16;

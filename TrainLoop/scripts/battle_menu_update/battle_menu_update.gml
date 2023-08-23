@@ -32,10 +32,12 @@ for(var i = 0; i < array_length(Player1.fish_inventory); i++;){
 }
 //for(var i = 0; i < array_length(Player1.attack_list);i++;){
 	var type = Player1.weapon.type;
-	var val = array_contains(attack_list_n, type);
-	
-	for(var i = 0; i < array_length(attack_list[val]); i++){
-		option[4, i] = Player1.attack_list[val, i];
+	//cout("Type " + type);
+	var val = array_get_index(Player1.attack_list_n, type);
+	for(var i = 0; i < array_length(Player1.attack_list[val]); i++){
+		//cout("Val " + string(val) + " i " + string(i));
+		//cout(Player1.attack_list[val][i]);
+		array_set(option[4], i, Player1.attack_list[val][i]);
 	}
 
 //}

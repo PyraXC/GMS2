@@ -9,3 +9,4 @@ yspeed = irandom_range(-6, -3);
 icon = s_camera;
 width = 100;
 type = "Blunt";
+width = 1;

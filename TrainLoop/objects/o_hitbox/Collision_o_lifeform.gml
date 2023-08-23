@@ -39,6 +39,7 @@ if(z_axis(other, width)){
 			other.state = "Death";
 			other.xp *= 1.5;
 			cout("Perfect Kill");
+			add_xp(other.xp);
 		}else if( creator.object_index == Player1 && other.hp < 0 and other.state != "Death"){//Normal Kill
 			Player1.kills += 1;	
 			other.state = "Death";
@@ -83,10 +84,7 @@ if(z_axis(other, width)){
 	}
 	
 	ds_list_add(hit_objects, other);
-	if other.state != "Death" and other.object_index != o_miniboss
-	{
-		other.state = "Knockback";
-	}
+
 }
 else
 {

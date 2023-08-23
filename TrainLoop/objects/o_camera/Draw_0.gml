@@ -9,7 +9,7 @@ case "Overworld":
 	
 	transition = layer_get_id("transition");
 	if(keyboard_check(vk_alt)){
-		camera_set_view_size(cam, viewSize.bigWidth, viewSize.bigHeight);
+		camera_set_view_size(cam, viewSize.smallWidth, viewSize.smallHeight);
 	}else if(keyboard_check(vk_control)){
 		camera_set_view_size(cam, room_width, room_height);
 	}else {
@@ -33,7 +33,8 @@ case "Battle":
 #region Battle Cam
 	target_x = player.ix;
 	target_y= player.iy;
-	camera_set_view_pos(cam, target_x - VW/2 + 64*4, target_y - VH/2 - 160);
+	camera_set_view_pos(cam, target_x - 136, target_y - VH/2 - 160);
+	camera_set_view_size(cam, viewSize.smallWidth, viewSize.smallHeight);
 	break;
 	#endregion
 }

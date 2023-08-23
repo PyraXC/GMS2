@@ -1,4 +1,4 @@
-if(z_axis(Player1, 20)){
+if(z_axis(Player1, width)){
 	state = "Idle";
 	if(spr == s_coins){
 	Player1.money += damage;

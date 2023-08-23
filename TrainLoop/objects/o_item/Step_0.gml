@@ -1,4 +1,5 @@
 event_inherited();
+depth = z;
 if durability <= 0{
 	array_delete(Player1.item_inventory, index, 1);
 	instance_destroy(self);

@@ -41,7 +41,7 @@ switch(state){
 		}
 		cout(turnList);
 		if turn = "Enemy"{
-			alarm[1] = 300;
+			alarm[1] = 60;
 			state = "Noone";
 		}
 		else{

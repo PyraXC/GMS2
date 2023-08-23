@@ -50,7 +50,7 @@ switch(menu_level){
 			//Identify
 			case 3: 
 				audio_play_sound(a_menu_select, 0.75, 0);
-				cout("here");
+				//cout("here");
 				var data = o_gameState.turnList[lr].enemy_index;
 				ini_open("enemyIndex.ini");
 				ini_write_real("enemies", data, 1);
@@ -109,7 +109,8 @@ switch(menu_level){
 	case 4:
 	audio_play_sound(a_menu_select, 0.75, 0);
 		with(Player1){
-		state = o_battle_menu.option[o_battle_menu.menu_level, o_battle_menu.pos];
+		state = "Approach";
+		next_state = o_battle_menu.option[o_battle_menu.menu_level, o_battle_menu.pos];
 		target = o_gameState.turnList[o_battle_menu.lr];
 		return_state = "Battle";
 		actions--;

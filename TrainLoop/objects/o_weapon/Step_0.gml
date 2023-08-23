@@ -1,4 +1,5 @@
 event_inherited();
+depth = z;
 if durability <= 0{
 	array_delete(Player1.weapon_inventory, index, 1);
 	instance_destroy(self);
@@ -19,5 +20,5 @@ switch(state){
 	y = approach(y, Player1.y-16, 10);
 		break;
 }
-depth = z;
+
 //cout("Active?");

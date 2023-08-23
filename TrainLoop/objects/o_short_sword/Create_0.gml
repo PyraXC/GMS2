@@ -7,3 +7,4 @@ state = "NONE";
 xspeed = irandom_range(-6,6);
 yspeed = irandom_range(-6, -3);
 type = "Short";
+wid = 12;

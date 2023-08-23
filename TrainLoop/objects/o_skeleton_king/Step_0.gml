@@ -1,3 +1,4 @@
+depth = z;
 switch(state){
 	case "Idle":
 	
@@ -12,7 +13,7 @@ switch(state){
 	case "Attack":
 		set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
-			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 1, 0, "None", 0, image_xscale, z, 15);
+			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 1, 0, "None", 0, image_xscale, z, 24);
 			audio_play_sound(a_medium_hit, 1, 0, 0.5);
 		}
 		if(animation_end()){
@@ -61,7 +62,7 @@ switch(state){
 		if(abs(x - Player1.x) <= 96){
 			set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
-			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 2, 6, "Bleed", 0, image_xscale, z, 15);
+			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 2, 6, "Bleed", 0, image_xscale, z, 24);
 			audio_play_sound(a_medium_hit, 1, 0);
 		}
 		if(animation_end()){

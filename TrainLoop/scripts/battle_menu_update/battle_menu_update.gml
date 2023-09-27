@@ -31,6 +31,7 @@ for(var i = 0; i < array_length(Player1.fish_inventory); i++;){
 	option[3, i] = Player1.fish_inventory[i].nme;
 }
 //for(var i = 0; i < array_length(Player1.attack_list);i++;){
+	array_resize(option[4], 0);
 	var type = Player1.weapon.type;
 	//cout("Type " + type);
 	var val = array_get_index(Player1.attack_list_n, type);

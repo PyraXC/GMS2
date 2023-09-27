@@ -7,7 +7,7 @@
 	["Hit"],//Blunt 0
 	["Stab", "Throw"],//Short 1
 	["Stab", "Sweep"],//Long 2
-	["Stab","Slice", "Overhead"],//Slicing 3
+	["Slice", "Overhead"],//Slicing 3
 	["Sweep", "Thrust"],//Polearm 4
 	["Shot"]//Ranged 5
 	];

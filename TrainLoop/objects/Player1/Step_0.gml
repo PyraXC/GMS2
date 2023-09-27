@@ -626,3 +626,4 @@ if hp > current_hp
 //cout("X:"+string(x)+" Y:"+string(y)+" Z:"+string(z));
 //cout(depth);
 //cout(z);
+//cout(attack_list);

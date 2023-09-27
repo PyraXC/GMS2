@@ -32,8 +32,8 @@
   "nineSlice": null,
   "origin": 0,
   "parent": {
-    "name": "UI",
-    "path": "folders/Sprites/UI.yy",
+    "name": "Skilltrees",
+    "path": "folders/Sprites/UI/Skilltrees.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

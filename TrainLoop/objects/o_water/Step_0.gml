@@ -6,7 +6,6 @@ switch(state){
 	if(abs(Player1.x - x) < 40 && abs(Player1.y - y) < 64) && abs(Player1.z - z) < 40{
 		if(!interactable){
 			interact = instance_create_layer(Player1.x + Player1.image_xscale*48, Player1.y-Player1.z-32, "InstancesTop", o_interact);
-//			interact.z = Player1.z;
 			interact.depth = -1;
 			interactable = 1;
 		}

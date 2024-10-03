@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "Script26",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "gmtest",
-    "path": "folders/Scripts/gmtest.yy",
+  "$GMScript":"",
+  "%Name":"Script26",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Script26",
+  "parent":{
+    "name":"gmtest",
+    "path":"folders/Scripts/gmtest.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,11 +1,10 @@
 get_input();
-//show_debug_message(left);
 
-if l{queue[x] = "l"; x++; alarm[0] = 15;}
-if r{queue[x] = "r"; x++; alarm[0] = 15;}
-if d{queue[x] = "d"; x++; alarm[0] = 15;}
-if u{queue[x] = "u"; x++; alarm[0] = 15;}
-if j{queue[x] = "j"; x++; alarm[0] = 15;}
-if a{queue[x] = "a"; x++; alarm[0] = 15;}
-if rn{queue[x] = "rn"; x++; alarm[0] = 15;}
-if df{queue[x] = "df"; x++; alarm[0] = 15;}
+if left{queue[i] = "l"; i++; alarm[0] = 15;}
+if right{queue[i] = "r"; i++; alarm[0] = 15;}
+if down{queue[i] = "d"; i++; alarm[0] = 15;}
+if up{queue[i] = "u"; i++; alarm[0] = 15;}
+if jump{queue[i] = "j"; i++; alarm[0] = 15;}
+if attack{queue[i] = "a"; i++; alarm[0] = 15;}
+if run{queue[i] = "rn"; i++; alarm[0] = 15;}
+if defend{queue[i] = "df"; i++; alarm[0] = 15;}

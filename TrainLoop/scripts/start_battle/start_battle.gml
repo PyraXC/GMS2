@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-//arg0
+///@arg Self
+///@arg P1 or eenmy turn
 function start_battle(argument0, turn){
 //array_push(global.obj_list, self);
 	Player1.state = "Battle";

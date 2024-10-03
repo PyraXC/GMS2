@@ -1,16 +1,28 @@
-if(z_axis(other, width)){
-	if creator == noone or creator == other or ds_list_find_index(hit_objects, other) != -1
+if(z_axis(other, 0)){
+	if creator == noone or creator.id == other.id or ds_list_find_index(hit_objects, other) != -1
 		{
 			exit;
 		}
+	if(other.object_index == o_deflect){
+		cout("Hit Deflect");
+		if(other.state = "Strong"){
+			cout("PARRY");
+			other.state = "Reflected";
+			instance_destroy();
+			exit;
+		}
+	}
 	if creator.object_index == Player1{
-		var crit = crit_chance(creator.weapon.crit);
-		var dam = floor((damage* (crit+1)) * other.defend);
+		var _crit = 0;
+		if(!crit){
+			_crit = crit_chance(creator.weapon.crit);
+		}
+		var dam = floor((damage* (_crit+1)) * other.defend);
 		other.hp -= dam;
 		var indicator = instance_create_layer(-1000, -1000, "InstancesTop", o_damage_indicator);
 		indicator.target = other;
 		indicator.damage = dam;
-		indicator.crit = sign(crit);
+		indicator.crit = sign(_crit);
 		if creator.status == "Fire" && status == "None"{
 			calc_status(other, "Fire", 50);
 		}else{calc_status(other, status, statrng);}
@@ -40,9 +52,17 @@ if(z_axis(other, width)){
 			other.xp *= 1.5;
 			cout("Perfect Kill");
 			add_xp(other.xp);
+			//Remove from gamestate in case of reflected proj killing final enemy
+			/*var index = find_other(other, o_gameState.turnList);
+			array_delete(o_gameState.turnList, index, 1);
+			o_gameState.enemyLen--;*/
+			
 		}else if( creator.object_index == Player1 && other.hp < 0 and other.state != "Death"){//Normal Kill
 			Player1.kills += 1;	
 			other.state = "Death";
+			/*var index = find_other(other, o_gameState.turnList);
+			array_delete(o_gameState.turnList, index, 1);
+			o_gameState.enemyLen--;*/
 		}
 
 		if other.object_index == Player1 && o_gameState.state == "Overworld"

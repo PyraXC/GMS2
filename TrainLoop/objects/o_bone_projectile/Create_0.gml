@@ -1,6 +1,12 @@
-
-event_inherited();
-
-target = "";
-creator = "";
+damage = 2;
+z = 0;
+target = noone;
+creator = noone;
+signal = 1;
+target_x = 0;
+target_y = 0;
+wid = 16;
+hsp = 8;
+vsp = 1;
+spd = 0;
 create_shadow("medium", self, y, z);

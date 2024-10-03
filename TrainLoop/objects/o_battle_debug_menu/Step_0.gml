@@ -99,13 +99,13 @@ switch(menu_level){
 	
 	case 3:
 	#region Give Items
-	drop_specific_item(global.item_list, pos, 0);
+	drop_specific_item(global.item_list[pos], 0);
 	break;
 	#endregion
 	
 	case 4:
 	#region Give Weapons
-	drop_specific_item(global.weapon_list, pos, 0);
+	drop_specific_item(global.weapon_list[pos], 0);
 	break;
 	#endregion
 	

@@ -1,3 +1,4 @@
+event_inherited();
 damage = 1;
 durability = 3;
 item = "Extra Action";
@@ -9,4 +10,5 @@ icon = s_extra_action_i;
 spr = s_extra_action;
 obj = self;
 create_shadow("small", self, y, z);
-width = 16;
+wid = 16;
+flavor_txt = "A Potion Of Extra Actions. Grants A Second Action Per Turn To Unleash Devastating Offensive Power. Can Be Used 3 Times";

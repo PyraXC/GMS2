@@ -1,3 +1,4 @@
+depth = z;
 switch(state){
 	case "Not Gambling":
 		if(abs(Player1.x - x) < 40 && abs(Player1.y - y) < 40){
@@ -6,7 +7,7 @@ switch(state){
 			interact.depth = -1;
 			interactable = 1;
 		}
-		if(Player1.input.jump && (Player1.state == "Move" or Player1.state == "Idle")){
+		if(Player1.input.jump && (Player1.state != "Coin Flip")){
 			Player1.state = "Coin Flip";
 			state = "GAMBLING";
 			instance_destroy(interact);

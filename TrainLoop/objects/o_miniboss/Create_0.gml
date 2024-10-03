@@ -1,1 +1,1 @@
-target = Player1;
+event_inherited();

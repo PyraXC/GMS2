@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "gmtest_methods",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "gmtest",
-    "path": "folders/Scripts/gmtest.yy",
+  "$GMScript":"",
+  "%Name":"gmtest_methods",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"gmtest_methods",
+  "parent":{
+    "name":"gmtest",
+    "path":"folders/Scripts/gmtest.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

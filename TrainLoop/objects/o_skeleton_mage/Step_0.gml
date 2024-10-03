@@ -1,25 +1,8 @@
+depth = z;
 switch(state){
 	case "Idle":
-	image_alpha = 100;
-	image_xscale = sign(distance_to_object(Player1));
 	set_state_sprite(s_mage_idle, 1, 0);
-		if(abs(distance_to_object(Player1)) < 200){
-			
-			state = "Attack";
-		}
 		break;
-		
-	case "Attack":
-		set_state_sprite(s_skeleton_king_default_attack, 1, 0);
-		if(animation_hit_frame(6)){
-			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 1, 0, "None", 0, image_xscale, z, 10);
-			audio_play_sound(a_medium_hit, 1, 0);
-		}
-		if(animation_end()){
-			state = "Idle";
-		}
-		break;
-		
 	case "Noone":
 	set_state_sprite(s_mage_idle, 1, 0);
 		break;
@@ -39,100 +22,89 @@ switch(state){
 		
 		break;
 		
+	case "Turn":
+		state = "Choose Attack";
+		break;
+	
 	case "Choose Attack":
 	rng = irandom_range(1,3);
 	//projectile = 0;
 		if(rng == 1){
-			state = "Overhead Swing";
-			rng = irandom_range(1,3);
+			state = "Bolt";
+			point = attack_point(600, 0, 0, 0);
 			//cout("RNG 1");
 		}
 		if(rng == 2){
-			state = "Ranged Attack";
-			//cout("RNG 2");
+			state = "Summon";
+			point = attack_point(600, 0, 0, 0);
 		}
 		if(rng == 3){
-			state = "Overhead Swing";
-			//cout("RNG 3");
+			state = "Bolt";
+			point = attack_point(600, 0, 0, 0);
 			}
 		break;
 		
-	case "Overhead Swing":
-		if(abs(x - Player1.x) <= 96){
-			set_state_sprite(s_skeleton_king_default_attack, 1, 0);
-		if(animation_hit_frame(6)){
-			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 2, 6, "Bleed", 0, image_xscale, z, 10);
-			audio_play_sound(a_medium_hit, 1, 0);
-		}
-		if(animation_end()){
-			//cout("Here");
-			state = "Return";
-		}
-		}
-		else{
-			set_state_sprite(s_skeleton_king_idle, 1, 0);
-			approach_target(Player1);
-		}
-		break;
-		
-	case "Ranged Attack":
-		if(abs(x - Player1.x) <= 600){
-			set_state_sprite(s_skeleton_king_ranged_attack, 1, 0);
-			if(animation_hit_frame(6) and projectile = 0){
-				proj = instance_create_layer(x, y, "Instances", o_king_projectile1);
-				proj.creator = self;	
-				audio_play_sound(a_swipe, 1, 0);
-				rng = irandom_range(1,2);
-				if rng == 1{
-					state = "Projectile Wait";
-					alarm[9] = 90;
-				}else{
-					//state = "Ranged Follow Up";
-					state = "Projectile Wait";
-					alarm[9] = 90;
-				}
-			}/*else if(projectile != 0){
-				set_state_sprite(s_skeleton_king_idle, 1, 0);
-			}
-			else if(!object_exists(proj)){
-				set_state_sprite(s_skeleton_king_idle, 1, 0);
-				if(!object_exists(o_king_projectile1)){
-					
+	case "Bolt":
+		if!(on_point(point, 1)){
+			set_state_sprite(s_mage_idle, 1, 0);
+			approach_point(point, 1, 1);
+			
+		}else{//Attack
+			set_state_sprite(s_mage_bolt, 1, 0);
+			//place_transition(sq_fade_out); Don't work
+			if(animation_hit_frame(10)){
+				for(var i = 0; i < 5; i++){
+					var bolt = instance_create_layer(x, y-sprite_height * 0.5, "InstancesTop", o_lightning_bolt);
+					bolt.target = Player1;
+					bolt.z = z;
+					bolt.creator = self;
 				}
 			}
-		}
-		else{
-			set_state_sprite(s_skeleton_king_idle, 1, 0);
-			approach_target(Player1);*/
+			if(animation_hit_frame(11)){
+				create_hitbox(Player1.x, Player1.y, self, s_move, 0, 0, 2, 4, "None", 100, 1, z, 12, 0);
+			}
+			if(animation_end()){
+				point = attack_point(ix-Player1.ix, iz-Player1.iz, iy-Player1.iy);
+				state = "Return";
+			}
 		}
 		break;
 		
 	case "Projectile Wait":
-		set_state_sprite(s_skeleton_king_idle, 1, 0);
-		if(alarm[9] == -1){
+		set_state_sprite(s_mage_idle, 1, 0);
+		wait--;
+		if(wait <= 0){
 			state = "Return";
-				projectile = 0;
+			projectile = 0;
 		}
 		
 		break;
 		
+	case "Summon":
+	set_state_sprite(s_mage_summon, 1, 0);
+	if(animation_hit_frame(12)){
+		add_enemy(o_A1_skeleton);
+	}
+	if(animation_end()){
+		state = "Return";
+		point = attack_point(ix-Player1.ix, iz-Player1.iz, iy-Player1.iy);
+	}
+		break;
+	
 	case "Return":
-		set_state_sprite(s_skeleton_king_idle, 1, 0);
-		var dir = sign(distance_to_object(Player1));
-		if(x != ix){
-			move_and_collide(dir*run_speed*2, 0);
-			if(abs(ix-x) < run_speed*2){
-				x += (ix-x);
-			}
-		}
-		else{
+		if!(on_point(point, 0)){
+			set_state_sprite(s_mage_idle, 1, 0);
+			approach_point(point, 2, 0);
+		}else{//Returned
+			turn = "Over";
 			state = return_state;
 		}
 		break;
 		
+		
 	case "Invincibility":
 	#region Player Ran
-	set_state_sprite(s_skeleton_king_inv, 1, 0);
+	set_state_sprite(s_mage_idle, 1, 0);
 	if(alarm[1] == -1){alarm[1] = 300;}
 	//image_alpha = alarm[1];
 	#endregion
@@ -140,16 +112,13 @@ switch(state){
 		
 	case "Death":
 	#region ded
-	set_state_sprite(s_skeleton_king_die, 1, 0);
+	set_state_sprite(s_mage_idle, 1, 0);
 	if(animation_hit_frame(0)){
 		index = find_self(o_gameState.turnList);
 		array_delete(o_gameState.turnList, index, 1);
 		o_gameState.enemyLen--;
 	}
-	if(animation_hit_frame(7)){	instance_create_layer(x-98*image_xscale, y-12, "Instances", o_crown);}
-	if(animation_hit_frame(10)){
-	drop_item(drop_list, drops);
-	}
+
 	if(animation_end()){
 		instance_destroy(self);
 	}
@@ -158,8 +127,7 @@ switch(state){
 	
 	case "Defeated":
 	#region ded
-	set_state_sprite(s_skeleton_king_die, 1, 0);
-	if(animation_hit_frame(7)){	instance_create_layer(x-98*image_xscale, y-12, "Instances", o_crown);}
+	set_state_sprite(s_mage_idle, 1, 0);
 	if animation_end(){
 		instance_destroy(self);
 	}
@@ -176,3 +144,4 @@ if(image_xscale != 1 or image_xscale != 0){image_xscale = 1; }
 //cout(x);
 //cout(id);
 //cout(alarm[7]);
+//cout(turn);

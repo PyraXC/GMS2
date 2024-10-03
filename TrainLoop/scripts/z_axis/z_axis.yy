@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "z_axis",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "New",
-    "path": "folders/Scripts/New.yy",
+  "$GMScript":"",
+  "%Name":"z_axis",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"z_axis",
+  "parent":{
+    "name":"Movement",
+    "path":"folders/Scripts/New/Movement.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

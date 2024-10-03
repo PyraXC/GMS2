@@ -7,5 +7,5 @@ keyboard_set_map(ord("P"),ord("P"));
 keyboard_set_map(ord("I"),ord("I"));
 
 get_input();
-queue = noone;
-x = 0;
+queue = [];
+i = 0;

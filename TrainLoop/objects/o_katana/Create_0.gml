@@ -1,3 +1,4 @@
+event_inherited();
 damage = 6;
 durability = 8;
 crit = 25;
@@ -7,7 +8,9 @@ state = "NONE";
 xspeed = irandom_range(-6,6);
 yspeed = irandom_range(-6, -3);
 icon = s_katana_i;
-width = 15;
+wid = 15;
 create_shadow("large", self, y, z);
 type = "Slicing";
 type2 = "Long";
+flavor_txt = "Katana :)";
+distance = 128;

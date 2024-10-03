@@ -1,1 +1,2 @@
-width = 0;
+wid = 0;
+spr = sprite_index;

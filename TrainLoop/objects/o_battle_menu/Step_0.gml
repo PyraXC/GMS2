@@ -1,3 +1,4 @@
+if(array_length(o_gameState.turnList) > 0 && state != "Noone"){
 up_key = keyboard_check_pressed(ord("W"));
 down_key = keyboard_check_pressed(ord("S"));
 right_key =keyboard_check_pressed(ord("D")); 
@@ -5,7 +6,7 @@ left_key =keyboard_check_pressed(ord("A"));
 accept_key = keyboard_check_pressed(vk_space);
 return_key = keyboard_check_pressed(vk_backspace);
 pause = keyboard_check_pressed(vk_escape);
-
+	
 vx = camera_get_view_x(o_camera.camera) + (20);
 vy = camera_get_view_y(o_camera.camera)+(80);
 pos += down_key - up_key;
@@ -42,7 +43,7 @@ switch(menu_level){
 	}
 		switch(pos){
 			//play
-			case 0: menu_level = 4; pos = 0; audio_play_sound(a_menu_select, 0.75, 0); break;
+			case 0: menu_level = 4; pos = 0; audio_play_sound(a_menu_select, 0.75, 0);  mouse_orig_x = mouse_x;break;
 			//Equipment
 			case 1: menu_level = 1; pos = 0; audio_play_sound(a_menu_select, 0.75, 0); break;
 			//Settings
@@ -108,10 +109,18 @@ switch(menu_level){
 	#region Attack Menu
 	case 4:
 	audio_play_sound(a_menu_select, 0.75, 0);
+	instance_destroy(cursor);
 		with(Player1){
 		state = "Approach";
 		next_state = o_battle_menu.option[o_battle_menu.menu_level, o_battle_menu.pos];
 		target = o_gameState.turnList[o_battle_menu.lr];
+		distance = weapon.distance;
+		if!(instance_exists(o_battle_menu.point)){
+			point = attack_point(target.x - distance, target.z, target.y, 1);
+		}else{
+			point = o_battle_menu.point;
+			point.x -= distance;
+		}
 		return_state = "Battle";
 		actions--;
 		}
@@ -122,6 +131,7 @@ switch(menu_level){
 		instance_destroy();
 		break; #endregion
 	}
+}
 }
 
 //cout(option[menu_level]);

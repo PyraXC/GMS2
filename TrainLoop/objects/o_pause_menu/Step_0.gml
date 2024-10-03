@@ -44,6 +44,8 @@ switch(menu_level){
 			case 2: menu_level = 2; pos = 0; break;
 			
 			case 3: menu_level = 3; pos = 0; lr = 0; break;
+			
+			case 4: menu_level = 4; pos = 0; lr = 0; break;
 		}
 		break; #endregion
 	#region Equip Menu

@@ -13,7 +13,7 @@ switch(state){
 	case "Attack":
 		set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
-			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 1, 0, "None", 0, image_xscale, z, 24);
+			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 1, 0, "None", 0, image_xscale, z, 24, );
 			audio_play_sound(a_medium_hit, 1, 0, 0.5);
 		}
 		if(animation_end()){
@@ -24,7 +24,13 @@ switch(state){
 	case "Noone":
 	set_state_sprite(s_skeleton_king_idle, 1, 0);
 		break;
-	
+		
+	case "Knockback":
+	#region
+	knockback_state(s_skeleton_king_idle, "Projectile Wait");
+	#endregion
+		break;
+		
 	case "Battle Debug":
 		Player1.state = "Battle Debug";
 		o_gameState.state = "P1";
@@ -37,11 +43,19 @@ switch(state){
 	set_state_sprite(s_skeleton_king_idle, 1, 0);
 	in_air();
 	//cout(instance);
+		break;
 		
+	case "Turn":
+	if(hp < max_hp/2){
+		state = "Choose Attack";	
+	}else{
+		state = "Choose Attack";
+	}
+	
 		break;
 		
 	case "Choose Attack":
-	rng = irandom_range(1,3);
+	rng = 1//irandom_range(1,3);
 	//projectile = 0;
 		if(rng == 1){
 			state = "Overhead Swing";
@@ -59,10 +73,10 @@ switch(state){
 		break;
 		
 	case "Overhead Swing":
-		if(abs(x - Player1.x) <= 96){
+		if(abs(x - Player1.x) <= 144){
 			set_state_sprite(s_skeleton_king_default_attack, 1, 0);
 		if(animation_hit_frame(6)){
-			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 2, 6, "Bleed", 0, image_xscale, z, 24);
+			create_hitbox(x, y, self, s_skeleton_king_default_attack_damage, 1, 1, 4, 6, "Bleed", 0, image_xscale, z, 24);
 			audio_play_sound(a_medium_hit, 1, 0);
 		}
 		if(animation_end()){
@@ -82,16 +96,19 @@ switch(state){
 			if(animation_hit_frame(6) and projectile = 0){
 				proj = instance_create_layer(x, y, "Instances", o_king_projectile1);
 				proj.creator = self;
+				proj.target = Player1;
 				proj.z = z;
+				proj.wid = 16;
+				projectile += 1;
 				audio_play_sound(a_swipe, 1, 0);
 				rng = irandom_range(1,2);
 				if rng == 1{
 					state = "Projectile Wait";
-					alarm[9] = 90;
+					wait = 90;
 				}else{
 					//state = "Ranged Follow Up";
 					state = "Projectile Wait";
-					alarm[9] = 90;
+					wait = 90;
 				}
 			}/*else if(projectile != 0){
 				set_state_sprite(s_skeleton_king_idle, 1, 0);
@@ -111,24 +128,25 @@ switch(state){
 		
 	case "Projectile Wait":
 		set_state_sprite(s_skeleton_king_idle, 1, 0);
-		if(alarm[9] == -1){
+		wait--;
+		if(wait <= 0){
 			state = "Return";
-				projectile = 0;
+			projectile = 0;
 		}
-		
 		break;
 		
 	case "Return":
 		set_state_sprite(s_skeleton_king_idle, 1, 0);
 		var dir = sign(distance_to_object(Player1));
 		if(x != ix){
-			move_and_collide(dir*run_speed*2, 0);
+			move_and_collide_new(dir*run_speed*2, 0, 0);
 			if(abs(ix-x) < run_speed*2){
 				x += (ix-x);
 			}
 		}
 		else{
 			state = return_state;
+			turn = "Over";
 		}
 		break;
 		
@@ -144,15 +162,17 @@ switch(state){
 	#region ded
 	set_state_sprite(s_skeleton_king_die, 1, 0);
 	if(animation_hit_frame(0)){
-		index = find_self(o_gameState.turnList);
-		array_delete(o_gameState.turnList, index, 1);
 		o_gameState.enemyLen--;
+		//turn = "Over";
 	}
 	if(animation_hit_frame(7)){	instance_create_layer(x-98*image_xscale, y-12, "Instances", o_crown);}
 	if(animation_hit_frame(10)){
 	drop_item(drop_list, drops);
 	}
 	if(animation_end()){
+		index = find_self(o_gameState.turnList);
+		array_delete(o_gameState.turnList, index, 1);
+		o_gameState.enemyturn = 0;
 		instance_destroy(self);
 	}
 	#endregion
@@ -180,3 +200,5 @@ if(image_xscale != 1 or image_xscale != 0){image_xscale = 1; }
 //cout(alarm[7]);
 //cout(z);
 //cout("King:" + string(depth));
+//cout("King " + string(depth));
+//cout(x);

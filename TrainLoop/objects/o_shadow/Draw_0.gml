@@ -11,6 +11,7 @@ switch(sz){
 }
 if(instance_exists(owner)){
 	x = owner.x;
+//	y = owner.grd.y;
 	z = owner.z;
 	depth = owner.depth + 1;
 	//y = collision_line(x, y, x, y+1000, o_wall, true, true).y-64;

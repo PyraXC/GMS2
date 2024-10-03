@@ -1,3 +1,4 @@
+event_inherited();
 damage = 20;
 durability = 3;
 item = "Health Potion";
@@ -9,4 +10,5 @@ icon = s_health_pot_i;
 spr = s_health_pot;
 obj = self;
 create_shadow("small", self, y, z);
-width = 16;
+wid = 16;
+flavor_txt = "A Potion Of Healing. Restores HP When Drank. Can Be Used 3 Times";

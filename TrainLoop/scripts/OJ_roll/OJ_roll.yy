@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"OJ_roll",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"OJ_roll",
+  "parent":{
+    "name":"OJ",
+    "path":"folders/Scripts/New/OJ.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

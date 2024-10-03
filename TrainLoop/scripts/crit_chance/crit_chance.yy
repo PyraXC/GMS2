@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "crit_chance",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Old",
-    "path": "folders/Scripts/Old.yy",
+  "$GMScript":"",
+  "%Name":"crit_chance",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"crit_chance",
+  "parent":{
+    "name":"Old",
+    "path":"folders/Scripts/Old.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

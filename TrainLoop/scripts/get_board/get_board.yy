@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"get_board",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"get_board",
+  "parent":{
+    "name":"OJ",
+    "path":"folders/Scripts/New/OJ.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

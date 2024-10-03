@@ -1,0 +1,11 @@
+title = "";
+txt = "";
+spr = 0;
+duration = 100;
+//glow = 0;
+x = o_camera.corner[1, 0];
+y = o_camera.corner[1, 1] + sprite_height;
+target_x = 0;
+target_y = 0;
+signal = 1;
+border = 32;

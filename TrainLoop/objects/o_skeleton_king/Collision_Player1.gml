@@ -1,4 +1,4 @@
-if(z_axis(Player1, 10)){
+if(z_axis(Player1, 0)){
 	if(state == "Idle" or state == "Attack"){
 		//cout("Here" + string(state));
 		//transition_to_battle(rm_battle1);

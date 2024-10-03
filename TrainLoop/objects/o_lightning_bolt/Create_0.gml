@@ -1,0 +1,10 @@
+z = 0;
+creator = noone;
+target = noone;
+alarm[0] = 8;
+distX = 0;
+distY = 0;
+signal = 0;
+tot_points = 0;
+points = [];
+dist_between = 100;

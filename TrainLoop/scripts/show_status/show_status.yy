@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "show_status",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Old",
-    "path": "folders/Scripts/Old.yy",
+  "$GMScript":"",
+  "%Name":"show_status",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"show_status",
+  "parent":{
+    "name":"Old",
+    "path":"folders/Scripts/Old.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

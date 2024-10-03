@@ -1,3 +1,4 @@
+draw_set_font(f_one);
 var hp_x = 16;
 var hp_y = 16;
 draw_sprite_ext(s_health_bar_full, 20 - Player1.hp, hp_x, hp_y, 1, 1, 0, c_white, 100);

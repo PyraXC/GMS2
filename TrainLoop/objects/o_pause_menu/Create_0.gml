@@ -14,6 +14,7 @@ option[0,0] = "Learn Skills";
 option[0, 1] = "Weaponry";
 option[0, 2] = "Items";
 option[0, 3] = "FISHH";
+option[0, 4] = "Index";
 option[4] = [];
 op_length = 0;
 menu_level = 0;

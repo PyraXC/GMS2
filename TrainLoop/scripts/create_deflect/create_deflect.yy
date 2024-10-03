@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"create_deflect",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"create_deflect",
+  "parent":{
+    "name":"Battle",
+    "path":"folders/Scripts/New/Battle.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

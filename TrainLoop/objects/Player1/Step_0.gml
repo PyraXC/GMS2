@@ -4,8 +4,8 @@ if(keyboard_check_pressed(vk_f1)){
 	Player1.y = instance_nearest(x, y, o_enemy).y;
 	Player1.z = instance_nearest(x, y, o_enemy).z;
 }
+if(keyboard_check(vk_f5)){ game_restart();}
 #endregion
-
 
 switch (state)
 {
@@ -24,6 +24,7 @@ switch (state)
 		if(!weapon && array_length(weapon_inventory) > 0){
 			weapon = weapon_inventory[0];
 		}
+		focused = 0;
 		moveLR = input.right - input.left;
 		moveTD = input.up - input.down;
 		hsp = moveLR * run_speed;
@@ -34,6 +35,7 @@ switch (state)
 		wall_jump_count = 0;
 		idle_time = 0;
 		i = 0;
+		jump_input = 0;
 		grav = i_grav;
 		actions = 1;
 		item_actions = 1;
@@ -50,21 +52,19 @@ switch (state)
 			set_state_sprite(s_idle, 1, 0);
 		}
 	#endregion
-	if input.run
-	{
+	if input.run{
 		run_speed = max_run_speed;
-	}
-	else
-	{ 
+	}else{ 
 		run_speed = i_run_speed;
 	}
 	
-	move_and_collide_new(hsp, ysp);
+	move_and_collide(hsp, ysp, 0);
 	can_jump();
-	if input.pause
-	{
+	
+	if input.pause{
 		state = "Paused";
 	}
+	
 	
 	/*
 	if keyboard_check_pressed(vk_enter){
@@ -157,14 +157,6 @@ switch (state)
 				}
 		}
 	*/	
-	if(!place_meeting(x, y+1, o_wall))
-		{
-			state = "Jump";
-		}
-	/*if(!place_meeting(x, y+z, o_wall)){
-			state = "Jump";
-	}*/
-	
 
 	break;
 #endregion
@@ -173,7 +165,7 @@ switch (state)
 	#region Jump
 	#region stuff
 	set_state_sprite(s_jump, 1, 0);
-	air_movement();
+	air_movement_new();
 	if i == 0
 	{
 		grav = 0;
@@ -248,22 +240,22 @@ switch (state)
 			set_state_sprite(s_fishing_L, 1, 0);
 			if(input.left and input.jump){
 				inputs--;
-				cout(inputs);
+				//cout(inputs);
 			}
 			if(input.right and input.jump){
 				inputs++;
-				cout(inputs);
+				//cout(inputs);
 			}
 		}
 		if(lr == 2){
 			set_state_sprite(s_fishing_R, 1, 0);
 			if(input.right and input.jump){
 				inputs--;
-				cout(inputs);
+				//cout(inputs);
 			}
 			if(input.left and input.jump){
 				inputs++;
-				cout(inputs);
+				//cout(inputs);
 			}
 		}
 		if(inputs <= 0){
@@ -306,8 +298,9 @@ switch (state)
 	
 	case "Battle":
 	#region Battle Start
-	set_state_sprite(s_move, 1, 0);
+	set_state_sprite(s_idle, 1, 0);
 	hsp = 0;
+	focused = 1;
 	dodge();
 	if(!place_meeting(x, y+1, o_wall)){
 		}
@@ -319,11 +312,12 @@ switch (state)
 			}
 		}
 		else if(o_gameState.state == "Enemy"){
+			focused = 0;
 			if(input.defend){
 				state = "Defend";
 			}
 			else if(input.attack){
-				state = "Reflect";
+				state = "Deflect";
 			}
 			else if(input.jump){
 				alarm[1] = delay;
@@ -341,25 +335,32 @@ switch (state)
 	case "Defend":
 	#region Defend In Enemy Turn
 	set_state_sprite(s_defend, 1, 0);
-	if(alarm[1] == -1){
-		if(animation_hit_frame_range(2, 4)){
+	//cout(defend);
+	//if(alarm[1] == -1){
+		if(animation_hit_frame(2)){
+			defend = 0.0;
+		}
+		if(animation_hit_frame_range(3, 12)){
 			defend = 0.25;
 		}
 		if(animation_end()){
 			defend = iDefend;
 			state = "Battle";
 		}
-	}
-	else if(animation_end()){
-			state = "Battle";
-		}
+	//}
+	//else if(animation_end()){
+		//	state = "Battle";
+	//	}
 	#endregion
 		break;
 		
-	case "Reflect":
+	case "Deflect":
 	#region Attack In Enemy Turn
-	set_state_sprite(s_attack, 1, 0);
-	if(animation_end){
+	set_state_sprite(s_deflect, 1, 0);
+	if(animation_hit_frame(17)){
+		create_deflect(x, y, self, s_deflect_hitbox, 18, image_xscale, z, 64);
+	}
+	if(animation_end()){
 		state = "Battle";
 	}
 	#endregion
@@ -367,8 +368,9 @@ switch (state)
 		
 	case "Dodge":
 	#region Evade/Jump In Enemy Turn
-	set_state_sprite(s_jump, 1, 0);
+	set_state_sprite(s_idle, 1, 0);
 	if(alarm[1] == -1){
+	set_state_sprite(s_jump, 1, 0);
 		dodge();
 	}
 	#endregion
@@ -389,9 +391,17 @@ switch (state)
 		
 	case "Approach":
 	#region Knife Approach
-	set_state_sprite(s_move, 1, 0);
+	/*set_state_sprite(s_move, 1, 0);
 	approach_target(target);
-	if(abs(x - target.x) < 64){
+	if(abs(x - target.x) < 96){
+		state = next_state;
+		next_state = "";
+		attack_type = weapon.type;
+	}*/
+	if!(on_point(point, 0)){
+		set_state_sprite(s_move, 1, 0);
+		approach_point(point, 1, 0);
+	}else{//Attack
 		state = next_state;
 		next_state = "";
 		attack_type = weapon.type;
@@ -429,8 +439,49 @@ switch (state)
 	#endregion
 		break;
 		
+	case "Hit":
+	#region Hit Approach
+	set_state_sprite(s_move, 1, 0);
+	approach_target(target);
+	if(abs(x - target.x) < 64){
+		state = "Hit Attack";
+	}
+	#endregion
+		break;	
+		
+	case "Hit Attack":
+	#region Hit Attack Tap
+	var spr = attack_sprite("Hits");
+	var frame = 12;
+	set_state_sprite(spr, 1, 0);
+	//Start basic input system
+	if(input.attack && inp == -1){
+		inp = image_index + 1;
+	}
+	
+	if(animation_hit_frame(frame) or inp > -1){
+		//cout(image_index);
+		image_index = frame;
+	//	cout(image_index);
+		var dist = frame - inp;
+	//	cout(dist);
+		tap(dist, 0);
+		create_hitbox(x, y, self, s_attack_damage, 0, 0, 1, 1*weapon.damage, "None", 0, image_xscale, z, 5);
+		audio_play_sound(a_medium_hit, 1, 0);	
+		inp = -2;
+		//image_index = frame + 1;
+	}
+	if(animation_end()){
+		inp = -1;
+		state = "Return";
+		point = attack_point(ix, iz, iy, 1);
+	}
+	
+	#endregion
+		break;
+	
 	case "Sweep":
-	#region Knife Approach
+	#region Sweep Approach
 	set_state_sprite(s_move, 1, 0);
 	approach_target(target);
 	if(abs(x - target.x) < 64){
@@ -444,11 +495,12 @@ switch (state)
 	var spr = attack_sprite("Sweeps");
 	set_state_sprite(spr, 1, 0);
 	if(animation_hit_frame(3)){
-		create_hitbox(x, y, self, s_sweep_damage, 0, 0, 10, max(1, weapon.damage-2), "Break", 100, image_xscale, z, 35);
+		create_hitbox(x, y, self, s_sweep_damage, 0, 0, 10, max(1, weapon.damage-2), "Break", 100, image_xscale, z, 75);
 		audio_play_sound(a_swipe, 1, 0);
 	}
 	if(animation_end()){
 		state = "Return";
+		point = attack_point(ix, iz, iy, 1);
 	}
 	
 	#endregion
@@ -466,13 +518,14 @@ switch (state)
 		
 	case "Overhead Attack":
 	#region Stab Attack
-	set_state_sprite(s_overhead0, 1, 0);
+	set_state_sprite(s_overhead, 1, 0);
 	if(animation_hit_frame(3)){
-		create_hitbox(x, y, self, s_overhead, 0, 0, 1, 1*weapon.damage, "Topple", 100, image_xscale, z, 5);
+		create_hitbox(x, y, self, s_overhead_damage, 0, 0, 1, 1*weapon.damage, "Topple", 100, image_xscale, z, 5);
 		audio_play_sound(a_medium_hit, 1, 0);
 	}
 	if(animation_end()){
 		state = "Return";
+		point = attack_point(ix, iz, iy, 1);
 	}
 	
 	#endregion
@@ -480,15 +533,30 @@ switch (state)
 
 	case "Bone":
 	#region Bone Item
+	attack_type = "Blunt";
 	set_state_sprite(s_throw_bone, 1, 0);
-	if animation_end(){
+	/*if animation_end(){
 		var bone = instance_create_layer(x, y-64, "InstancesTop", o_bone_projectile);
 		bone.creator = Player1;
 		bone.target = target;
 		item.durability--;
 		state = return_state;
+	}*/
+	if(animation_end()){
+		throw_bone(true, 0, 2);
+		wait = 30;
 	}
 	#endregion
+		break;
+		
+	case "Projectile Wait":
+	#region Waiting
+		set_state_sprite(s_idle, 1, 0);
+		wait--;
+		if(wait <= 0){
+			state = return_state;
+		}
+		#endregion
 		break;
 		
 	case "Health Potion":
@@ -515,16 +583,13 @@ switch (state)
 
 	case "Return":
 		#region return
-		set_state_sprite(s_move, 1, 0);
-		if(x != ix){
-			move_and_collide_new(-run_speed*2, 0);
-			if(abs(ix-x) < run_speed*2){
-				x += (ix-x);
-			}
-		}
-		else{
-			if(instance_exists(target)){cout(target.hp);}
+		if!(on_point(point, 0)){
+			set_state_sprite(s_move, 1, 0);
+			approach_point(point, 1, 0);
+		}else{//Attack
+			//if(instance_exists(target)){cout(target.hp);}
 			state = return_state;
+			point = noone;
 		}
 		#endregion
 		break;
@@ -544,6 +609,9 @@ switch (state)
 		break;
 	
 	case "Skill":
+	if(!instance_exists(o_sp_menu)){
+		state = "Move";
+	}
 	#region Skill Menu
 	
 	#endregion
@@ -576,7 +644,7 @@ switch (state)
 	#endregion
 		break;	
 }
-depth = z;
+
 if hp >= max_hp
 	{
 		hp = max_hp;
@@ -627,3 +695,15 @@ if hp > current_hp
 //cout(depth);
 //cout(z);
 //cout(attack_list);
+//cout(ds_list_find_value(ground, ds_list_size(ground)-1));
+//cout(z_axis(Player1, o_wall));
+//cout(string(z + wid) + " " + string(ground.z));
+//cout(ysp);
+//print_ds(ground);
+//cout(grd);
+//cout((string(input.jump) + state));
+//cout(ix);
+//cout(focused);
+//cout("Player " + string(depth));
+//cout(state);
+//cout(x);

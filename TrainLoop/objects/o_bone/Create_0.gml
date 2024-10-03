@@ -1,3 +1,4 @@
+event_inherited();
 damage = 2;
 durability = 1;
 item = "Bone";
@@ -6,7 +7,8 @@ state = "NONE";
 xspeed = irandom_range(-8,8);
 yspeed = irandom_range(-8, -4);
 icon = s_bone_i;
-spr = s_bone;
+spr = s_bone_spr;
 obj = self;
 create_shadow("medium", self, y, z);
-width = 32;
+wid = 32;
+flavor_txt = "A Piece Of A Lost Friend. Can Be Thrown For Small Damage";

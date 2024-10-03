@@ -1,3 +1,3 @@
-//show_debug_message(queue);
-queue = noone;
-x = 0;
+//cout(queue);
+queue = [];
+i = 0;

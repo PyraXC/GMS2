@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "draw_z",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "New",
-    "path": "folders/Scripts/New.yy",
+  "$GMScript":"",
+  "%Name":"draw_z",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"draw_z",
+  "parent":{
+    "name":"Functions",
+    "path":"folders/Scripts/New/Functions.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

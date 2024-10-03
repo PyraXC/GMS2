@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "hurt_player",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "gmtest",
-    "path": "folders/Scripts/gmtest.yy",
+  "$GMScript":"",
+  "%Name":"hurt_player",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"hurt_player",
+  "parent":{
+    "name":"gmtest",
+    "path":"folders/Scripts/gmtest.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

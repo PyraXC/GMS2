@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"print_ds",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"print_ds",
+  "parent":{
+    "name":"Functions",
+    "path":"folders/Scripts/New/Functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

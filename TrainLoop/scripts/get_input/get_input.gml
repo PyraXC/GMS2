@@ -10,12 +10,12 @@ function get_input() {
 	pause = keyboard_check_pressed(vk_escape);
 
 	
-	r = keyboard_check_pressed(ord("D"));
+	/*r = keyboard_check_pressed(ord("D"));
 	l = keyboard_check_pressed(ord("A"));
 	d = keyboard_check_pressed(ord("S"));
 	u = keyboard_check_pressed(ord("W"));
 	j = keyboard_check_pressed(vk_space);
 	a = keyboard_check_pressed(ord("J"));
 	rn = keyboard_check_pressed(vk_shift);
-	df = keyboard_check_pressed(ord("K"));
+	df = keyboard_check_pressed(ord("K"));*/
 }

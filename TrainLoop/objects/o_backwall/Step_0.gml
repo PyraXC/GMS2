@@ -1,3 +1,4 @@
+depth = z;
 switch(room){
 	
 case 0:

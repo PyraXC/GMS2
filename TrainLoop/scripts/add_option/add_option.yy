@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "add_option",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Old",
-    "path": "folders/Scripts/Old.yy",
+  "$GMScript":"",
+  "%Name":"add_option",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"add_option",
+  "parent":{
+    "name":"Old",
+    "path":"folders/Scripts/Old.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

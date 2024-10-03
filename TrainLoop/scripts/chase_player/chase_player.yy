@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"chase_player",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"chase_player",
+  "parent":{
+    "name":"Movement",
+    "path":"folders/Scripts/New/Movement.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

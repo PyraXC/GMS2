@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "battle_menu_update",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Old",
-    "path": "folders/Scripts/Old.yy",
+  "$GMScript":"",
+  "%Name":"battle_menu_update",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"battle_menu_update",
+  "parent":{
+    "name":"Old",
+    "path":"folders/Scripts/Old.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

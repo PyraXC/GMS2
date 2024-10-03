@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "add_xp",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "New",
-    "path": "folders/Scripts/New.yy",
+  "$GMScript":"",
+  "%Name":"add_xp",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"add_xp",
+  "parent":{
+    "name":"Battle",
+    "path":"folders/Scripts/New/Battle.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

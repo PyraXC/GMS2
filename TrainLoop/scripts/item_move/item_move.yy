@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "item_move",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Old",
-    "path": "folders/Scripts/Old.yy",
+  "$GMScript":"",
+  "%Name":"item_move",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"item_move",
+  "parent":{
+    "name":"Old",
+    "path":"folders/Scripts/Old.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

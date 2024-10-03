@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"focus",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"focus",
+  "parent":{
+    "name":"Functions",
+    "path":"folders/Scripts/New/Functions.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

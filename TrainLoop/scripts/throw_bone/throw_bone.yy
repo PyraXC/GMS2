@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"throw_bone",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"throw_bone",
+  "parent":{
+    "name":"Battle",
+    "path":"folders/Scripts/New/Battle.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

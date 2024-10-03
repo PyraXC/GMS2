@@ -1,3 +1,4 @@
+event_inherited();
 damage = 5;
 durability = 15;
 crit = 20;
@@ -7,6 +8,9 @@ state = "NONE";
 xspeed = irandom_range(-6,6);
 yspeed = irandom_range(-6, -3);
 icon = s_king_sword_i;
-width = 25;
+wid = 25;
 create_shadow("large", self, y, z);
 type = "Long";
+//type2 = "";
+flavor_txt = "A Sword Of The King";
+distance = 128;

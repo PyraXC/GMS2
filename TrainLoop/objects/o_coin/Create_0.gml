@@ -1,3 +1,4 @@
+event_inherited();
 damage = 15;
 durability = 1;
 item = "Coins";
@@ -9,4 +10,5 @@ icon = s_coin;
 spr = s_coins;
 obj = self;
 create_shadow("small", self, y, z);
-width = 8;
+wid = 8;
+flavor_txt = "Money :)";

@@ -1,3 +1,6 @@
+//PRINTS
+SHOW_POPUPS = 1;
+POPUP_ONSCREEN = false;
 #region Menus
 	#region ATTACKS
 	ini_open("attackList.ini");
@@ -34,15 +37,22 @@
 		var sweep_str = ds_map_write(sweepList);
 		ds_map_destroy(sweepList);
 		#endregion
+		#region HITS
+		var hitList = ds_map_create();
+		hitList[? "Unarmed"] = s_hit_unarmed;
+		var hit_str = ds_map_write(hitList);
+		#endregion
 		
 		ini_write_string("Stabs", "Stabs", stab_str);
 		ini_write_string("Sweeps", "Sweeps", sweep_str);
+		ini_write_string("Hits", "Hits", hit_str);
 		ini_close();
 	#endregion
 item_inventory = [];
 weapon_inventory = [];
 equip_inventory = [];
 fish_inventory = [];
+popup_queue = [];
 weapon = noone;
 attack_type = noone;
 item = noone;
@@ -55,11 +65,17 @@ k = 0;
 rng = 0;
 #endregion
 target = noone;
+ground = ds_list_create();
+grd = noone;
+air_walls = ds_list_create();
+air_wall = noone;
+point = noone;
 //prev_state = "Move";
 hp = 20;
 money = 1000;
 max_hp = hp;
 current_hp = max_hp;
+facing = 1;
 state = "Move";
 return_state = "Move";
 next_state = "Move";
@@ -67,10 +83,14 @@ status = "None";
 status_turns = 0;
 ix = 0;
 iy = 0;
+iz = 0;
+point = noone;
 defend = 1;
 iDefend = defend;
 actions = 1;
 item_actions = 1;
+wait = 0;
+focused = 0;
 delay = 15;
 #region Move stuff
 run_speed = 6;
@@ -84,7 +104,6 @@ hsp = 0;
 max_hsp = 6;
 vsp = 0;
 z = 0;
-width = 32;
 wid = 32;
 move = 0;
 wall_jump_count = 0;
@@ -93,9 +112,13 @@ i_run_speed = run_speed;
 i_jump_speed = jump_speed;
 #endregion
 i = 0;
+inp = -1;
 lag_count = 0;
 kills = 0;
 //Dependencies
 input = instance_create_layer(0, 0, "Instances", o_input);
 global.obj_list = [];
 create_shadow("large", self, y, z);
+tempvar = 0;
+dest = 100;
+distance = 64;

@@ -14,7 +14,7 @@ function air_movement(){
 		if input.right {hsp = max_hsp;}
 		if !input.left && !input.right{hsp = 0;}
 		if input.left && input.right{hsp = 0;}
-			move_and_collide(hsp, vsp);
+		move_and_collide(hsp, vsp);
 		
 		
 	if (vsp < 15) vsp += global.grav;
@@ -43,8 +43,9 @@ function air_movement(){
 		}
 	
 	//Verticle Collision
-	if(place_meeting(x, y+vsp, o_wall)) and vsp > 0 and lag_count == 0
+	if(place_meeting(x, y+vsp, o_wall)) and vsp > 0
 		{
+			
 			if state = "Jump"
 			{
 				run_speed = i_run_speed;
@@ -52,12 +53,12 @@ function air_movement(){
 				cout("land");
 				//audio_play_sound(a_landing, 1, 0);
 			}
-			else
+			/*else
 			{
 				lag_count ++;
 				alarm[0] = (sprite_get_number(sprite_index )- image_index) * 3;
 				state = "Aerial Lag";
-			}
+			}*/
 		}
 	
 	if(place_meeting(x, y+vsp, o_wall))

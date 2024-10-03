@@ -8,3 +8,6 @@ xspeed = irandom_range(-6,6);
 yspeed = irandom_range(-6, -3);
 type = "Short";
 wid = 12;
+z = 0;
+flavor_txt = "Sword, but short";
+distance = 64;

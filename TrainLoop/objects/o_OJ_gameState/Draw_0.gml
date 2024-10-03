@@ -1,0 +1,1 @@
+draw_arrow(players[turn].x-8, players[turn].y-32, players[turn].x-8, players[turn].y, 16);

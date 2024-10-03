@@ -3,10 +3,14 @@ var target_x = player.x;
 var target_y = player.y;
 var VW = camera_get_view_width(cam);
 var VH = camera_get_view_height(cam);
+
 switch(state){
 case "Overworld":
-#region Normal Cam
-	
+corner[0, 0] = x - VW/2 + 192;
+corner[0, 1] = y - VH/2 - 160;
+corner[1, 0] = (x + VW/2 + 192);
+corner[1, 1] = (y + VH/2 - 160);
+#region Normal Cam	
 	transition = layer_get_id("transition");
 	if(keyboard_check(vk_alt)){
 		camera_set_view_size(cam, viewSize.smallWidth, viewSize.smallHeight);
@@ -31,10 +35,20 @@ case "Overworld":
 	
 case "Battle":
 #region Battle Cam
+
 	target_x = player.ix;
 	target_y= player.iy;
+	corner[0, 0] = target_x - 136;
+	corner[0, 1] = target_y - VH/2 - 160;
+	corner[1, 0] = target_x + VW - 136;
+	corner[1, 1] = target_y + VH/2 - 160;
+	//x = target_x - 136;
+	//y = target_y - VH/2 - 160;
 	camera_set_view_pos(cam, target_x - 136, target_y - VH/2 - 160);
 	camera_set_view_size(cam, viewSize.smallWidth, viewSize.smallHeight);
 	break;
 	#endregion
+	
+case "Gambling":
+	break;
 }

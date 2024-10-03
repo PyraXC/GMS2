@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"tap",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"tap",
+  "parent":{
+    "name":"Battle",
+    "path":"folders/Scripts/New/Battle.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"attack_point",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"attack_point",
+  "parent":{
+    "name":"Battle",
+    "path":"folders/Scripts/New/Battle.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

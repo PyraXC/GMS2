@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"card_builder",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"card_builder",
+  "parent":{
+    "name":"OJ",
+    "path":"folders/Scripts/New/OJ.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

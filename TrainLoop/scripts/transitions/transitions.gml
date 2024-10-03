@@ -41,9 +41,12 @@ function FadeOut(){
 }
 function FadeIn(){
 	//if(!global.midTransition){
+		if(!global.midTransition){
 		global.midTransition = true;
 		place_transition(sq_fade_in);
 		return true;
+	}
+		else return false;
 	//}
 		//else return false;
 }
